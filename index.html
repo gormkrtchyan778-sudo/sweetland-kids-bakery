@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sweetland Kids Bakery — детские дни рождения, кондитерские мастер-классы и авторские торты на заказ. Незабываемые праздники для ваших детей.">
+  <meta name="keywords" content="детский день рождения, кондитерский мастер-класс, торт на заказ, детский праздник, выездной мастер-класс">
+  <meta property="og:title" content="Sweetland Kids Bakery — Самые сладкие праздники">
+  <meta property="og:description" content="Дни рождения, мастер-классы и незабываемые эмоции в Sweetland Kids Bakery">
+  <meta property="og:type" content="website">
+  <title>Sweetland Kids Bakery — Самые сладкие праздники для ваших детей</title>
+
+  <!-- Google Fonts: Cormorant Garamond (luxury display) + Plus Jakarta Sans (modern body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS - Scroll Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <!-- Swiper - Touch Slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <style>
+    /* ================================================================
+       DESIGN TOKENS & RESET
+    ================================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* — Color Palette — */
+      --ivory:        #FAF7F2;
+      --cream:        #F5EDE0;
+      --blush:        #F0D9D5;
+      --rose:         #E2ACAB;
+      --deep-rose:    #BE7A7C;
+      --gold:         #C8A06A;
+      --gold-light:   #E5C99A;
+      --sage:         #B5C9B8;
+      --lavender:     #C5B5D2;
+      --charcoal:     #2A2323;
+      --text:         #3A3030;
+      --text-muted:   #8A7C7C;
+      --text-light:   #B8ADAD;
+      --white:        #FFFFFF;
+
+      /* — Glassmorphism — */
+      --glass-bg:     rgba(255,255,255,0.22);
+      --glass-border: rgba(255,255,255,0.42);
+      --glass-shadow: 0 8px 40px rgba(0,0,0,0.08);
+
+      /* — Typography — */
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+
+      /* — Layout — */
+      --nav-h:      80px;
+      --sec-v:      130px;
+      --radius:     20px;
+      --radius-lg:  32px;
+
+      /* — Easing — */
+      --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--ivory);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a   { text-decoration: none; color: inherit; }
+
+    /* ================================================================
+       TYPOGRAPHY SCALE
+    ================================================================ */
+    .t-xl  { font-family: var(--font-display); font-size: clamp(3rem,7vw,7rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.01em; }
+    .t-lg  { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,5rem); font-weight: 400; line-height: 1.14; }
+    .t-md  { font-family: var(--font-display); font-size: clamp(1.8rem,3.5vw,3.5rem); font-weight: 500; line-height: 1.18; }
+
+    /* ================================================================
+       LAYOUT
+    ================================================================ */
+    .container { max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+    .section   { padding: var(--sec-v) 0; }
+
+    /* ================================================================
+       BUTTONS
+    ================================================================ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 38px; border-radius: 100px;
+      font-family: var(--font-body); font-size: 0.925rem;
+      font-weight: 600; letter-spacing: 0.03em;
+      cursor: pointer; transition: all 0.35s var(--ease);
+      white-space: nowrap; border: none; outline: none;
+    }
+    .btn-primary { background: var(--deep-rose); color: #fff; box-shadow: 0 4px 24px rgba(190,122,124,.35); }
+    .btn-primary:hover { background: var(--charcoal); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(42,35,35,.25); }
+    .btn-outline { background: transparent; border: 1.5px solid rgba(255,255,255,.6); color: #fff; backdrop-filter: blur(4px); }
+    .btn-outline:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
+    .btn-gold { background: linear-gradient(135deg,var(--gold),var(--gold-light)); color: #fff; box-shadow: 0 4px 24px rgba(200,160,106,.35); }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,160,106,.5); }
+    .btn-dark { background: var(--charcoal); color: #fff; }
+    .btn-dark:hover { background: var(--deep-rose); transform: translateY(-2px); }
+
+    /* ================================================================
+       NAVIGATION
+    ================================================================ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      height: var(--nav-h); transition: all 0.4s var(--ease);
+    }
+    .nav.scrolled {
+      background: rgba(250,247,242,.96); backdrop-filter: blur(20px);
+      box-shadow: 0 2px 40px rgba(0,0,0,.07);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+
+    /* Logo */
+    .nav-logo { display: flex; flex-direction: column; }
+    .nav-logo-main { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; letter-spacing: .02em; color: #fff; transition: color .4s; }
+    .nav-logo-sub  { font-size: .65rem; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.65); transition: color .4s; margin-top: -3px; }
+    .nav.scrolled .nav-logo-main { color: var(--charcoal); }
+    .nav.scrolled .nav-logo-sub  { color: var(--text-muted); }
+
+    /* Links */
+    .nav-menu { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-menu a { font-size: .875rem; font-weight: 500; color: rgba(255,255,255,.85); transition: color .3s; position: relative; }
+    .nav-menu a::after { content:''; position:absolute; bottom:-3px; left:0; width:0; height:1.5px; background:var(--rose); transition:width .3s; }
+    .nav-menu a:hover::after { width: 100%; }
+    .nav.scrolled .nav-menu a { color: var(--text); }
+    .nav-cta { padding: 11px 26px; font-size: .825rem; }
+
+    /* Burger */
+    .nav-burger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+    .nav-burger span { display:block; width:24px; height:2px; background:#fff; border-radius:2px; transition:all .3s; }
+    .nav.scrolled .nav-burger span { background: var(--charcoal); }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: var(--ivory);
+      z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu-close {
+      position: absolute; top: 26px; right: 26px; width: 44px; height: 44px;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; font-size:1.4rem; color:var(--text); background:none; border:none;
+    }
+    .mobile-menu ul { list-style:none; text-align:center; }
+    .mobile-menu ul a { font-family:var(--font-display); font-size:2.4rem; font-weight:400; color:var(--charcoal); display:block; padding:10px 20px; transition:color .3s; }
+    .mobile-menu ul a:hover { color: var(--deep-rose); }
+
+    /* ================================================================
+       HERO
+    ================================================================ */
+    .hero { position:relative; height:100vh; min-height:680px; display:flex; align-items:center; overflow:hidden; }
+    .hero-bg {
+      position:absolute; inset:0;
+      background-image: url('https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1920&q=85&auto=format&fit=crop');
+      background-size:cover; background-position:center;
+      transform: scale(1.1); will-change: transform;
+    }
+    .hero-overlay {
+      position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(42,35,35,.78) 0%, rgba(55,38,38,.58) 50%, rgba(28,22,22,.68) 100%);
+    }
+    .hero-content { position:relative; z-index:2; max-width:860px; }
+
+    /* Badge */
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background: var(--glass-bg); border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px); padding:8px 22px; border-radius:100px;
+      margin-bottom:28px; font-size:.78rem; font-weight:700;
+      letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.9);
+    }
+    .badge-dot { width:6px; height:6px; background:var(--rose); border-radius:50%; animation:pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.5)} }
+
+    .hero-title { color: #fff; margin-bottom: 22px; }
+    .hero-title em { font-style:italic; color:var(--rose); }
+    .hero-sub { font-size:clamp(1rem,1.8vw,1.2rem); color:rgba(255,255,255,.75); max-width:520px; margin-bottom:44px; font-weight:300; line-height:1.75; }
+    .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position:absolute; bottom:40px; left:50%; transform:translateX(-50%); z-index:2;
+      display:flex; flex-direction:column; align-items:center; gap:8px;
+      color:rgba(255,255,255,.5); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
+    }
+    .scroll-line { width:1px; height:48px; background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent); animation:scroll-anim 2s ease-in-out infinite; }
+    @keyframes scroll-anim { 0%,100%{opacity:1;transform:scaleY(1)} 50%{opacity:.3;transform:scaleY(.4)} }
+
+    /* ── Floating Sweet Elements ── */
+    .hero-float { position:absolute; z-index:1; pointer-events:none; will-change:transform; }
+    .float-el  { filter: drop-shadow(0 8px 24px rgba(0,0,0,.22)); }
+    @keyframes fl1 { 0%,100%{transform:translateY(0) rotate(0deg)} 33%{transform:translateY(-22px) rotate(8deg)} 66%{transform:translateY(-10px) rotate(-5deg)} }
+    @keyframes fl2 { 0%,100%{transform:translateY(0) rotate(0deg) scale(1)} 50%{transform:translateY(-26px) rotate(-8deg) scale(1.06)} }
+    @keyframes fl3 { 0%,100%{transform:translateY(0) rotate(0deg)} 40%{transform:translateY(-18px) rotate(12deg)} 70%{transform:translateY(-6px) rotate(-3deg)} }
+    @keyframes fl4 { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-20px) scale(1.08)} }
+
+    /* ================================================================
+       SECTION HEADERS
+    ================================================================ */
+    .sec-head { text-align:center; margin-bottom:72px; }
+    .sec-tag  { display:inline-block; font-size:.74rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--deep-rose); margin-bottom:16px; }
+    .sec-line { width:60px; height:2px; background:linear-gradient(90deg,var(--rose),var(--gold)); margin:16px auto 0; }
+    .sec-sub  { color:var(--text-muted); font-size:1.08rem; max-width:540px; margin:14px auto 0; font-weight:400; line-height:1.75; }
+
+    /* ================================================================
+       WHY SWEETLAND
+    ================================================================ */
+    .why { background:var(--cream); position:relative; overflow:hidden; }
+    .why::before { content:''; position:absolute; top:-120px; right:-160px; width:560px; height:560px; background:radial-gradient(circle,rgba(226,172,171,.14),transparent 70%); pointer-events:none; }
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .why-card {
+      background: var(--glass-bg); border:1px solid var(--glass-border); backdrop-filter:blur(16px);
+      border-radius: var(--radius-lg); padding:44px 36px;
+      transition: all .4s var(--ease); position:relative; overflow:hidden;
+    }
+    .why-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--rose),var(--gold)); transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease); }
+    .why-card:hover { transform:translateY(-7px); box-shadow:0 22px 64px rgba(0,0,0,.1); background:#fff; }
+    .why-card:hover::after { transform: scaleX(1); }
+    .why-icon { width:58px; height:58px; background:linear-gradient(135deg,var(--blush),var(--rose)); border-radius:18px; display:flex; align-items:center; justify-content:center; font-size:1.55rem; margin-bottom:24px; }
+    .why-card h3 { font-family:var(--font-display); font-size:1.5rem; font-weight:500; color:var(--charcoal); margin-bottom:12px; }
+    .why-card p  { color:var(--text-muted); font-size:.93rem; line-height:1.75; }
+
+    /* ================================================================
+       SERVICES
+    ================================================================ */
+    .services { background: var(--ivory); }
+    .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
+    .svc-card { border-radius:var(--radius-lg); overflow:hidden; position:relative; cursor:pointer; aspect-ratio:4/3; }
+    .svc-img  { position:absolute; inset:0; object-fit:cover; width:100%; height:100%; transition:transform .7s var(--ease); }
+    .svc-card:hover .svc-img { transform: scale(1.07); }
+    .svc-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(18,12,12,.88) 0%,rgba(18,12,12,.28) 55%,transparent 100%); transition:background .4s; }
+    .svc-card:hover .svc-overlay { background:linear-gradient(to top,rgba(18,12,12,.92) 0%,rgba(18,12,12,.4) 60%,rgba(18,12,12,.08) 100%); }
+    .svc-body { position:absolute; bottom:0; left:0; right:0; padding:36px; transform:translateY(6px); transition:transform .4s var(--ease); }
+    .svc-card:hover .svc-body { transform: translateY(0); }
+    .svc-chip { display:inline-block; padding:4px 14px; background:rgba(226,172,171,.28); border:1px solid rgba(226,172,171,.38); border-radius:100px; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--rose); margin-bottom:12px; }
+    .svc-body h3 { font-family:var(--font-display); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:500; color:#fff; margin-bottom:10px; }
+    .svc-body p  { color:rgba(255,255,255,.7); font-size:.9rem; line-height:1.7; margin-bottom:20px; max-width:340px; }
+    .svc-link { display:inline-flex; align-items:center; gap:8px; font-size:.85rem; font-weight:600; color:#fff; opacity:0; transform:translateY(10px); transition:all .4s var(--ease) .05s; }
+    .svc-card:hover .svc-link { opacity:1; transform:translateY(0); }
+    .svc-link svg { width:18px; height:18px; transition:transform .3s; }
+    .svc-card:hover .svc-link svg { transform: translateX(5px); }
+
+    /* ================================================================
+       GALLERY
+    ================================================================ */
+    .gallery { background:var(--charcoal); padding:var(--sec-v) 0; }
+    .gallery .sec-tag  { color:var(--rose); }
+    .gallery .t-md     { color:#fff; }
+    .gallery .sec-sub  { color:rgba(255,255,255,.5); }
+
+    .gal-grid {
+      display:grid;
+      grid-template-columns: repeat(4,1fr);
+      gap:12px;
+    }
+    .gal-item { position:relative; overflow:hidden; border-radius:16px; cursor:pointer; }
+    .gal-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .65s var(--ease); }
+
+    /* Large featured items */
+    .gal-item:nth-child(1) { grid-column:span 2; grid-row:span 2; }
+    .gal-item:nth-child(5) { grid-column:span 2; }
+    .gal-item:nth-child(7) { grid-column:span 2; }
+
+    /* Aspect ratios */
+    .gal-item { aspect-ratio:1; }
+    .gal-item:nth-child(1) { aspect-ratio:auto; min-height:400px; }
+    .gal-item:nth-child(5),
+    .gal-item:nth-child(7) { aspect-ratio:2/1; }
+
+    .gal-item:hover img { transform: scale(1.06); }
+    .gal-over { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.6),transparent); opacity:0; transition:opacity .4s; display:flex; align-items:center; justify-content:center; }
+    .gal-item:hover .gal-over { opacity:1; }
+    .gal-zoom { width:50px; height:50px; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.38); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem; backdrop-filter:blur(8px); transform:scale(.4); opacity:0; transition:all .35s var(--ease-bounce); }
+    .gal-item:hover .gal-zoom { transform:scale(1); opacity:1; }
+
+    /* Lightbox */
+    .lightbox { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.96); align-items:center; justify-content:center; backdrop-filter:blur(10px); }
+    .lightbox.active { display:flex; }
+    .lb-img { max-width:90vw; max-height:88vh; object-fit:contain; border-radius:12px; }
+    .lb-close { position:fixed; top:24px; right:24px; width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28); display:flex; align-items:center; justify-content:center; cursor:pointer; color:#fff; font-size:1.2rem; transition:all .3s; }
+    .lb-close:hover { background:rgba(255,255,255,.28); }
+
+    /* ================================================================
+       HOW IT WORKS
+    ================================================================ */
+    .how { background:var(--cream); overflow:hidden; }
+    .timeline { position:relative; max-width:860px; margin:0 auto; }
+    .timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:1px; background:linear-gradient(to bottom,transparent,var(--rose),var(--gold),transparent); transform:translateX(-50%); }
+    .tl-item { display:flex; align-items:center; gap:60px; margin-bottom:64px; position:relative; }
+    .tl-item:last-child { margin-bottom:0; }
+    .tl-item:nth-child(even) { flex-direction: row-reverse; }
+    .tl-node { position:absolute; left:50%; transform:translateX(-50%); width:52px; height:52px; background:linear-gradient(135deg,var(--rose),var(--deep-rose)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:1.3rem; font-weight:600; color:#fff; z-index:1; box-shadow:0 4px 22px rgba(190,122,124,.42); }
+    .tl-box { width:calc(50% - 56px); background:#fff; border-radius:var(--radius); padding:32px 36px; box-shadow:0 4px 32px rgba(0,0,0,.06); position:relative; }
+    .tl-item:nth-child(odd)  .tl-box::after { content:''; position:absolute; right:-10px; top:50%; transform:translateY(-50%); border:10px solid transparent; border-left:10px solid #fff; }
+    .tl-item:nth-child(even) .tl-box::after { content:''; position:absolute; left:-10px; top:50%; transform:translateY(-50%); border:10px solid transparent; border-right:10px solid #fff; }
+    .tl-box h3 { font-family:var(--font-display); font-size:1.4rem; font-weight:500; color:var(--charcoal); margin-bottom:9px; }
+    .tl-box p  { color:var(--text-muted); font-size:.9rem; line-height:1.75; }
+    .tl-spacer { width:calc(50% - 56px); }
+
+    /* ================================================================
+       PRICING
+    ================================================================ */
+    .pricing { background:var(--ivory); }
+    .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch; }
+    .price-card { border-radius:var(--radius-lg); overflow:hidden; background:#fff; box-shadow:0 4px 32px rgba(0,0,0,.06); transition:all .4s var(--ease); display:flex; flex-direction:column; }
+    .price-card:hover { transform:translateY(-8px); box-shadow:0 22px 64px rgba(0,0,0,.12); }
+    .price-card.featured { background:linear-gradient(160deg,var(--charcoal) 0%,#3d2f2f 100%); }
+    .price-head { padding:40px 40px 30px; border-bottom:1px solid rgba(0,0,0,.06); }
+    .price-card.featured .price-head { border-bottom-color:rgba(255,255,255,.1); }
+    .price-badge { display:inline-block; padding:4px 14px; background:linear-gradient(90deg,var(--rose),var(--gold)); border-radius:100px; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#fff; margin-bottom:16px; }
+    .price-name { font-family:var(--font-display); font-size:2.1rem; font-weight:500; color:var(--charcoal); margin-bottom:8px; }
+    .price-card.featured .price-name { color:#fff; }
+    .price-desc { color:var(--text-muted); font-size:.875rem; }
+    .price-card.featured .price-desc { color:rgba(255,255,255,.5); }
+    .price-amt  { padding:26px 40px; display:flex; align-items:baseline; gap:8px; }
+    .price-num  { font-family:var(--font-display); font-size:3rem; font-weight:400; color:var(--deep-rose); }
+    .price-card.featured .price-num { color:var(--rose); }
+    .price-note { font-size:.85rem; color:var(--text-muted); font-style:italic; }
+    .price-card.featured .price-note { color:rgba(255,255,255,.4); }
+    .price-feats { padding:0 40px 40px; flex:1; display:flex; flex-direction:column; }
+    .price-feats ul { list-style:none; flex:1; margin-bottom:30px; }
+    .price-feats ul li { display:flex; align-items:flex-start; gap:12px; padding:10px 0; border-bottom:1px solid rgba(0,0,0,.05); font-size:.9rem; color:var(--text); }
+    .price-card.featured .price-feats ul li { border-bottom-color:rgba(255,255,255,.08); color:rgba(255,255,255,.82); }
+    .price-feats ul li:last-child { border-bottom:none; }
+    .chk { width:20px; height:20px; min-width:20px; background:var(--blush); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--deep-rose); font-size:.7rem; margin-top:1px; }
+    .price-card.featured .chk { background:rgba(226,172,171,.24); color:var(--rose); }
+
+    /* ================================================================
+       CUSTOM CAKES
+    ================================================================ */
+    .cakes { background:var(--cream); overflow:hidden; }
+    .cakes-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .cake-visual { position:relative; }
+    .cake-wrap { border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/5; box-shadow:0 32px 80px rgba(0,0,0,.15); }
+    .cake-wrap img { width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease); }
+    .cake-wrap:hover img { transform: scale(1.04); }
+    .cake-badge {
+      position:absolute; top:-20px; right:-20px; width:110px; height:110px;
+      background:linear-gradient(135deg,var(--rose),var(--gold)); border-radius:50%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      color:#fff; text-align:center; box-shadow:0 8px 32px rgba(200,160,106,.42);
+      animation: float-badge 4s ease-in-out infinite;
+    }
+    @keyframes float-badge { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-9px) rotate(5deg)} }
+    .cake-badge span:first-child { font-family:var(--font-display); font-size:1rem; font-weight:600; }
+    .cake-badge span:last-child  { font-size:.63rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; opacity:.85; }
+    .cakes-content h2 { margin:12px 0 24px; color:var(--charcoal); }
+    .cakes-text { color:var(--text-muted); font-size:1rem; line-height:1.82; margin-bottom:44px; }
+    .cake-benefits { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:44px; }
+    .ben-item { display:flex; align-items:center; gap:12px; background:#fff; padding:16px 20px; border-radius:14px; box-shadow:0 2px 16px rgba(0,0,0,.05); }
+    .ben-icon { font-size:1.4rem; min-width:32px; }
+    .ben-item span:last-child { font-size:.875rem; font-weight:600; color:var(--charcoal); }
+
+    /* ================================================================
+       FAQ
+    ================================================================ */
+    .faq { background:var(--ivory); }
+    .faq-list { max-width:780px; margin:0 auto; }
+    .faq-item { border-bottom:1px solid rgba(0,0,0,.08); }
+    .faq-item:first-child { border-top:1px solid rgba(0,0,0,.08); }
+    .faq-q {
+      width:100%; background:none; border:none; display:flex; align-items:center;
+      justify-content:space-between; gap:20px; padding:24px 0; cursor:pointer;
+      text-align:left; font-family:var(--font-display); font-size:1.22rem; font-weight:500;
+      color:var(--charcoal); transition:color .3s;
+    }
+    .faq-q:hover { color: var(--deep-rose); }
+    .faq-ico { width:36px; height:36px; min-width:36px; border-radius:50%; background:var(--blush); display:flex; align-items:center; justify-content:center; color:var(--deep-rose); font-size:1.4rem; font-weight:300; line-height:1; transition:all .35s var(--ease); }
+    .faq-item.open .faq-ico { background:var(--deep-rose); color:#fff; transform:rotate(45deg); }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .42s var(--ease); }
+    .faq-a-inner { padding:0 0 24px; color:var(--text-muted); font-size:.95rem; line-height:1.82; }
+
+    /* ================================================================
+       CONTACTS
+    ================================================================ */
+    .contacts { background:linear-gradient(140deg,var(--charcoal) 0%,#3d2f2f 100%); padding:var(--sec-v) 0; overflow:hidden; position:relative; }
+    .contacts::before { content:''; position:absolute; top:-220px; left:-220px; width:640px; height:640px; background:radial-gradient(circle,rgba(226,172,171,.07),transparent 70%); }
+    .contacts::after  { content:''; position:absolute; bottom:-120px; right:-120px; width:440px; height:440px; background:radial-gradient(circle,rgba(200,160,106,.07),transparent 70%); }
+    .contacts .sec-tag { color:var(--rose); }
+    .contacts .t-md   { color:#fff; }
+    .contacts .sec-sub { color:rgba(255,255,255,.48); }
+    .contacts-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:60px; }
+    .con-card { background:var(--glass-bg); border:1px solid rgba(255,255,255,.12); backdrop-filter:blur(16px); border-radius:var(--radius); padding:36px 28px; text-align:center; transition:all .4s var(--ease); }
+    .con-card:hover { transform:translateY(-6px); background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.2); }
+    .con-icon { width:56px; height:56px; background:linear-gradient(135deg,rgba(226,172,171,.28),rgba(200,160,106,.28)); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 20px; }
+    .con-lbl  { font-size:.74rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--rose); margin-bottom:8px; }
+    .con-val  { font-family:var(--font-display); font-size:1.1rem; color:#fff; font-weight:400; }
+
+    /* Contact form */
+    .cf-wrap { max-width:620px; margin:60px auto 0; }
+    .cf-box  { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:28px; padding:48px; }
+    .cf-box h3 { font-family:var(--font-display); font-size:1.9rem; color:#fff; margin-bottom:8px; font-weight:400; }
+    .cf-box p  { color:rgba(255,255,255,.42); font-size:.9rem; margin-bottom:32px; }
+    .cf-fields { display:flex; flex-direction:column; gap:16px; }
+    .cf-input {
+      background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12);
+      border-radius:14px; padding:16px 20px; color:#fff; font-size:.95rem;
+      font-family:var(--font-body); outline:none; transition:border-color .3s; width:100%;
+    }
+    .cf-input:focus { border-color:rgba(226,172,171,.65); }
+    .cf-input::placeholder { color:rgba(255,255,255,.38); }
+    .cf-input option { color:#333; }
+
+    /* ================================================================
+       FINAL CTA
+    ================================================================ */
+    .final-cta { position:relative; padding:var(--sec-v) 0; overflow:hidden; text-align:center; }
+    .fcta-bg { position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=1920&q=80&auto=format&fit=crop'); background-size:cover; background-position:center; }
+    .fcta-ov  { position:absolute; inset:0; background:linear-gradient(135deg,rgba(42,35,35,.9),rgba(58,35,38,.82)); }
+    .fcta-content { position:relative; z-index:1; max-width:720px; margin:0 auto; }
+    .fcta-content h2 { color:#fff; margin-bottom:20px; }
+    .fcta-content p  { color:rgba(255,255,255,.68); font-size:1.1rem; margin-bottom:44px; line-height:1.75; }
+
+    /* ================================================================
+       FOOTER
+    ================================================================ */
+    .footer { background:var(--charcoal); padding:64px 0 32px; }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px; margin-bottom:60px; }
+    .foot-brand-name { font-family:var(--font-display); font-size:1.85rem; font-weight:600; color:#fff; }
+    .foot-brand-sub  { font-size:.64rem; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.38); margin-top:-3px; }
+    .foot-brand p    { color:rgba(255,255,255,.42); font-size:.875rem; line-height:1.75; margin-top:20px; max-width:280px; }
+    .footer h4 { font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.46); margin-bottom:20px; }
+    .footer ul { list-style:none; }
+    .footer ul li   { margin-bottom:10px; }
+    .footer ul a    { color:rgba(255,255,255,.58); font-size:.9rem; transition:color .3s; }
+    .footer ul a:hover { color:var(--rose); }
+    .foot-bottom { border-top:1px solid rgba(255,255,255,.08); padding-top:28px; display:flex; align-items:center; justify-content:space-between; }
+    .foot-copy   { color:rgba(255,255,255,.28); font-size:.8rem; }
+    .foot-socials { display:flex; gap:10px; }
+    .foot-soc { width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.48); font-size:1rem; transition:all .3s; }
+    .foot-soc:hover { background:var(--deep-rose); color:#fff; }
+
+    /* ================================================================
+       FLOATING CTA BUTTON
+    ================================================================ */
+    .float-btn {
+      position:fixed; bottom:32px; right:32px; z-index:900;
+      background:linear-gradient(135deg,var(--deep-rose),#d4909a); color:#fff;
+      padding:14px 28px; border-radius:100px; font-size:.875rem; font-weight:600;
+      cursor:pointer; box-shadow:0 8px 32px rgba(190,122,124,.52);
+      transition:all .45s var(--ease-bounce); transform:translateY(110px); opacity:0;
+      border:none; display:flex; align-items:center; gap:8px; font-family:var(--font-body);
+    }
+    .float-btn.show { transform:translateY(0); opacity:1; }
+    .float-btn:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(190,122,124,.65); }
+
+    /* ================================================================
+       FORM SUCCESS
+    ================================================================ */
+    .form-success { display:none; text-align:center; padding:40px 0; }
+    .form-success.show { display:block; }
+
+    /* ================================================================
+       RESPONSIVE — 1024px
+    ================================================================ */
+    @media (max-width:1024px) {
+      :root { --sec-v:100px; }
+      .why-grid        { grid-template-columns:repeat(2,1fr); }
+      .pricing-grid    { grid-template-columns:repeat(2,1fr); }
+      .contacts-grid   { grid-template-columns:repeat(2,1fr); }
+      .footer-grid     { grid-template-columns:1fr 1fr; gap:40px; }
+      .cakes-grid      { gap:50px; }
+    }
+
+    /* ================================================================
+       RESPONSIVE — 768px
+    ================================================================ */
+    @media (max-width:768px) {
+      :root { --sec-v:80px; --nav-h:68px; }
+
+      /* Nav */
+      .nav-menu, .nav-cta-d { display:none; }
+      .nav-burger { display:flex; }
+
+      /* Hero */
+      .hero-float { display:none; }
+
+      /* Services */
+      .services-grid { grid-template-columns:1fr; }
+
+      /* Gallery */
+      .gal-grid { grid-template-columns:repeat(2,1fr); }
+      .gal-item:nth-child(1) { grid-column:span 2; min-height:280px; }
+      .gal-item:nth-child(5) { grid-column:span 2; }
+      .gal-item:nth-child(7) { grid-column:span 1; aspect-ratio:1; }
+
+      /* Timeline */
+      .timeline::before { left:26px; }
+      .tl-item { flex-direction:column !important; align-items:flex-start; padding-left:72px; gap:0; }
+      .tl-node { left:0; transform:none; }
+      .tl-box  { width:100%; margin-top:20px; }
+      .tl-spacer { display:none; }
+      .tl-item:nth-child(odd)  .tl-box::after,
+      .tl-item:nth-child(even) .tl-box::after { display:none; }
+
+      /* Pricing */
+      .pricing-grid { grid-template-columns:1fr; max-width:420px; margin-left:auto; margin-right:auto; }
+
+      /* Cakes */
+      .cakes-grid { grid-template-columns:1fr; gap:48px; }
+      .cake-wrap  { aspect-ratio:16/9; }
+      .cake-badge { width:88px; height:88px; top:-14px; right:-10px; }
+
+      /* Contacts */
+      .contacts-grid { grid-template-columns:repeat(2,1fr); }
+
+      /* Footer */
+      .footer-grid { grid-template-columns:1fr; gap:32px; }
+      .foot-bottom { flex-direction:column; gap:20px; text-align:center; }
+
+      .float-btn { bottom:20px; right:20px; padding:12px 22px; font-size:.825rem; }
+    }
+
+    @media (max-width:480px) {
+      .hero-btns     { flex-direction:column; align-items:flex-start; }
+      .why-grid      { grid-template-columns:1fr; }
+      .contacts-grid { grid-template-columns:1fr; }
+      .cake-benefits { grid-template-columns:1fr; }
+      .cf-box        { padding:32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================================================================
+     NAVIGATION
+================================================================ -->
+<header class="nav" id="nav" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Основная навигация">
+
+      <a href="#" class="nav-logo" aria-label="Sweetland Kids Bakery — На главную">
+        <span class="nav-logo-main">Sweetland</span>
+        <span class="nav-logo-sub">Kids Bakery</span>
+      </a>
+
+      <ul class="nav-menu" role="list">
+        <li><a href="#services">Услуги</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#pricing">Пакеты</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+
+      <a href="#contacts" class="btn btn-primary nav-cta nav-cta-d">Записаться</a>
+
+      <button class="nav-burger" id="navBurger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Навигационное меню">
+  <button class="mobile-menu-close" id="menuClose" aria-label="Закрыть меню">✕</button>
+  <ul>
+    <li><a href="#services" class="mob-l">Услуги</a></li>
+    <li><a href="#gallery"  class="mob-l">Галерея</a></li>
+    <li><a href="#pricing"  class="mob-l">Пакеты</a></li>
+    <li><a href="#faq"      class="mob-l">FAQ</a></li>
+    <li><a href="#contacts" class="mob-l">Контакты</a></li>
+  </ul>
+  <a href="#contacts" class="btn btn-primary mob-l" style="margin-top:16px">Записаться</a>
+</div>
+
+<main>
+
+<!-- ================================================================
+     SECTION 1 — HERO
+================================================================ -->
+<section class="hero" id="home" aria-label="Главная секция">
+  <div class="hero-bg" id="heroBg" role="img" aria-label="Праздничные торты и сладости"></div>
+  <div class="hero-overlay"></div>
+
+  <!-- ─── Floating Decorative Elements ─── -->
+  <!-- Cupcake -->
+  <div class="hero-float" style="top:14%;right:7%;animation:fl1 6s ease-in-out infinite" aria-hidden="true">
+    <svg class="float-el" width="92" height="92" viewBox="0 0 92 92" fill="none">
+      <rect x="26" y="56" width="40" height="26" rx="9" fill="rgba(240,217,213,.92)"/>
+      <path d="M20 59 Q46 40 72 59" fill="rgba(200,160,106,.88)"/>
+      <ellipse cx="46" cy="41" rx="23" ry="21" fill="rgba(226,172,171,.9)"/>
+      <ellipse cx="46" cy="37" rx="15" ry="12" fill="rgba(255,220,220,.95)"/>
+      <rect x="44" y="22" width="4" height="17" rx="2" fill="rgba(200,160,106,.9)"/>
+      <circle cx="46" cy="20" r="5.5" fill="rgba(190,122,124,1)"/>
+      <circle cx="36" cy="43" r="3" fill="rgba(255,255,255,.65)"/>
+      <circle cx="56" cy="44" r="2.5" fill="rgba(255,255,255,.65)"/>
+    </svg>
+  </div>
+  <!-- Cookie -->
+  <div class="hero-float" style="top:62%;right:4%;animation:fl2 8s ease-in-out infinite 1s" aria-hidden="true">
+    <svg class="float-el" width="78" height="78" viewBox="0 0 78 78" fill="none">
+      <circle cx="39" cy="39" r="32" fill="rgba(229,201,154,.92)"/>
+      <circle cx="39" cy="39" r="27" fill="rgba(200,160,106,.82)" stroke="rgba(229,201,154,.5)" stroke-width="1.5"/>
+      <circle cx="27" cy="30" r="5"  fill="rgba(80,50,20,.8)"/>
+      <circle cx="49" cy="34" r="4"  fill="rgba(80,50,20,.8)"/>
+      <circle cx="31" cy="50" r="4.5" fill="rgba(80,50,20,.8)"/>
+      <circle cx="51" cy="52" r="3.5" fill="rgba(80,50,20,.8)"/>
+      <circle cx="41" cy="22" r="3"   fill="rgba(80,50,20,.8)"/>
+    </svg>
+  </div>
+  <!-- Cake slice -->
+  <div class="hero-float" style="top:18%;left:4%;animation:fl3 7s ease-in-out infinite 0.5s" aria-hidden="true">
+    <svg class="float-el" width="68" height="96" viewBox="0 0 68 96" fill="none">
+      <rect x="9"  y="52" width="50" height="34" rx="9" fill="rgba(200,160,106,.9)"/>
+      <rect x="9"  y="40" width="50" height="16"        fill="rgba(240,217,213,.92)"/>
+      <rect x="9"  y="28" width="50" height="15"        fill="rgba(226,172,171,.9)"/>
+      <rect x="9"  y="18" width="50" height="13" rx="8" fill="rgba(200,160,106,.9)"/>
+      <ellipse cx="34" cy="18" rx="25" ry="8" fill="rgba(255,220,220,.92)"/>
+      <rect x="31" y="5" width="6" height="15" rx="3" fill="rgba(200,160,106,.9)"/>
+      <path d="M32 5 Q34 1 36 5" stroke="rgba(255,200,90,.9)" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
+  <!-- Macaron -->
+  <div class="hero-float" style="bottom:22%;left:7%;animation:fl4 9s ease-in-out infinite 2s" aria-hidden="true">
+    <svg class="float-el" width="66" height="66" viewBox="0 0 66 66" fill="none">
+      <ellipse cx="33" cy="21" rx="24" ry="14" fill="rgba(197,181,210,.9)"/>
+      <ellipse cx="33" cy="46" rx="24" ry="14" fill="rgba(181,201,184,.9)"/>
+      <rect x="9" y="31" width="48" height="8" rx="2" fill="rgba(255,242,238,.96)"/>
+      <ellipse cx="33" cy="21" rx="20" ry="10" fill="rgba(218,206,228,.82)"/>
+      <ellipse cx="33" cy="46" rx="20" ry="10" fill="rgba(198,218,204,.82)"/>
+    </svg>
+  </div>
+  <!-- Star candy -->
+  <div class="hero-float" style="bottom:32%;right:11%;animation:fl1 5.5s ease-in-out infinite 1.6s" aria-hidden="true">
+    <svg class="float-el" width="54" height="54" viewBox="0 0 54 54" fill="none">
+      <polygon points="27,4 31,20 47,20 35,30 39,46 27,36 15,46 19,30 7,20 23,20" fill="rgba(229,201,154,.92)"/>
+      <polygon points="27,9 30,21 42,21 33,28 36,39 27,32 18,39 21,28 12,21 24,21" fill="rgba(200,160,106,.8)"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-content" id="heroContent">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Sweetland Kids Bakery
+      </div>
+      <h1 class="t-xl hero-title">
+        Самые <em>сладкие</em><br>праздники<br>для ваших детей
+      </h1>
+      <p class="hero-sub">
+        Дни рождения, мастер-классы и незабываемые эмоции в Sweetland Kids Bakery
+      </p>
+      <div class="hero-btns">
+        <a href="#contacts" class="btn btn-primary">Записаться</a>
+        <a href="#services"  class="btn btn-outline">Узнать подробнее</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Прокрутите</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 2 — WHY SWEETLAND
+================================================================ -->
+<section class="section why" id="why" aria-labelledby="why-h">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">Почему мы</span>
+      <h2 class="t-md" id="why-h">Sweetland — это больше,<br>чем просто праздник</h2>
+      <div class="sec-line"></div>
+      <p class="sec-sub">Каждое мероприятие мы создаём с любовью и вниманием к каждой детали</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-icon" aria-hidden="true">👩‍🍳</div>
+        <h3>Опытные мастера</h3>
+        <p>Наши кондитеры с многолетним опытом создают магию вкуса и красоты для каждого события</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-icon" aria-hidden="true">✨</div>
+        <h3>Авторские программы</h3>
+        <p>Уникальные сценарии праздников, разработанные специально для детей разных возрастов</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-icon" aria-hidden="true">🚗</div>
+        <h3>Выездные мероприятия</h3>
+        <p>Приедем в школу, детский сад или на любую площадку — организуем праздник под ключ</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="why-icon" aria-hidden="true">💎</div>
+        <h3>Индивидуальный подход</h3>
+        <p>Каждый праздник уникален: мы учитываем пожелания ребёнка и его родителей</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="why-icon" aria-hidden="true">🛡️</div>
+        <h3>Безопасность детей</h3>
+        <p>Только проверенные натуральные ингредиенты, безопасные инструменты и аттестованные мастера</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="why-icon" aria-hidden="true">🌟</div>
+        <h3>Яркие впечатления</h3>
+        <p>Создаём воспоминания, которые останутся с вашим ребёнком на всю жизнь</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 3 — SERVICES
+================================================================ -->
+<section class="section services" id="services" aria-labelledby="svc-h">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">Услуги</span>
+      <h2 class="t-md" id="svc-h">Создаём праздники<br>для самых любимых</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="services-grid">
+      <!-- 1 -->
+      <article class="svc-card" data-aos="fade-up" data-aos-delay="0">
+        <img class="svc-img"
+             src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80&auto=format&fit=crop"
+             alt="Детский день рождения — красивый торт с свечами" loading="lazy">
+        <div class="svc-overlay"></div>
+        <div class="svc-body">
+          <span class="svc-chip">Популярное</span>
+          <h3>Детские дни рождения</h3>
+          <p>Незабываемый праздник с тематическим декором, мастер-классом и авторским тортом</p>
+          <a href="#contacts" class="svc-link" aria-label="Узнать о детских днях рождения">
+            Узнать больше
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="svc-card" data-aos="fade-up" data-aos-delay="100">
+        <img class="svc-img"
+             src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80&auto=format&fit=crop"
+             alt="Кондитерский мастер-класс для детей" loading="lazy">
+        <div class="svc-overlay"></div>
+        <div class="svc-body">
+          <span class="svc-chip">Хит</span>
+          <h3>Кондитерские мастер-классы</h3>
+          <p>Дети учатся создавать торты, капкейки и печенье под руководством опытных кондитеров</p>
+          <a href="#contacts" class="svc-link" aria-label="Узнать о мастер-классах">
+            Узнать больше
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="svc-card" data-aos="fade-up" data-aos-delay="200">
+        <img class="svc-img"
+             src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=900&q=80&auto=format&fit=crop"
+             alt="Выездной мастер-класс для школы или детского сада" loading="lazy">
+        <div class="svc-overlay"></div>
+        <div class="svc-body">
+          <span class="svc-chip">Для организаций</span>
+          <h3>Выездные мастер-классы</h3>
+          <p>Организуем кондитерские мастер-классы прямо в вашей школе, садике или на корпоративе</p>
+          <a href="#contacts" class="svc-link" aria-label="Узнать о выездных мастер-классах">
+            Узнать больше
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="svc-card" data-aos="fade-up" data-aos-delay="300">
+        <img class="svc-img"
+             src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900&q=80&auto=format&fit=crop"
+             alt="Торт на заказ — индивидуальный дизайн" loading="lazy">
+        <div class="svc-overlay"></div>
+        <div class="svc-body">
+          <span class="svc-chip">Эксклюзив</span>
+          <h3>Торты на заказ</h3>
+          <p>Авторские торты с индивидуальным дизайном на любую тему из натуральных ингредиентов</p>
+          <a href="#contacts" class="svc-link" aria-label="Заказать торт">
+            Узнать больше
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 4 — GALLERY
+================================================================ -->
+<section class="gallery" id="gallery" aria-labelledby="gal-h">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">Галерея</span>
+      <h2 class="t-md" id="gal-h">Наши сладкие шедевры</h2>
+      <div class="sec-line"></div>
+      <p class="sec-sub">Каждое фото — история настоящего счастья</p>
+    </div>
+
+    <div class="gal-grid">
+      <div class="gal-item" data-aos="zoom-in" data-aos-delay="0">
+        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=900&q=80&auto=format&fit=crop" alt="Элегантный торт с цветами" loading="lazy">
+        <div class="gal-over"><div class="gal-zoom" aria-hidden="true">⊕</div></div>
+      </div>
+      <div class="gal-item" data-aos="zoom-in" data-aos-delay="80">
+        <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=600&q=80&auto=format&fit=crop" alt="Розовые капкейки" loading="lazy">
+        <div class="gal-over"><div class="gal-zoom" aria-hidden="true">⊕</div></div>
+      </div>
+      <div class="gal-item" data-aos="zoom-in" data-aos-delay="160">
+        <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?w=600&q=80&auto=format&fit=crop" alt="Французские макароны" loading="lazy">
+        <div class="gal-over"><div class="gal-zoom" aria-hidden="true">⊕</div></div>
+      </div>
+      <div class="gal-item" data-aos="zoom-in" data-aos-delay="240">
+        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&q=80&auto=format&fit=crop" alt="Праздничный стол с десертами" loading="lazy">
+        <div class="gal-over"><div class="gal-zoom" aria-hidden="true">⊕</div></div>
+      </div>
+      <div class="gal-item" data-aos="zoom-in" data-aos-delay="0">
+        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=900&q=80&auto=format&fit=crop" alt="Детский торт на день рождения" loading="lazy">
+        <div class="gal-over"><div class="gal-zoom" aria-hidden="true">⊕</div></div>
+      </div>
+      <div class="gal-item" data-aos="zoom-in" data-aos-delay="80">
+        <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80&auto=format&fit=crop" alt="Красочные кексы" loading="lazy">
+        <div class="gal-over"><div class="gal-zoom" aria-hidden="true">⊕</div></div>
+      </div>
+      <div class="gal-item" data-aos="zoom-in" data-aos-delay="160">
+        <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=900&q=80&auto=format&fit=crop" alt="Пирожные и мини-торты" loading="lazy">
+        <div class="gal-over"><div class="gal-zoom" aria-hidden="true">⊕</div></div>
+      </div>
+      <div class="gal-item" data-aos="zoom-in" data-aos-delay="240">
+        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&q=80&auto=format&fit=crop" alt="Торт с розами" loading="lazy">
+        <div class="gal-over"><div class="gal-zoom" aria-hidden="true">⊕</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+    <button class="lb-close" id="lbClose" aria-label="Закрыть галерею">✕</button>
+    <img class="lb-img" id="lbImg" src="" alt="">
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 5 — HOW IT WORKS
+================================================================ -->
+<section class="section how" id="how" aria-labelledby="how-h">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">Как это работает</span>
+      <h2 class="t-md" id="how-h">Путь к незабываемому<br>празднику</h2>
+      <div class="sec-line"></div>
+      <p class="sec-sub">Всего 5 простых шагов — и счастливые детские эмоции гарантированы</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item" data-aos="fade-right">
+        <div class="tl-box">
+          <h3>Оставляете заявку</h3>
+          <p>Заполните форму на сайте, напишите в WhatsApp или позвоните — ответим в течение часа</p>
+        </div>
+        <div class="tl-node" aria-hidden="true">1</div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-item" data-aos="fade-left">
+        <div class="tl-spacer"></div>
+        <div class="tl-node" aria-hidden="true">2</div>
+        <div class="tl-box">
+          <h3>Мы связываемся</h3>
+          <p>Наш менеджер перезвонит, уточнит дату, количество детей, тематику и пожелания</p>
+        </div>
+      </div>
+
+      <div class="tl-item" data-aos="fade-right">
+        <div class="tl-box">
+          <h3>Подбираем программу</h3>
+          <p>Разрабатываем индивидуальный сценарий праздника, подбираем активности и меню</p>
+        </div>
+        <div class="tl-node" aria-hidden="true">3</div>
+        <div class="tl-spacer"></div>
+      </div>
+
+      <div class="tl-item" data-aos="fade-left">
+        <div class="tl-spacer"></div>
+        <div class="tl-node" aria-hidden="true">4</div>
+        <div class="tl-box">
+          <h3>Проводим мероприятие</h3>
+          <p>Наша команда приезжает заранее, всё организует и делает каждый момент волшебным</p>
+        </div>
+      </div>
+
+      <div class="tl-item" data-aos="fade-right">
+        <div class="tl-box">
+          <h3>Ваш ребёнок счастлив! 🎉</h3>
+          <p>Дети уходят с самодельными сладостями, яркими воспоминаниями и желанием вернуться снова</p>
+        </div>
+        <div class="tl-node" aria-hidden="true">5</div>
+        <div class="tl-spacer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 6 — BIRTHDAY PACKAGES
+================================================================ -->
+<section class="section pricing" id="pricing" aria-labelledby="pricing-h">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">Пакеты праздников</span>
+      <h2 class="t-md" id="pricing-h">Выберите идеальный<br>праздник для ребёнка</h2>
+      <div class="sec-line"></div>
+      <p class="sec-sub">Три пакета для любых пожеланий — от камерного торжества до grand-праздника</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Мини -->
+      <article class="price-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="price-head">
+          <div class="price-name">Мини</div>
+          <div class="price-desc">Уютный праздник для небольшой компании</div>
+        </div>
+        <div class="price-amt">
+          <span class="price-num">——</span>
+          <span class="price-note">Уточняется</span>
+        </div>
+        <div class="price-feats">
+          <ul>
+            <li><span class="chk" aria-hidden="true">✓</span> До 8 детей</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Длительность 2 часа</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Один мастер-класс</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Мини-торт в подарок</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Фотозона</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Сладкие сувениры</li>
+          </ul>
+          <a href="#contacts" class="btn btn-dark" style="width:100%;justify-content:center">Записаться</a>
+        </div>
+      </article>
+
+      <!-- Стандарт (Featured) -->
+      <article class="price-card featured" data-aos="fade-up" data-aos-delay="150">
+        <div class="price-head">
+          <div class="price-badge">✨ Популярный</div>
+          <div class="price-name">Стандарт</div>
+          <div class="price-desc">Идеальный баланс программы и эмоций</div>
+        </div>
+        <div class="price-amt">
+          <span class="price-num">——</span>
+          <span class="price-note">Уточняется</span>
+        </div>
+        <div class="price-feats">
+          <ul>
+            <li><span class="chk" aria-hidden="true">✓</span> До 15 детей</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Длительность 3 часа</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Два мастер-класса</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Именной торт</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Декор и оформление</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Аниматор</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Фотоотчёт</li>
+          </ul>
+          <a href="#contacts" class="btn btn-primary" style="width:100%;justify-content:center">Записаться</a>
+        </div>
+      </article>
+
+      <!-- Премиум -->
+      <article class="price-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="price-head">
+          <div class="price-name">Премиум</div>
+          <div class="price-desc">Роскошный праздник под ключ</div>
+        </div>
+        <div class="price-amt">
+          <span class="price-num">——</span>
+          <span class="price-note">Уточняется</span>
+        </div>
+        <div class="price-feats">
+          <ul>
+            <li><span class="chk" aria-hidden="true">✓</span> До 25 детей</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Длительность 4 часа</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Три мастер-класса</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Торт-эксклюзив</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Полное оформление</li>
+            <li><span class="chk" aria-hidden="true">✓</span> 2 аниматора</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Видео + фотосъёмка</li>
+            <li><span class="chk" aria-hidden="true">✓</span> Подарки всем детям</li>
+          </ul>
+          <a href="#contacts" class="btn btn-gold" style="width:100%;justify-content:center">Записаться</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 7 — CUSTOM CAKES
+================================================================ -->
+<section class="section cakes" id="cakes" aria-labelledby="cakes-h">
+  <div class="container">
+    <div class="cakes-grid">
+      <!-- Visual -->
+      <div class="cake-visual" data-aos="fade-right" data-aos-duration="900">
+        <div class="cake-wrap">
+          <img src="https://images.unsplash.com/photo-1567636788276-40a47795ba4d?w=900&q=80&auto=format&fit=crop"
+               alt="Роскошный авторский торт с цветами" loading="lazy">
+        </div>
+        <div class="cake-badge" aria-hidden="true">
+          <span>Авторский</span>
+          <span>Дизайн</span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="cakes-content" data-aos="fade-left" data-aos-duration="900">
+        <span class="sec-tag">Торты на заказ</span>
+        <h2 class="t-md" id="cakes-h">Торт, о котором<br>будут говорить</h2>
+        <p class="cakes-text">
+          Каждый торт — это произведение искусства, созданное специально для вас.
+          Мы воплощаем любые идеи: от нежных пастельных шедевров до ярких тематических
+          конструкций с любимыми героями вашего ребёнка.
+        </p>
+        <div class="cake-benefits">
+          <div class="ben-item"><span class="ben-icon" aria-hidden="true">🎨</span><span>Индивидуальный дизайн</span></div>
+          <div class="ben-item"><span class="ben-icon" aria-hidden="true">🌿</span><span>Натуральные ингредиенты</span></div>
+          <div class="ben-item"><span class="ben-icon" aria-hidden="true">🎭</span><span>Любая тематика</span></div>
+          <div class="ben-item"><span class="ben-icon" aria-hidden="true">⚡</span><span>Быстрое изготовление</span></div>
+        </div>
+        <a href="#contacts" class="btn btn-primary">
+          Заказать торт
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M3 9h12M9 3l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 8 — FAQ
+================================================================ -->
+<section class="section faq" id="faq" aria-labelledby="faq-h">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">Вопросы и ответы</span>
+      <h2 class="t-md" id="faq-h">Часто задаваемые<br>вопросы</h2>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="faq-list" role="list">
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          С какого возраста можно участвовать?
+          <span class="faq-ico" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Наши мастер-классы подходят детям от 4 лет. Для малышей 4–6 лет разрабатываем адаптированные программы с упрощёнными заданиями и дополнительной помощью мастеров. Дети старше 7 лет могут участвовать во всех форматах занятий.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Сколько длится мастер-класс?
+          <span class="faq-ico" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Стандартный мастер-класс длится от 1,5 до 2 часов в зависимости от программы и возраста детей. Праздники с несколькими активностями занимают 3–4 часа. Точную продолжительность согласовываем индивидуально при бронировании.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Можно ли провести мероприятие на выезде?
+          <span class="faq-ico" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Да, с удовольствием приедем к вам! Организуем выездные мастер-классы в школах, детских садах, загородных домах и офисах. Всё необходимое оборудование и ингредиенты привозим с собой.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Сколько детей может участвовать?
+          <span class="faq-ico" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            В зависимости от пакета: от 8 до 25 детей. Для школьных и корпоративных мероприятий возможны группы до 40 человек при соответствующей организации. Минимальная группа — 5 детей.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Как заказать торт?
+          <span class="faq-ico" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a" role="region">
+          <div class="faq-a-inner">
+            Оставьте заявку через форму на сайте или напишите нам в WhatsApp. Менеджер свяжется с вами, уточнит детали (дата, вкус, дизайн, размер) и рассчитает стоимость. Рекомендуем заказывать за 7–14 дней до события.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 9 — CONTACTS
+================================================================ -->
+<section class="contacts" id="contacts" aria-labelledby="con-h">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-tag">Свяжитесь с нами</span>
+      <h2 class="t-md" id="con-h">Давайте создадим<br>сладкое чудо вместе</h2>
+      <div class="sec-line"></div>
+      <p class="sec-sub">Мы на связи и готовы ответить на все вопросы</p>
+    </div>
+
+    <div class="contacts-grid">
+      <div class="con-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="con-icon" aria-hidden="true">📞</div>
+        <div class="con-lbl">Телефон</div>
+        <div class="con-val">[ADD_PHONE]</div>
+      </div>
+      <div class="con-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="con-icon" aria-hidden="true">💬</div>
+        <div class="con-lbl">WhatsApp</div>
+        <div class="con-val">[ADD_WHATSAPP]</div>
+      </div>
+      <div class="con-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="con-icon" aria-hidden="true">📸</div>
+        <div class="con-lbl">Instagram</div>
+        <div class="con-val">[ADD_INSTAGRAM]</div>
+      </div>
+      <div class="con-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="con-icon" aria-hidden="true">📍</div>
+        <div class="con-lbl">Адрес</div>
+        <div class="con-val">[ADD_ADDRESS]</div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="cf-wrap" data-aos="fade-up">
+      <div class="cf-box">
+        <h3>Оставить заявку</h3>
+        <p>Мы перезвоним в течение 1 часа</p>
+
+        <div class="cf-fields" id="cfFields">
+          <input class="cf-input" type="text"  id="cfName"    placeholder="Ваше имя"             aria-label="Ваше имя">
+          <input class="cf-input" type="tel"   id="cfPhone"   placeholder="Номер телефона"        aria-label="Номер телефона">
+          <select class="cf-input"             id="cfService"                                      aria-label="Выберите услугу">
+            <option value=""           style="color:#333">Выберите услугу</option>
+            <option value="birthday"   style="color:#333">День рождения</option>
+            <option value="masterclass"style="color:#333">Мастер-класс</option>
+            <option value="offsite"    style="color:#333">Выездной мастер-класс</option>
+            <option value="cake"       style="color:#333">Торт на заказ</option>
+          </select>
+          <textarea class="cf-input" id="cfMsg" rows="3" placeholder="Расскажите о вашем событии..." aria-label="Сообщение" style="resize:none"></textarea>
+          <button onclick="cfSubmit()" class="btn btn-primary" style="width:100%;justify-content:center;padding:18px">
+            Отправить заявку
+          </button>
+        </div>
+
+        <div class="form-success" id="cfSuccess">
+          <div style="font-size:3rem;margin-bottom:16px">🎉</div>
+          <h4 style="font-family:var(--font-display);font-size:1.7rem;color:#fff;margin-bottom:8px">Заявка отправлена!</h4>
+          <p style="color:rgba(255,255,255,.5);font-size:.9rem">Мы свяжемся с вами в течение часа</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 10 — FINAL CTA
+================================================================ -->
+<section class="final-cta" aria-labelledby="fcta-h">
+  <div class="fcta-bg"></div>
+  <div class="fcta-ov"></div>
+  <div class="container">
+    <div class="fcta-content" data-aos="fade-up">
+      <span class="sec-tag" style="color:var(--rose)">Sweetland Kids Bakery</span>
+      <h2 class="t-lg" id="fcta-h" style="margin:14px 0 18px">
+        Подарите ребёнку праздник,<br>который он запомнит надолго
+      </h2>
+      <p>Каждый момент детства бесценен. Позвольте нам сделать его по-настоящему сладким и незабываемым</p>
+      <a href="#contacts" class="btn btn-primary" style="font-size:1rem;padding:18px 48px">
+        Оставить заявку
+      </a>
+    </div>
+  </div>
+</section>
+
+</main><!-- /main -->
+
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-brand-name">Sweetland</div>
+        <div class="foot-brand-sub">Kids Bakery</div>
+        <p>Создаём незабываемые детские праздники с любовью, мастерством и по-настоящему вкусными угощениями.</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Дни рождения</a></li>
+          <li><a href="#services">Мастер-классы</a></li>
+          <li><a href="#services">Выездные МК</a></li>
+          <li><a href="#cakes">Торты на заказ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Информация</h4>
+        <ul>
+          <li><a href="#why">О нас</a></li>
+          <li><a href="#pricing">Пакеты</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:[ADD_PHONE]">[ADD_PHONE]</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#contacts">[ADD_ADDRESS]</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2026 Sweetland Kids Bakery. Все права защищены.</span>
+      <div class="foot-socials" aria-label="Социальные сети">
+        <a href="#" class="foot-soc" aria-label="Instagram">📸</a>
+        <a href="#" class="foot-soc" aria-label="WhatsApp">💬</a>
+        <a href="#" class="foot-soc" aria-label="Telegram">✈️</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<button class="float-btn" id="floatBtn"
+        onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
+        aria-label="Записаться на праздник">
+  🎂 Записаться
+</button>
+
+
+<!-- ================================================================
+     SCRIPTS
+================================================================ -->
+<!-- GSAP core + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- AOS — scroll animations -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- Swiper — slider -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+/* ================================================================
+   INIT AOS
+================================================================ */
+AOS.init({
+  duration : 820,
+  easing   : 'ease-out-cubic',
+  once     : true,
+  offset   : 56
+});
+
+/* ================================================================
+   GSAP SETUP
+================================================================ */
+gsap.registerPlugin(ScrollTrigger);
+
+/* ── Hero Entrance ── */
+const heroTl = gsap.timeline({ defaults:{ ease:'power3.out' } });
+heroTl
+  .from('.hero-badge',   { opacity:0, y:28, duration:0.9, delay:0.25 })
+  .from('.hero-title',   { opacity:0, y:52, duration:1.1 }, '-=0.55')
+  .from('.hero-sub',     { opacity:0, y:30, duration:0.9 }, '-=0.65')
+  .from('.hero-btns',    { opacity:0, y:20, duration:0.8 }, '-=0.55')
+  .from('.hero-scroll',  { opacity:0,        duration:1.0 }, '-=0.2');
+
+/* ── Hero Parallax ── */
+gsap.to('#heroBg', {
+  yPercent: 22,
+  ease: 'none',
+  scrollTrigger: { trigger:'.hero', start:'top top', end:'bottom top', scrub:true }
+});
+
+/* ── Why cards stagger ── */
+gsap.from('.why-card', {
+  scrollTrigger: { trigger:'.why-grid', start:'top 82%' },
+  y:40, opacity:0, duration:0.7, stagger:0.1, ease:'power3.out'
+});
+
+/* ── Timeline items ── */
+gsap.utils.toArray('.tl-box').forEach((box, i) => {
+  gsap.from(box, {
+    scrollTrigger: { trigger:box, start:'top 84%' },
+    x: i%2===0 ? -45 : 45,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+});
+
+/* ── Pricing cards ── */
+gsap.from('.price-card', {
+  scrollTrigger: { trigger:'.pricing-grid', start:'top 82%' },
+  y:55, opacity:0, duration:0.85, stagger:0.15, ease:'power3.out'
+});
+
+/* ── Section titles ── */
+document.querySelectorAll('.t-md').forEach(el => {
+  gsap.from(el, {
+    scrollTrigger: { trigger:el, start:'top 86%' },
+    y:32, opacity:0, duration:0.9, ease:'power3.out'
+  });
+});
+
+/* ── Cake image subtle scale ── */
+gsap.from('.cake-wrap', {
+  scrollTrigger: { trigger:'.cakes-grid', start:'top 80%' },
+  scale:0.94, opacity:0, duration:1.1, ease:'power3.out'
+});
+
+/* ================================================================
+   NAVIGATION — SCROLL & STICKY
+================================================================ */
+const nav     = document.getElementById('nav');
+const floatBtn = document.getElementById('floatBtn');
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 80);
+  floatBtn.classList.toggle('show', y > 450);
+}, { passive:true });
+
+/* ================================================================
+   MOBILE MENU
+================================================================ */
+const burger     = document.getElementById('navBurger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuClose  = document.getElementById('menuClose');
+
+function openMenu () {
+  mobileMenu.classList.add('active');
+  burger.classList.add('open');
+  burger.setAttribute('aria-expanded','true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu () {
+  mobileMenu.classList.remove('active');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded','false');
+  document.body.style.overflow = '';
+}
+
+burger.addEventListener('click', openMenu);
+menuClose.addEventListener('click', closeMenu);
+document.querySelectorAll('.mob-l').forEach(l => l.addEventListener('click', closeMenu));
+mobileMenu.addEventListener('click', e => { if(e.target===mobileMenu) closeMenu(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') { closeMenu(); closeLightbox(); } });
+
+/* ================================================================
+   FAQ ACCORDION
+================================================================ */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q');
+  const ans = item.querySelector('.faq-a');
+
+  btn.addEventListener('click', () => {
+    const open = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = '0';
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+
+    // Open clicked if was closed
+    if (!open) {
+      item.classList.add('open');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded','true');
+    }
+  });
+});
+
+/* ================================================================
+   GALLERY LIGHTBOX
+================================================================ */
+const lightbox = document.getElementById('lightbox');
+const lbImg    = document.getElementById('lbImg');
+const lbClose  = document.getElementById('lbClose');
+
+document.querySelectorAll('.gal-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    lbImg.src = img.src.replace(/w=\d+/, 'w=1400');
+    lbImg.alt = img.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  item.style.cursor = 'zoom-in';
+});
+
+function closeLightbox () {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if(e.target===lightbox) closeLightbox(); });
+
+/* ================================================================
+   CONTACT FORM (demo)
+================================================================ */
+function cfSubmit () {
+  const name  = document.getElementById('cfName').value.trim();
+  const phone = document.getElementById('cfPhone').value.trim();
+
+  // Highlight empty required fields
+  if (!name)  { highlight('cfName');  return; }
+  if (!phone) { highlight('cfPhone'); return; }
+
+  // Show success
+  document.getElementById('cfFields').style.display  = 'none';
+  const success = document.getElementById('cfSuccess');
+  success.classList.add('show');
+  gsap.from(success, { opacity:0, y:22, duration:0.7, ease:'power3.out' });
+}
+
+function highlight (id) {
+  const el = document.getElementById(id);
+  el.style.borderColor = 'rgba(226,172,171,.85)';
+  el.focus();
+  gsap.fromTo(el, { x:-6 }, { x:0, duration:0.4, ease:'elastic.out(1,.4)' });
+}
+
+// Reset highlight on input
+['cfName','cfPhone'].forEach(id => {
+  document.getElementById(id).addEventListener('input', function() {
+    this.style.borderColor = 'rgba(255,255,255,.12)';
+  });
+});
+
+/* ================================================================
+   SMOOTH ANCHOR SCROLL
+================================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 80;
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior:'smooth' });
+    }
+  });
+});
+
+console.log('%c🎂 Sweetland Kids Bakery — Landing Page Ready', 'color:#BE7A7C;font-size:14px;font-weight:bold');
+</script>
+</body>
+</html>
