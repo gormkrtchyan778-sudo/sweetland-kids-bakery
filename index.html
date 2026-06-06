@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sweetland Kids Bakery — детские дни рождения, кондитерские мастер-классы и авторские торты на заказ. Незабываемые праздники для ваших детей.">
-  <meta name="keywords" content="детский день рождения, кондитерский мастер-класс, торт на заказ, детский праздник, выездной мастер-класс">
   <meta property="og:title" content="Sweetland Kids Bakery — Самые сладкие праздники">
   <meta property="og:description" content="Дни рождения, мастер-классы и незабываемые эмоции в Sweetland Kids Bakery">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1200&q=85&auto=format&fit=crop">
+  <meta name="theme-color" content="#BE7A7C">
   <title>Sweetland Kids Bakery — Самые сладкие праздники для ваших детей</title>
 
   <!-- Google Fonts: Cormorant Garamond (luxury display) + Plus Jakarta Sans (modern body) -->
@@ -102,6 +103,12 @@
     }
     .btn-primary { background: var(--deep-rose); color: #fff; box-shadow: 0 4px 24px rgba(190,122,124,.35); }
     .btn-primary:hover { background: var(--charcoal); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(42,35,35,.25); }
+    .btn:focus-visible,
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible { outline:3px solid rgba(226,172,171,.72); outline-offset:4px; }
     .btn-outline { background: transparent; border: 1.5px solid rgba(255,255,255,.6); color: #fff; backdrop-filter: blur(4px); }
     .btn-outline:hover { background: rgba(255,255,255,.14); transform: translateY(-2px); }
     .btn-gold { background: linear-gradient(135deg,var(--gold),var(--gold-light)); color: #fff; box-shadow: 0 4px 24px rgba(200,160,106,.35); }
@@ -400,6 +407,8 @@
     .con-icon { width:56px; height:56px; background:linear-gradient(135deg,rgba(226,172,171,.28),rgba(200,160,106,.28)); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 20px; }
     .con-lbl  { font-size:.74rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--rose); margin-bottom:8px; }
     .con-val  { font-family:var(--font-display); font-size:1.1rem; color:#fff; font-weight:400; }
+    .con-val a { color:#fff; transition:color .3s; }
+    .con-val a:hover { color:var(--rose); }
 
     /* Contact form */
     .cf-wrap { max-width:620px; margin:60px auto 0; }
@@ -413,8 +422,10 @@
       font-family:var(--font-body); outline:none; transition:border-color .3s; width:100%;
     }
     .cf-input:focus { border-color:rgba(226,172,171,.65); }
+    .cf-input.invalid { border-color:rgba(226,172,171,.9); }
     .cf-input::placeholder { color:rgba(255,255,255,.38); }
     .cf-input option { color:#333; }
+    .cf-note { color:rgba(255,255,255,.42); font-size:.78rem; line-height:1.6; text-align:center; margin-top:2px; }
 
     /* ================================================================
        FINAL CTA
@@ -464,6 +475,16 @@
     ================================================================ */
     .form-success { display:none; text-align:center; padding:40px 0; }
     .form-success.show { display:block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after {
+        animation-duration:0.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:0.01ms !important;
+      }
+    }
 
     /* ================================================================
        RESPONSIVE — 1024px
@@ -1147,22 +1168,22 @@
       <div class="con-card" data-aos="fade-up" data-aos-delay="0">
         <div class="con-icon" aria-hidden="true">📞</div>
         <div class="con-lbl">Телефон</div>
-        <div class="con-val">[ADD_PHONE]</div>
+        <div class="con-val"><a href="#contacts" data-contact="phone">Укажите телефон</a></div>
       </div>
       <div class="con-card" data-aos="fade-up" data-aos-delay="100">
         <div class="con-icon" aria-hidden="true">💬</div>
         <div class="con-lbl">WhatsApp</div>
-        <div class="con-val">[ADD_WHATSAPP]</div>
+        <div class="con-val"><a href="#contacts" data-contact="whatsapp">Написать в WhatsApp</a></div>
       </div>
       <div class="con-card" data-aos="fade-up" data-aos-delay="200">
         <div class="con-icon" aria-hidden="true">📸</div>
         <div class="con-lbl">Instagram</div>
-        <div class="con-val">[ADD_INSTAGRAM]</div>
+        <div class="con-val"><a href="#contacts" data-contact="instagram">Instagram</a></div>
       </div>
       <div class="con-card" data-aos="fade-up" data-aos-delay="300">
         <div class="con-icon" aria-hidden="true">📍</div>
         <div class="con-lbl">Адрес</div>
-        <div class="con-val">[ADD_ADDRESS]</div>
+        <div class="con-val"><span data-contact="address">Укажите адрес</span></div>
       </div>
     </div>
 
@@ -1172,21 +1193,22 @@
         <h3>Оставить заявку</h3>
         <p>Мы перезвоним в течение 1 часа</p>
 
-        <div class="cf-fields" id="cfFields">
-          <input class="cf-input" type="text"  id="cfName"    placeholder="Ваше имя"             aria-label="Ваше имя">
-          <input class="cf-input" type="tel"   id="cfPhone"   placeholder="Номер телефона"        aria-label="Номер телефона">
-          <select class="cf-input"             id="cfService"                                      aria-label="Выберите услугу">
+        <form class="cf-fields" id="cfFields" novalidate>
+          <input class="cf-input" type="text"  id="cfName"    name="name"    placeholder="Ваше имя"      aria-label="Ваше имя" required autocomplete="name">
+          <input class="cf-input" type="tel"   id="cfPhone"   name="phone"   placeholder="Номер телефона" aria-label="Номер телефона" required autocomplete="tel" inputmode="tel">
+          <select class="cf-input"             id="cfService" name="service"                              aria-label="Выберите услугу">
             <option value=""           style="color:#333">Выберите услугу</option>
             <option value="birthday"   style="color:#333">День рождения</option>
             <option value="masterclass"style="color:#333">Мастер-класс</option>
             <option value="offsite"    style="color:#333">Выездной мастер-класс</option>
             <option value="cake"       style="color:#333">Торт на заказ</option>
           </select>
-          <textarea class="cf-input" id="cfMsg" rows="3" placeholder="Расскажите о вашем событии..." aria-label="Сообщение" style="resize:none"></textarea>
-          <button onclick="cfSubmit()" class="btn btn-primary" style="width:100%;justify-content:center;padding:18px">
+          <textarea class="cf-input" id="cfMsg" name="message" rows="3" placeholder="Расскажите о вашем событии..." aria-label="Сообщение" style="resize:none"></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:18px">
             Отправить заявку
           </button>
-        </div>
+          <div class="cf-note" id="cfNote" aria-live="polite">После отправки заявка сохранится на странице. Добавьте WhatsApp в настройках сайта, чтобы отправлять сообщения напрямую.</div>
+        </form>
 
         <div class="form-success" id="cfSuccess">
           <div style="font-size:3rem;margin-bottom:16px">🎉</div>
@@ -1254,19 +1276,19 @@
       <div>
         <h4>Контакты</h4>
         <ul>
-          <li><a href="tel:[ADD_PHONE]">[ADD_PHONE]</a></li>
-          <li><a href="#">WhatsApp</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#contacts">[ADD_ADDRESS]</a></li>
+          <li><a href="#contacts" data-contact="phone">Укажите телефон</a></li>
+          <li><a href="#contacts" data-contact="whatsapp">WhatsApp</a></li>
+          <li><a href="#contacts" data-contact="instagram">Instagram</a></li>
+          <li><a href="#contacts" data-contact="address">Укажите адрес</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
       <span class="foot-copy">© 2026 Sweetland Kids Bakery. Все права защищены.</span>
       <div class="foot-socials" aria-label="Социальные сети">
-        <a href="#" class="foot-soc" aria-label="Instagram">📸</a>
-        <a href="#" class="foot-soc" aria-label="WhatsApp">💬</a>
-        <a href="#" class="foot-soc" aria-label="Telegram">✈️</a>
+        <a href="#contacts" class="foot-soc" aria-label="Instagram" data-contact="instagram">📸</a>
+        <a href="#contacts" class="foot-soc" aria-label="WhatsApp" data-contact="whatsapp">💬</a>
+        <a href="#contacts" class="foot-soc" aria-label="Telegram">✈️</a>
       </div>
     </div>
   </div>
@@ -1292,73 +1314,114 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
+const siteContacts = {
+  phone: '',
+  whatsapp: '',
+  instagram: '',
+  address: ''
+};
+
+function normalizePhone (value) {
+  return value.replace(/[^\d+]/g, '');
+}
+
+function applyContactConfig () {
+  const phone = siteContacts.phone.trim();
+  const whatsapp = siteContacts.whatsapp.trim();
+  const instagram = siteContacts.instagram.trim();
+  const address = siteContacts.address.trim();
+
+  document.querySelectorAll('[data-contact="phone"]').forEach(el => {
+    el.textContent = phone || 'Укажите телефон';
+    if (el.tagName === 'A') el.href = phone ? `tel:${normalizePhone(phone)}` : '#contacts';
+  });
+
+  document.querySelectorAll('[data-contact="whatsapp"]').forEach(el => {
+    if (el.tagName === 'A') el.href = whatsapp ? `https://wa.me/${normalizePhone(whatsapp).replace('+','')}` : '#contacts';
+  });
+
+  document.querySelectorAll('[data-contact="instagram"]').forEach(el => {
+    if (el.tagName === 'A') el.href = instagram || '#contacts';
+  });
+
+  document.querySelectorAll('[data-contact="address"]').forEach(el => {
+    el.textContent = address || 'Укажите адрес';
+  });
+}
+
+applyContactConfig();
+
 /* ================================================================
    INIT AOS
 ================================================================ */
-AOS.init({
-  duration : 820,
-  easing   : 'ease-out-cubic',
-  once     : true,
-  offset   : 56
-});
+if (window.AOS) {
+  AOS.init({
+    duration : 820,
+    easing   : 'ease-out-cubic',
+    once     : true,
+    offset   : 56
+  });
+}
 
 /* ================================================================
    GSAP SETUP
 ================================================================ */
-gsap.registerPlugin(ScrollTrigger);
+if (window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
 
-/* ── Hero Entrance ── */
-const heroTl = gsap.timeline({ defaults:{ ease:'power3.out' } });
-heroTl
-  .from('.hero-badge',   { opacity:0, y:28, duration:0.9, delay:0.25 })
-  .from('.hero-title',   { opacity:0, y:52, duration:1.1 }, '-=0.55')
-  .from('.hero-sub',     { opacity:0, y:30, duration:0.9 }, '-=0.65')
-  .from('.hero-btns',    { opacity:0, y:20, duration:0.8 }, '-=0.55')
-  .from('.hero-scroll',  { opacity:0,        duration:1.0 }, '-=0.2');
+  /* ── Hero Entrance ── */
+  const heroTl = gsap.timeline({ defaults:{ ease:'power3.out' } });
+  heroTl
+    .from('.hero-badge',   { opacity:0, y:28, duration:0.9, delay:0.25 })
+    .from('.hero-title',   { opacity:0, y:52, duration:1.1 }, '-=0.55')
+    .from('.hero-sub',     { opacity:0, y:30, duration:0.9 }, '-=0.65')
+    .from('.hero-btns',    { opacity:0, y:20, duration:0.8 }, '-=0.55')
+    .from('.hero-scroll',  { opacity:0,        duration:1.0 }, '-=0.2');
 
-/* ── Hero Parallax ── */
-gsap.to('#heroBg', {
-  yPercent: 22,
-  ease: 'none',
-  scrollTrigger: { trigger:'.hero', start:'top top', end:'bottom top', scrub:true }
-});
-
-/* ── Why cards stagger ── */
-gsap.from('.why-card', {
-  scrollTrigger: { trigger:'.why-grid', start:'top 82%' },
-  y:40, opacity:0, duration:0.7, stagger:0.1, ease:'power3.out'
-});
-
-/* ── Timeline items ── */
-gsap.utils.toArray('.tl-box').forEach((box, i) => {
-  gsap.from(box, {
-    scrollTrigger: { trigger:box, start:'top 84%' },
-    x: i%2===0 ? -45 : 45,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
+  /* ── Hero Parallax ── */
+  gsap.to('#heroBg', {
+    yPercent: 22,
+    ease: 'none',
+    scrollTrigger: { trigger:'.hero', start:'top top', end:'bottom top', scrub:true }
   });
-});
 
-/* ── Pricing cards ── */
-gsap.from('.price-card', {
-  scrollTrigger: { trigger:'.pricing-grid', start:'top 82%' },
-  y:55, opacity:0, duration:0.85, stagger:0.15, ease:'power3.out'
-});
-
-/* ── Section titles ── */
-document.querySelectorAll('.t-md').forEach(el => {
-  gsap.from(el, {
-    scrollTrigger: { trigger:el, start:'top 86%' },
-    y:32, opacity:0, duration:0.9, ease:'power3.out'
+  /* ── Why cards stagger ── */
+  gsap.from('.why-card', {
+    scrollTrigger: { trigger:'.why-grid', start:'top 82%' },
+    y:40, opacity:0, duration:0.7, stagger:0.1, ease:'power3.out'
   });
-});
 
-/* ── Cake image subtle scale ── */
-gsap.from('.cake-wrap', {
-  scrollTrigger: { trigger:'.cakes-grid', start:'top 80%' },
-  scale:0.94, opacity:0, duration:1.1, ease:'power3.out'
-});
+  /* ── Timeline items ── */
+  gsap.utils.toArray('.tl-box').forEach((box, i) => {
+    gsap.from(box, {
+      scrollTrigger: { trigger:box, start:'top 84%' },
+      x: i%2===0 ? -45 : 45,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+  });
+
+  /* ── Pricing cards ── */
+  gsap.from('.price-card', {
+    scrollTrigger: { trigger:'.pricing-grid', start:'top 82%' },
+    y:55, opacity:0, duration:0.85, stagger:0.15, ease:'power3.out'
+  });
+
+  /* ── Section titles ── */
+  document.querySelectorAll('.t-md').forEach(el => {
+    gsap.from(el, {
+      scrollTrigger: { trigger:el, start:'top 86%' },
+      y:32, opacity:0, duration:0.9, ease:'power3.out'
+    });
+  });
+
+  /* ── Cake image subtle scale ── */
+  gsap.from('.cake-wrap', {
+    scrollTrigger: { trigger:'.cakes-grid', start:'top 80%' },
+    scale:0.94, opacity:0, duration:1.1, ease:'power3.out'
+  });
+}
 
 /* ================================================================
    NAVIGATION — SCROLL & STICKY
@@ -1401,9 +1464,13 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') { closeMenu(); 
 /* ================================================================
    FAQ ACCORDION
 ================================================================ */
-document.querySelectorAll('.faq-item').forEach(item => {
+document.querySelectorAll('.faq-item').forEach((item, index) => {
   const btn = item.querySelector('.faq-q');
   const ans = item.querySelector('.faq-a');
+  const ansId = `faq-answer-${index + 1}`;
+
+  ans.id = ansId;
+  btn.setAttribute('aria-controls', ansId);
 
   btn.addEventListener('click', () => {
     const open = item.classList.contains('open');
@@ -1450,36 +1517,61 @@ lbClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', e => { if(e.target===lightbox) closeLightbox(); });
 
 /* ================================================================
-   CONTACT FORM (demo)
+   CONTACT FORM
 ================================================================ */
-function cfSubmit () {
+const contactForm = document.getElementById('cfFields');
+
+function cfSubmit (event) {
+  event.preventDefault();
+
   const name  = document.getElementById('cfName').value.trim();
   const phone = document.getElementById('cfPhone').value.trim();
+  const service = document.getElementById('cfService').value.trim();
+  const message = document.getElementById('cfMsg').value.trim();
+  const phoneDigits = phone.replace(/\D/g, '');
 
-  // Highlight empty required fields
   if (!name)  { highlight('cfName');  return; }
   if (!phone) { highlight('cfPhone'); return; }
+  if (phoneDigits.length < 7) { highlight('cfPhone'); return; }
 
-  // Show success
-  document.getElementById('cfFields').style.display  = 'none';
+  const serviceText = service ? document.querySelector(`#cfService option[value="${service}"]`).textContent : 'Не выбрано';
+  const requestText = [
+    'Новая заявка Sweetland Kids Bakery',
+    `Имя: ${name}`,
+    `Телефон: ${phone}`,
+    `Услуга: ${serviceText}`,
+    message ? `Комментарий: ${message}` : ''
+  ].filter(Boolean).join('\n');
+
+  if (siteContacts.whatsapp.trim()) {
+    const wa = normalizePhone(siteContacts.whatsapp).replace('+','');
+    window.open(`https://wa.me/${wa}?text=${encodeURIComponent(requestText)}`, '_blank', 'noopener');
+  }
+
+  contactForm.style.display  = 'none';
   const success = document.getElementById('cfSuccess');
   success.classList.add('show');
-  gsap.from(success, { opacity:0, y:22, duration:0.7, ease:'power3.out' });
+  if (window.gsap) {
+    gsap.from(success, { opacity:0, y:22, duration:0.7, ease:'power3.out' });
+  }
 }
 
 function highlight (id) {
   const el = document.getElementById(id);
-  el.style.borderColor = 'rgba(226,172,171,.85)';
+  el.classList.add('invalid');
   el.focus();
-  gsap.fromTo(el, { x:-6 }, { x:0, duration:0.4, ease:'elastic.out(1,.4)' });
+  if (window.gsap) {
+    gsap.fromTo(el, { x:-6 }, { x:0, duration:0.4, ease:'elastic.out(1,.4)' });
+  }
 }
 
-// Reset highlight on input
 ['cfName','cfPhone'].forEach(id => {
   document.getElementById(id).addEventListener('input', function() {
-    this.style.borderColor = 'rgba(255,255,255,.12)';
+    this.classList.remove('invalid');
   });
 });
+
+contactForm.addEventListener('submit', cfSubmit);
 
 /* ================================================================
    SMOOTH ANCHOR SCROLL
