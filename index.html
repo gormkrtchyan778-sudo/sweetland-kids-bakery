@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="ru">
+
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta name="description" content="Sweetland Kids Bakery — детские дни рождения, кондитерские мастер-классы и авторские торты на заказ. Незабываемые праздники для ваших детей.">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="description"
+    content="Sweetland Kids Bakery — детские дни рождения, кондитерские мастер-классы и авторские торты на заказ. Незабываемые праздники для ваших детей.">
   <meta property="og:title" content="Sweetland Kids Bakery — Самые сладкие праздники">
   <meta property="og:description" content="Дни рождения, мастер-классы и незабываемые эмоции в Sweetland Kids Bakery">
   <meta property="og:type" content="website">
   <meta property="og:image" content="castle_logo.jpg">
   <meta name="theme-color" content="#804d5e">
   <title>Sweetland Kids Bakery | Волшебные праздники для детей</title>
-  
+
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;family=Quicksand:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&amp;family=Quicksand:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+
   <!-- Tailwind Configuration -->
   <script id="tailwind-config">
     tailwind.config = {
@@ -92,13 +96,13 @@
             "body-lg": ["Quicksand"]
           },
           "fontSize": {
-            "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
-            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-            "display-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "800"}],
-            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}],
-            "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
-            "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "700"}],
-            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}]
+            "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+            "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "display-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "800" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+            "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+            "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }]
           }
         }
       }
@@ -107,15 +111,39 @@
 
   <style>
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
     }
-    .animate-float { animation: float 4s ease-in-out infinite; }
-    .rose-shadow { box-shadow: 0 20px 40px -10px rgba(128, 77, 94, 0.15); }
-    .wavy-divider { shape-outside: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%); }
-    .sprinkle-bg { background-image: radial-gradient(circle, #f6b5c8 1px, transparent 1px); background-size: 30px 30px; }
-    .frosted-glass { backdrop-filter: blur(8px); background: rgba(255, 248, 248, 0.7); }
-    
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .rose-shadow {
+      box-shadow: 0 20px 40px -10px rgba(128, 77, 94, 0.15);
+    }
+
+    .wavy-divider {
+      shape-outside: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    }
+
+    .sprinkle-bg {
+      background-image: radial-gradient(circle, #f6b5c8 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .frosted-glass {
+      backdrop-filter: blur(8px);
+      background: rgba(255, 248, 248, 0.7);
+    }
+
     .wave-bottom {
       mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23000" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,218.7C960,235,1056,213,1152,186.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
       mask-size: cover;
@@ -131,42 +159,112 @@
     }
 
     /* Floating SVG keyframes from original design */
-    @keyframes fl1 { 0%,100%{transform:translateY(0) rotate(0deg)} 33%{transform:translateY(-22px) rotate(8deg)} 66%{transform:translateY(-10px) rotate(-5deg)} }
-    @keyframes fl2 { 0%,100%{transform:translateY(0) rotate(0deg) scale(1)} 50%{transform:translateY(-26px) rotate(-8deg) scale(1.06)} }
-    @keyframes fl3 { 0%,100%{transform:translateY(0) rotate(0deg)} 40%{transform:translateY(-18px) rotate(12deg)} 70%{transform:translateY(-6px) rotate(-3deg)} }
-    @keyframes fl4 { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-20px) scale(1.08)} }
+    @keyframes fl1 {
 
-    #navBurger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    #navBurger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    #navBurger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg)
+      }
+
+      33% {
+        transform: translateY(-22px) rotate(8deg)
+      }
+
+      66% {
+        transform: translateY(-10px) rotate(-5deg)
+      }
+    }
+
+    @keyframes fl2 {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg) scale(1)
+      }
+
+      50% {
+        transform: translateY(-26px) rotate(-8deg) scale(1.06)
+      }
+    }
+
+    @keyframes fl3 {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg)
+      }
+
+      40% {
+        transform: translateY(-18px) rotate(12deg)
+      }
+
+      70% {
+        transform: translateY(-6px) rotate(-3deg)
+      }
+    }
+
+    @keyframes fl4 {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1)
+      }
+
+      50% {
+        transform: translateY(-20px) scale(1.08)
+      }
+    }
+
+    #navBurger.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    #navBurger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    #navBurger.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
   </style>
 </head>
+
 <body class="bg-background text-on-surface font-body-md text-body-md overflow-x-hidden">
 
   <!-- Top Navigation -->
-  <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-lg shadow-primary/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-full mx-auto transition-all duration-300">
+  <header
+    class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-lg shadow-primary/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-full mx-auto transition-all duration-300">
     <div class="flex items-center gap-2">
-      <img alt="Sweetland Kids Bakery Castle Logo" class="h-12 w-auto object-contain" src="castle_logo.jpg"/>
+      <img alt="Sweetland Kids Bakery Castle Logo" class="h-12 w-auto object-contain" src="castle_logo.jpg" />
       <div class="flex flex-col">
         <span class="font-headline-md text-xl md:text-2xl font-bold text-primary leading-tight">Sweetland</span>
-        <span class="text-[9px] font-bold tracking-[0.15em] text-on-surface-variant uppercase leading-none mt-[-2px]">Kids Bakery</span>
+        <span
+          class="text-[9px] font-bold tracking-[0.15em] text-on-surface-variant uppercase leading-none mt-[-2px]">Kids
+          Bakery</span>
       </div>
     </div>
-    
+
     <nav class="hidden md:flex items-center gap-8">
-      <a class="text-primary font-bold border-b-2 border-primary transition-all duration-300" href="#services">Услуги</a>
-      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="#gallery">Галерея</a>
-      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="#pricing">Пакеты</a>
+      <a class="text-primary font-bold border-b-2 border-primary transition-all duration-300"
+        href="#services">Услуги</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300"
+        href="#gallery">Галерея</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300"
+        href="#pricing">Пакеты</a>
       <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="#faq">FAQ</a>
-      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="#contacts">Контакты</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300"
+        href="#contacts">Контакты</a>
     </nav>
 
-    <div class="flex items-center gap-4">
-      <a href="#contacts" class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold hover:scale-105 transition-transform duration-300 active:scale-95 shadow-lg shadow-primary/20">
+    <div class="flex items-center gap-3">
+      <a href="#contacts"
+        class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold hover:scale-105 transition-transform duration-300 active:scale-95 shadow-lg shadow-primary/20">
         Записаться
       </a>
-      
-      <button id="navBurger" class="md:hidden flex flex-col justify-center gap-1.5 p-2 focus:outline-none" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+
+      <button id="navBurger" class="md:hidden flex flex-col justify-center gap-1.5 p-2 focus:outline-none"
+        aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
         <span class="w-6 h-0.5 bg-primary transition-all duration-300 origin-center"></span>
         <span class="w-6 h-0.5 bg-primary transition-all duration-300 origin-center"></span>
         <span class="w-6 h-0.5 bg-primary transition-all duration-300 origin-center"></span>
@@ -175,67 +273,80 @@
   </header>
 
   <!-- Mobile Menu Drawer -->
-  <div id="mobileMenu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-lg translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-8 md:hidden" role="dialog" aria-modal="true" aria-label="Навигационное меню">
-    <button id="menuClose" class="absolute top-6 right-6 text-primary text-3xl focus:outline-none" aria-label="Закрыть меню">✕</button>
+  <div id="mobileMenu"
+    class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-lg translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-8 md:hidden pointer-events-none invisible"
+    role="dialog" aria-modal="true" aria-label="Навигационное меню">
+    <button id="menuClose" class="absolute top-6 right-6 text-primary text-3xl focus:outline-none"
+      aria-label="Закрыть меню">✕</button>
     <nav class="flex flex-col items-center gap-6">
       <a class="text-2xl text-primary font-bold mob-l" href="#services">Услуги</a>
       <a class="text-2xl text-on-surface-variant font-medium mob-l" href="#gallery">Галерея</a>
       <a class="text-2xl text-on-surface-variant font-medium mob-l" href="#pricing">Пакеты</a>
       <a class="text-2xl text-on-surface-variant font-medium mob-l" href="#faq">FAQ</a>
       <a class="text-2xl text-on-surface-variant font-medium mob-l" href="#contacts">Контакты</a>
+
     </nav>
-    <a href="#contacts" class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold shadow-lg shadow-primary/20 mob-l">Записаться</a>
+    <a href="#contacts"
+      class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold shadow-lg shadow-primary/20 mob-l">Записаться</a>
   </div>
 
   <main>
     <!-- Hero Section -->
-    <section class="relative min-h-[90vh] flex items-center bg-surface-container-low pt-32 wave-bottom">
+    <section class="relative min-h-[90vh] flex items-center bg-surface-container-low pt-40 md:pt-48 wave-bottom">
       <!-- Floating Background Sprinkle -->
       <div class="absolute inset-0 sprinkle-bg opacity-30 pointer-events-none overflow-hidden"></div>
 
-      <div class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center z-10 py-12">
-        
+      <div
+        class="container mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center z-10 py-12">
+
         <!-- Left Column (Text Content) -->
         <div class="text-left space-y-8 relative">
           <!-- Cake slice on the top-left of the text column (positioned locally so it never overlaps the logo) -->
-          <div class="absolute top-[-25%] left-[-15%] animate-float hidden xl:block z-0" style="animation: fl3 7s ease-in-out infinite 0.5s" aria-hidden="true">
+          <div class="absolute top-[-25%] left-[-15%] animate-float hidden xl:block z-0"
+            style="animation: fl3 7s ease-in-out infinite 0.5s" aria-hidden="true">
             <svg class="drop-shadow-lg opacity-60" width="56" height="78" viewBox="0 0 68 96" fill="none">
-              <rect x="9"  y="52" width="50" height="34" rx="9" fill="rgba(200,160,106,.9)"/>
-              <rect x="9"  y="40" width="50" height="16"        fill="rgba(240,217,213,.92)"/>
-              <rect x="9"  y="28" width="50" height="15"        fill="rgba(226,172,171,.9)"/>
-              <rect x="9"  y="18" width="50" height="13" rx="8" fill="rgba(200,160,106,.9)"/>
-              <ellipse cx="34" cy="18" rx="25" ry="8" fill="rgba(255,220,220,.92)"/>
-              <rect x="31" y="5" width="6" height="15" rx="3" fill="rgba(200,160,106,.9)"/>
-              <path d="M32 5 Q34 1 36 5" stroke="rgba(255,200,90,.9)" stroke-width="2" fill="none"/>
+              <rect x="9" y="52" width="50" height="34" rx="9" fill="rgba(200,160,106,.9)" />
+              <rect x="9" y="40" width="50" height="16" fill="rgba(240,217,213,.92)" />
+              <rect x="9" y="28" width="50" height="15" fill="rgba(226,172,171,.9)" />
+              <rect x="9" y="18" width="50" height="13" rx="8" fill="rgba(200,160,106,.9)" />
+              <ellipse cx="34" cy="18" rx="25" ry="8" fill="rgba(255,220,220,.92)" />
+              <rect x="31" y="5" width="6" height="15" rx="3" fill="rgba(200,160,106,.9)" />
+              <path d="M32 5 Q34 1 36 5" stroke="rgba(255,200,90,.9)" stroke-width="2" fill="none" />
             </svg>
           </div>
 
           <!-- Macaron on the bottom-left of the text column -->
-          <div class="absolute bottom-[-15%] left-[-10%] animate-float hidden xl:block z-0" style="animation: fl4 9s ease-in-out infinite 2s" aria-hidden="true">
+          <div class="absolute bottom-[-15%] left-[-10%] animate-float hidden xl:block z-0"
+            style="animation: fl4 9s ease-in-out infinite 2s" aria-hidden="true">
             <svg class="drop-shadow-lg opacity-60" width="56" height="56" viewBox="0 0 66 66" fill="none">
-              <ellipse cx="33" cy="21" rx="24" ry="14" fill="rgba(197,181,210,.9)"/>
-              <ellipse cx="33" cy="46" rx="24" ry="14" fill="rgba(181,201,184,.9)"/>
-              <rect x="9" y="31" width="48" height="8" rx="2" fill="rgba(255,242,238,.96)"/>
-              <ellipse cx="33" cy="21" rx="20" ry="10" fill="rgba(218,206,228,.82)"/>
-              <ellipse cx="33" cy="46" rx="20" ry="10" fill="rgba(198,218,204,.82)"/>
+              <ellipse cx="33" cy="21" rx="24" ry="14" fill="rgba(197,181,210,.9)" />
+              <ellipse cx="33" cy="46" rx="24" ry="14" fill="rgba(181,201,184,.9)" />
+              <rect x="9" y="31" width="48" height="8" rx="2" fill="rgba(255,242,238,.96)" />
+              <ellipse cx="33" cy="21" rx="20" ry="10" fill="rgba(218,206,228,.82)" />
+              <ellipse cx="33" cy="46" rx="20" ry="10" fill="rgba(198,218,204,.82)" />
             </svg>
           </div>
 
-          <div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed-variant px-6 py-2 rounded-full font-label-bold text-label-bold hero-badge">
+          <div
+            class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed-variant px-6 py-2 rounded-full font-label-bold text-label-bold hero-badge">
             <span class="material-symbols-outlined text-[18px]">magic_button</span>
             Sweetland Kids Bakery
           </div>
-          <h1 class="font-display-lg text-display-mobile md:text-display-lg text-primary max-w-xl hero-title leading-[1.15]">
+          <h1
+            class="font-display-lg text-display-mobile md:text-display-lg text-primary max-w-xl hero-title leading-[1.15]">
             Самые <span class="text-tertiary font-serif italic">сладкие</span> праздники для ваших детей
           </h1>
           <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg hero-sub">
             Дни рождения, кондитерские мастер-классы и незабываемые эмоции в атмосфере волшебства и творчества.
           </p>
           <div class="flex flex-wrap gap-4 hero-btns">
-            <a href="#contacts" class="bg-primary text-on-primary px-10 py-5 rounded-full font-label-bold text-headline-sm hover:scale-105 transition-all rose-shadow active:scale-95 text-center">
+            <a href="#contacts"
+              class="bg-primary text-on-primary px-10 py-5 rounded-full font-label-bold text-headline-sm hover:scale-105 transition-all rose-shadow active:scale-95 text-center">
               Записаться на праздник
             </a>
-            <a href="#services" class="border-2 border-primary text-primary px-10 py-5 rounded-full font-label-bold text-headline-sm hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-center">
+
+            <a href="#services"
+              class="border-2 border-primary text-primary px-10 py-5 rounded-full font-label-bold text-headline-sm hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-center">
               Наши услуги
             </a>
           </div>
@@ -244,42 +355,46 @@
         <!-- Right Column (High Resolution Castle Logo Image) -->
         <div class="relative flex justify-center items-center mt-12 lg:mt-0" style="z-index:20">
           <div class="absolute w-[130%] h-[130%] bg-primary/5 rounded-full blur-3xl"></div>
-          
+
           <!-- Cupcake on the top-left of the castle logo -->
-          <div class="absolute top-[-10%] left-[-10%] animate-float hidden xl:block" style="z-index:25; animation: fl1 6s ease-in-out infinite" aria-hidden="true">
+          <div class="absolute top-[-10%] left-[-10%] animate-float hidden xl:block"
+            style="z-index:25; animation: fl1 6s ease-in-out infinite" aria-hidden="true">
             <svg class="drop-shadow-lg opacity-80" width="76" height="76" viewBox="0 0 92 92" fill="none">
-              <rect x="26" y="56" width="40" height="26" rx="9" fill="rgba(240,217,213,.92)"/>
-              <path d="M20 59 Q46 40 72 59" fill="rgba(200,160,106,.88)"/>
-              <ellipse cx="46" cy="41" rx="23" ry="21" fill="rgba(226,172,171,.9)"/>
-              <ellipse cx="46" cy="37" rx="15" ry="12" fill="rgba(255,220,220,.95)"/>
-              <rect x="44" y="22" width="4" height="17" rx="2" fill="rgba(200,160,106,.9)"/>
-              <circle cx="46" cy="20" r="5.5" fill="rgba(190,122,124,1)"/>
-              <circle cx="36" cy="43" r="3" fill="rgba(255,255,255,.65)"/>
-              <circle cx="56" cy="44" r="2.5" fill="rgba(255,255,255,.65)"/>
+              <rect x="26" y="56" width="40" height="26" rx="9" fill="rgba(240,217,213,.92)" />
+              <path d="M20 59 Q46 40 72 59" fill="rgba(200,160,106,.88)" />
+              <ellipse cx="46" cy="41" rx="23" ry="21" fill="rgba(226,172,171,.9)" />
+              <ellipse cx="46" cy="37" rx="15" ry="12" fill="rgba(255,220,220,.95)" />
+              <rect x="44" y="22" width="4" height="17" rx="2" fill="rgba(200,160,106,.9)" />
+              <circle cx="46" cy="20" r="5.5" fill="rgba(190,122,124,1)" />
+              <circle cx="36" cy="43" r="3" fill="rgba(255,255,255,.65)" />
+              <circle cx="56" cy="44" r="2.5" fill="rgba(255,255,255,.65)" />
             </svg>
           </div>
 
           <!-- Cookie on the bottom-right of the castle logo -->
-          <div class="absolute bottom-[0%] right-[-10%] animate-float hidden xl:block" style="z-index:25; animation: fl2 8s ease-in-out infinite 1s" aria-hidden="true">
+          <div class="absolute bottom-[0%] right-[-10%] animate-float hidden xl:block"
+            style="z-index:25; animation: fl2 8s ease-in-out infinite 1s" aria-hidden="true">
             <svg class="drop-shadow-lg opacity-80" width="64" height="64" viewBox="0 0 78 78" fill="none">
-              <circle cx="39" cy="39" r="32" fill="rgba(229,201,154,.92)"/>
-              <circle cx="39" cy="39" r="27" fill="rgba(200,160,106,.82)" stroke="rgba(229,201,154,.5)" stroke-width="1.5"/>
-              <circle cx="27" cy="30" r="5"  fill="rgba(80,50,20,.8)"/>
-              <circle cx="49" cy="34" r="4"  fill="rgba(80,50,20,.8)"/>
-              <circle cx="31" cy="50" r="4.5" fill="rgba(80,50,20,.8)"/>
-              <circle cx="51" cy="52" r="3.5" fill="rgba(80,50,20,.8)"/>
-              <circle cx="41" cy="22" r="3"   fill="rgba(80,50,20,.8)"/>
+              <circle cx="39" cy="39" r="32" fill="rgba(229,201,154,.92)" />
+              <circle cx="39" cy="39" r="27" fill="rgba(200,160,106,.82)" stroke="rgba(229,201,154,.5)"
+                stroke-width="1.5" />
+              <circle cx="27" cy="30" r="5" fill="rgba(80,50,20,.8)" />
+              <circle cx="49" cy="34" r="4" fill="rgba(80,50,20,.8)" />
+              <circle cx="31" cy="50" r="4.5" fill="rgba(80,50,20,.8)" />
+              <circle cx="51" cy="52" r="3.5" fill="rgba(80,50,20,.8)" />
+              <circle cx="41" cy="22" r="3" fill="rgba(80,50,20,.8)" />
             </svg>
           </div>
 
           <img id="heroBg" alt="Sweetland Kids Bakery Castle Logo"
-               class="relative w-full max-w-[560px] lg:max-w-[640px] animate-float drop-shadow-2xl object-contain"
-               style="z-index:22; image-rendering: high-quality;"
-               src="castle_logo.jpg"/>
+            class="relative w-full max-w-[560px] lg:max-w-[640px] animate-float drop-shadow-2xl object-contain"
+            style="z-index:22; image-rendering: high-quality;" src="castle_logo.jpg" />
         </div>
       </div>
-      
-      <div class="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 cursor-pointer hidden md:flex" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">
+
+      <div
+        class="hero-scroll absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 cursor-pointer hidden md:flex"
+        onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">
         <span class="text-xs uppercase tracking-widest text-primary font-bold">Прокрутите</span>
         <div class="w-1 h-8 bg-gradient-to-b from-primary to-transparent rounded-full animate-bounce"></div>
       </div>
@@ -288,78 +403,98 @@
     <!-- Why Us Section (Bento Grid Style) -->
     <section id="why" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background">
       <div class="text-center mb-16 space-y-4">
-        <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Почему мы</span>
+        <span
+          class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Почему
+          мы</span>
         <h2 class="font-headline-md text-display-lg text-primary">Сделано с волшебством</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Каждое мероприятие мы создаём с любовью, заботой и безупречным вниманием к каждой детали.</p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Каждое мероприятие мы создаём с
+          любовью, заботой и безупречным вниманием к каждой детали.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <div class="why-card p-10 bg-white rounded-xl rose-shadow flex flex-col items-center text-center space-y-6 hover:scale-105 transition-transform duration-300">
+
+        <div
+          class="why-card p-10 bg-white rounded-xl rose-shadow flex flex-col items-center text-center space-y-6 hover:scale-105 transition-transform duration-300">
           <div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center">
             <span class="material-symbols-outlined text-primary text-4xl">face</span>
           </div>
           <h3 class="font-headline-sm text-headline-sm text-primary">Опытные мастера</h3>
-          <p class="text-on-surface-variant">Наши кондитеры с многолетним опытом создают магию вкуса и красоты для каждого события, вовлекая каждого ребёнка в процесс.</p>
+          <p class="text-on-surface-variant">Наши кондитеры с многолетним опытом создают магию вкуса и красоты для
+            каждого события, вовлекая каждого ребёнка в процесс.</p>
         </div>
 
-        <div class="why-card p-10 bg-surface-container-low rounded-xl rose-shadow flex flex-col items-center text-center space-y-6 hover:scale-105 transition-transform duration-300">
+        <div
+          class="why-card p-10 bg-surface-container-low rounded-xl rose-shadow flex flex-col items-center text-center space-y-6 hover:scale-105 transition-transform duration-300">
           <div class="w-20 h-20 bg-tertiary-fixed rounded-full flex items-center justify-center">
             <span class="material-symbols-outlined text-tertiary text-4xl">auto_fix_high</span>
           </div>
           <h3 class="font-headline-sm text-headline-sm text-primary">Авторские программы</h3>
-          <p class="text-on-surface-variant">Уникальные сценарии праздников и мастер-классов, разработанные специально для детей разных возрастных групп.</p>
+          <p class="text-on-surface-variant">Уникальные сценарии праздников и мастер-классов, разработанные специально
+            для детей разных возрастных групп.</p>
         </div>
 
-        <div class="why-card p-10 bg-white rounded-xl rose-shadow flex flex-col items-center text-center space-y-6 hover:scale-105 transition-transform duration-300">
+        <div
+          class="why-card p-10 bg-white rounded-xl rose-shadow flex flex-col items-center text-center space-y-6 hover:scale-105 transition-transform duration-300">
           <div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center">
             <span class="material-symbols-outlined text-primary text-4xl">local_shipping</span>
           </div>
           <h3 class="font-headline-sm text-headline-sm text-primary">Выездные мероприятия</h3>
-          <p class="text-on-surface-variant">Приедем в школу, детский сад или на любую площадку — организуем праздник под ключ с заботой о чистоте и безопасности.</p>
+          <p class="text-on-surface-variant">Приедем в школу, детский сад или на любую площадку — организуем праздник
+            под ключ с заботой о чистоте и безопасности.</p>
         </div>
-        
+
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
+    <section id="services"
+      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
       <div class="absolute inset-0 sprinkle-bg opacity-10 pointer-events-none"></div>
       <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 relative z-10">
         <div class="max-w-xl text-left space-y-3">
-          <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Услуги</span>
+          <span
+            class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Услуги</span>
           <h2 class="font-headline-md text-display-lg text-primary">Наши волшебные услуги</h2>
-          <p class="text-body-lg text-on-surface-variant">От весёлых дней рождения до обучающих кулинарных мастер-классов.</p>
+          <p class="text-body-lg text-on-surface-variant">От весёлых дней рождения до обучающих кулинарных
+            мастер-классов.</p>
         </div>
-        <a href="#contacts" class="bg-primary text-on-primary px-8 py-3.5 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+        <a href="#contacts"
+          class="bg-primary text-on-primary px-8 py-3.5 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
           Все услуги
         </a>
       </div>
-      
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter relative z-10">
         <!-- Service Card 1 -->
-        <div class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
+        <div
+          class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-6 mb-6">
-              <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                 <span class="material-symbols-outlined text-4xl">celebration</span>
               </div>
               <h3 class="font-headline-sm text-headline-md text-primary">Дни рождения</h3>
             </div>
             <p class="text-on-surface-variant mb-8 text-body-lg">
-              Полная организация детского дня рождения: тематический декор, кондитерский мастер-класс и торжественный вынос торта.
+              Полная организация детского дня рождения: тематический декор, кондитерский мастер-класс и торжественный
+              вынос торта.
             </p>
           </div>
           <div class="relative h-64 w-full rounded-lg overflow-hidden mt-auto">
-            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Детский день рождения Sweetland" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3mumqNJ9WSu2bwtEAohRfHbRWbnzSJjYS-Cwt2C_qLflJPUjZXY1Ez7qEZN0acVysJX_WCvaDmE_pkooKsMFGTZ4WygXJWaANv_pk5DDcFmgQgUvFVBESuc3dSCbQ7ogq9l_TNToFatBh8Ns0YbHCN5c7LB0Oc5HwFoYsE5VYTdZf82UkKnaEkRarvB-GgoCg15KL0rR97ovoyUA_kCg3S82rvkLHO_3Ub4XRpHK5b8OZgvZG-_j5RFdV_nz5IJmvNZGmw-8OSA4"/>
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Детский день рождения Sweetland"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3mumqNJ9WSu2bwtEAohRfHbRWbnzSJjYS-Cwt2C_qLflJPUjZXY1Ez7qEZN0acVysJX_WCvaDmE_pkooKsMFGTZ4WygXJWaANv_pk5DDcFmgQgUvFVBESuc3dSCbQ7ogq9l_TNToFatBh8Ns0YbHCN5c7LB0Oc5HwFoYsE5VYTdZf82UkKnaEkRarvB-GgoCg15KL0rR97ovoyUA_kCg3S82rvkLHO_3Ub4XRpHK5b8OZgvZG-_j5RFdV_nz5IJmvNZGmw-8OSA4" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
         </div>
-        
+
         <!-- Service Card 2 -->
-        <div class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
+        <div
+          class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-6 mb-6">
-              <div class="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors">
+              <div
+                class="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors">
                 <span class="material-symbols-outlined text-4xl">school</span>
               </div>
               <h3 class="font-headline-sm text-headline-md text-primary">Мастер-классы</h3>
@@ -369,45 +504,57 @@
             </p>
           </div>
           <div class="relative h-64 w-full rounded-lg overflow-hidden mt-auto">
-            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Детские кондитерские мастер-классы" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY4c52QJn9B4XHHFt8tHhVJ8V2FydXZZ71Y6iLokQLunEmGiwypZwL-YktU_13Lvn6CohlXevNrFsITtwD5Oz5TiY_VM73d-XetahdlOaY2P-4aCTYgiuvwxdBqu--vv80ZCGNm22pIvboa3NLGqyr8euTJAizaevIcgMfg0_pCmrx7c173aIcUb2NFB_nJQzo4O6NgQW79rGChVqKLRHirY68YoFXddNjPTeTiXqJJS0iBgOGsu-rJbyxf0COX46fKVRJHJkD9oA"/>
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Детские кондитерские мастер-классы"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY4c52QJn9B4XHHFt8tHhVJ8V2FydXZZ71Y6iLokQLunEmGiwypZwL-YktU_13Lvn6CohlXevNrFsITtwD5Oz5TiY_VM73d-XetahdlOaY2P-4aCTYgiuvwxdBqu--vv80ZCGNm22pIvboa3NLGqyr8euTJAizaevIcgMfg0_pCmrx7c173aIcUb2NFB_nJQzo4O6NgQW79rGChVqKLRHirY68YoFXddNjPTeTiXqJJS0iBgOGsu-rJbyxf0COX46fKVRJHJkD9oA" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
         </div>
 
         <!-- Service Card 3 -->
-        <div class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
+        <div
+          class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-6 mb-6">
-              <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                 <span class="material-symbols-outlined text-4xl">local_shipping</span>
               </div>
               <h3 class="font-headline-sm text-headline-md text-primary">Выездные мастер-классы</h3>
             </div>
             <p class="text-on-surface-variant mb-8 text-body-lg">
-              Привезем всё необходимое оборудование, фартуки, шапочки и свежие ингредиенты к вам домой, в школу или в игровую.
+              Привезем всё необходимое оборудование, фартуки, шапочки и свежие ингредиенты к вам домой, в школу или в
+              игровую.
             </p>
           </div>
           <div class="relative h-64 w-full rounded-lg overflow-hidden mt-auto">
-            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Выездные детские мастер-классы" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDef2Z1chsczeZ8b4yL6IO41OA5E_abs-wh1hGmuKNZ0kx-SS0T9SCz-0CWXHcdht2ArEGOT9UOmssul_IGg-Dfmb4K6oSJjY8Z0vmKXuRUDolY1n8WxtXOiEYgUrlKCmawf3MtasQ9T0SPcCkBffzR5NlCjKbINFYy6EswpLKVmwYlgGyeKGfGGNc8FW_WEQelKKDwBtFjpsSk2Q9CxuOoPJTaNOpVPV_j_Nf0Gak9eS9zD0vlvx6L170k5v3pT35byvlnhMvFyhg"/>
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Выездные детские мастер-классы"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDef2Z1chsczeZ8b4yL6IO41OA5E_abs-wh1hGmuKNZ0kx-SS0T9SCz-0CWXHcdht2ArEGOT9UOmssul_IGg-Dfmb4K6oSJjY8Z0vmKXuRUDolY1n8WxtXOiEYgUrlKCmawf3MtasQ9T0SPcCkBffzR5NlCjKbINFYy6EswpLKVmwYlgGyeKGfGGNc8FW_WEQelKKDwBtFjpsSk2Q9CxuOoPJTaNOpVPV_j_Nf0Gak9eS9zD0vlvx6L170k5v3pT35byvlnhMvFyhg" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
         </div>
 
         <!-- Service Card 4 -->
-        <div class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
+        <div
+          class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-6 mb-6">
-              <div class="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors">
+              <div
+                class="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors">
                 <span class="material-symbols-outlined text-4xl">bakery_dining</span>
               </div>
               <h3 class="font-headline-sm text-headline-md text-primary">Торты на заказ</h3>
             </div>
             <p class="text-on-surface-variant mb-8 text-body-lg">
-              Авторские кондитерские шедевры, созданные индивидуально под ваши пожелания из 100% натуральных ингредиентов.
+              Авторские кондитерские шедевры, созданные индивидуально под ваши пожелания из 100% натуральных
+              ингредиентов.
             </p>
           </div>
           <div class="relative h-64 w-full rounded-lg overflow-hidden mt-auto">
-            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Авторские торты на заказ" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt7rBxjGOGs_p9BLPbdkXmQt2H7mEv_zWuDRDPzYFR_tr1hxvFadyNvrLuZ3DKvrcESQYAw6axb13v5Altb6uZna6zTHp2jOETeMopxEfUmbuz8NSfvcjseVkFwthNGU8CCOcKNIvuVnghWHxFMdsMZXNZn12ddY6D6-OjM9sA-ANWL3DwxItpfqVmz_NrEaknmMvQSrwRvioL4MFI9MA5BRfZSsCrztn4FBb4eMUcGcmrTXktjbRMUx4vhvjwi4z5EC1H-vnPN0U"/>
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              alt="Авторские торты на заказ"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt7rBxjGOGs_p9BLPbdkXmQt2H7mEv_zWuDRDPzYFR_tr1hxvFadyNvrLuZ3DKvrcESQYAw6axb13v5Altb6uZna6zTHp2jOETeMopxEfUmbuz8NSfvcjseVkFwthNGU8CCOcKNIvuVnghWHxFMdsMZXNZn12ddY6D6-OjM9sA-ANWL3DwxItpfqVmz_NrEaknmMvQSrwRvioL4MFI9MA5BRfZSsCrztn4FBb4eMUcGcmrTXktjbRMUx4vhvjwi4z5EC1H-vnPN0U" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
         </div>
@@ -417,7 +564,8 @@
     <!-- Gallery Section -->
     <section id="gallery" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background">
       <div class="text-center mb-16 space-y-4">
-        <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Галерея</span>
+        <span
+          class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Галерея</span>
         <h2 class="font-headline-md text-display-lg text-primary">Галерея сладких шедевров</h2>
         <div class="mt-4 flex justify-center gap-2">
           <span class="w-12 h-1 bg-primary rounded-full"></span>
@@ -425,35 +573,50 @@
           <span class="w-4 h-1 bg-primary rounded-full"></span>
         </div>
       </div>
-      
+
       <div class="columns-1 sm:columns-2 lg:columns-3 gap-gutter space-y-gutter">
         <div class="gal-item break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg rose-shadow">
-          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700" alt="Пончики с глазурью" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSimAVJTYsUI6Y2jfjNI6IankjpwlbbMui2AnUoWc-3ap0ka9jH9X0TYqymhyeB5bM30CL4lnyFlyiiV2oWClRt4DLzhBCT2txGJ9IL2QQk6tSbGdH7HoWfDXeWtw7R1-x2phX1_HApimMi4dHs1-PjfEEkG5pANU72hhtxstm6sMGN24nYrTz2eU4nSa5ZkqVW-cKCydIWGYML56-wMeE_Q47_ZXfAHcV97mvHiRrWtQX_7LZVTajtqg8d5FaiqwqgVVN8TBrwRI"/>
-          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700"
+            alt="Пончики с глазурью"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSimAVJTYsUI6Y2jfjNI6IankjpwlbbMui2AnUoWc-3ap0ka9jH9X0TYqymhyeB5bM30CL4lnyFlyiiV2oWClRt4DLzhBCT2txGJ9IL2QQk6tSbGdH7HoWfDXeWtw7R1-x2phX1_HApimMi4dHs1-PjfEEkG5pANU72hhtxstm6sMGN24nYrTz2eU4nSa5ZkqVW-cKCydIWGYML56-wMeE_Q47_ZXfAHcV97mvHiRrWtQX_7LZVTajtqg8d5FaiqwqgVVN8TBrwRI" />
+          <div
+            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
           </div>
         </div>
         <div class="gal-item break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg rose-shadow">
-          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700" alt="Разноцветные макароны" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL21pkForq9JgQd6mlfNdPQY3UY9N1enJec7uuIexCDQtsWlbks8OrJJ8ky6l73Xj_UW9boPdvVE2dSIs-3i9-RVwgwqk6TlTE2dgEPkbbiy3p_RQoScm17PiHDnSfwMQwMdIi5PdFYB4IUD6W3PjX2qomViJb2PJ-vd528mvdE97HDffDCUdUdaXrc_3A1h-v6C_wwL358EkGs8aboXWSHKvpz2FtZxplW4rTeKxArmTtZeqQsiCqYY9XB4Nxgj6FTmSq5v3RlTo"/>
-          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700"
+            alt="Разноцветные макароны"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL21pkForq9JgQd6mlfNdPQY3UY9N1enJec7uuIexCDQtsWlbks8OrJJ8ky6l73Xj_UW9boPdvVE2dSIs-3i9-RVwgwqk6TlTE2dgEPkbbiy3p_RQoScm17PiHDnSfwMQwMdIi5PdFYB4IUD6W3PjX2qomViJb2PJ-vd528mvdE97HDffDCUdUdaXrc_3A1h-v6C_wwL358EkGs8aboXWSHKvpz2FtZxplW4rTeKxArmTtZeqQsiCqYY9XB4Nxgj6FTmSq5v3RlTo" />
+          <div
+            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
           </div>
         </div>
         <div class="gal-item break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg rose-shadow">
-          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700" alt="Сказочные кейк-попсы" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlVzlEqkpZ0MJI1wcWgMdIfbC4pyjc7hppgkBEj0c0XubIspgT8pYH4380ODbGSrDidzakG9l-VtBo-FyNrp2JVlCNC93lqnjCupdxGf0xVrhztNWx8QrUtCkHb8jLUo5xXZ-I043MF29zBttkJNKrUQ0yBJEXHf6J2HolXyqpXwUvkl4FwhRSGZT1lUN0UJZsmDUXDZZutNsGIlheERh5tng6IzNw5YnrgWe7ZPOEN20aHuDW46TQBHJPKZBWPnQ4GPae6flfl5A"/>
-          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700"
+            alt="Сказочные кейк-попсы"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlVzlEqkpZ0MJI1wcWgMdIfbC4pyjc7hppgkBEj0c0XubIspgT8pYH4380ODbGSrDidzakG9l-VtBo-FyNrp2JVlCNC93lqnjCupdxGf0xVrhztNWx8QrUtCkHb8jLUo5xXZ-I043MF29zBttkJNKrUQ0yBJEXHf6J2HolXyqpXwUvkl4FwhRSGZT1lUN0UJZsmDUXDZZutNsGIlheERh5tng6IzNw5YnrgWe7ZPOEN20aHuDW46TQBHJPKZBWPnQ4GPae6flfl5A" />
+          <div
+            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
           </div>
         </div>
         <div class="gal-item break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg rose-shadow">
-          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700" alt="Украшение капкейков" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRgh5JlibWIab-xyFc06aKFXDl4ddaUbTg4KJ0463ZglIRgAEiKWM7wlaS1zHwpvYA4ePUJuLqKCbyJSNLfljkhxuatCpISmXDyAdYYLBS3D-iKfQX1Mcgqi_t2OXwG1pa0D5yQenxUJz5O_ytALhKQnKJ7hHVZ0ROOaLmo8jgnn7uCPIswytyFdGy9fTY08WU58OvEFBlZIbT-nSJncBsn4irH7l2St09iTMhwxCTX25sN__G-0n14J2phP2II0vM6jOLMEiFqeM"/>
-          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700"
+            alt="Украшение капкейков"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRgh5JlibWIab-xyFc06aKFXDl4ddaUbTg4KJ0463ZglIRgAEiKWM7wlaS1zHwpvYA4ePUJuLqKCbyJSNLfljkhxuatCpISmXDyAdYYLBS3D-iKfQX1Mcgqi_t2OXwG1pa0D5yQenxUJz5O_ytALhKQnKJ7hHVZ0ROOaLmo8jgnn7uCPIswytyFdGy9fTY08WU58OvEFBlZIbT-nSJncBsn4irH7l2St09iTMhwxCTX25sN__G-0n14J2phP2II0vM6jOLMEiFqeM" />
+          <div
+            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
           </div>
         </div>
         <div class="gal-item break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg rose-shadow">
-          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700" alt="Десертный стол на мастер-классе" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_aRu0WuziYzz0eYklfECs3_gaBUV2Xy0LIShTN0E3uTvRgsiCokSHTvLnN8gQOa25BdCHTC469UY-kFaUFqKqbMPKUapX2_WvkcYH2IjntHBknKGQ5KXZ5YrvvgUF1jR9m8iXKplHperDezjm_6Rzq9jNW_gF4n7MsTS0LcmyWcJ8JMb53jq9AjmbSGtXO1CPYIOEauYu-GzW6IgLsHa4jLrbfxS1s1Q972i2xy3vZd3g3H3-88nr7Evqd6aMl-o7HTsI7E5wKnY"/>
-          <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <img class="w-full rounded-lg transform group-hover:scale-110 transition-transform duration-700"
+            alt="Десертный стол на мастер-классе"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_aRu0WuziYzz0eYklfECs3_gaBUV2Xy0LIShTN0E3uTvRgsiCokSHTvLnN8gQOa25BdCHTC469UY-kFaUFqKqbMPKUapX2_WvkcYH2IjntHBknKGQ5KXZ5YrvvgUF1jR9m8iXKplHperDezjm_6Rzq9jNW_gF4n7MsTS0LcmyWcJ8JMb53jq9AjmbSGtXO1CPYIOEauYu-GzW6IgLsHa4jLrbfxS1s1Q972i2xy3vZd3g3H3-88nr7Evqd6aMl-o7HTsI7E5wKnY" />
+          <div
+            class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <span class="material-symbols-outlined text-white text-4xl">zoom_in</span>
           </div>
         </div>
@@ -461,78 +624,95 @@
     </section>
 
     <!-- Gallery Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md hidden items-center justify-center p-4 cursor-zoom-out" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
-      <button id="lbClose" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white text-2xl hover:bg-white/20 transition-all focus:outline-none" aria-label="Закрыть галерею">✕</button>
+    <div id="lightbox"
+      class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md hidden items-center justify-center p-4 cursor-zoom-out"
+      role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+      <button id="lbClose"
+        class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white text-2xl hover:bg-white/20 transition-all focus:outline-none"
+        aria-label="Закрыть галерею">✕</button>
       <img id="lbImg" class="max-w-full max-h-[90vh] rounded-lg object-contain" src="" alt="">
     </div>
 
     <!-- How It Works (Timeline) -->
-    <section id="how" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-high relative wave-top wave-bottom">
+    <section id="how"
+      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-high relative wave-top wave-bottom">
       <div class="max-w-4xl mx-auto py-20">
         <div class="text-center mb-16 space-y-4">
-          <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Как это работает</span>
+          <span
+            class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Как
+            это работает</span>
           <h2 class="font-headline-md text-display-lg text-primary">Путь к незабываемому празднику</h2>
           <p class="text-body-lg text-on-surface-variant">5 простых шагов к созданию детского праздника мечты</p>
         </div>
         <div class="relative">
           <!-- Vertical Line -->
           <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 -translate-x-1/2 hidden md:block"></div>
-          
+
           <!-- Step 1 -->
           <div class="relative flex flex-col md:flex-row items-center mb-24 group">
             <div class="flex-1 md:text-right md:pr-12 order-2 md:order-1 tl-box">
               <h3 class="font-headline-sm text-primary mb-2">Оставляете заявку</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Заполните форму на сайте, напишите в WhatsApp или позвоните — ответим в течение часа.</p>
+              <p class="text-on-surface-variant text-sm md:text-base">Заполните форму на сайте, напишите в WhatsApp или
+                позвоните — ответим в течение часа.</p>
             </div>
-            <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
+            <div
+              class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
               1
             </div>
             <div class="flex-1 md:pl-12 order-3"></div>
           </div>
-          
+
           <!-- Step 2 -->
           <div class="relative flex flex-col md:flex-row items-center mb-24 group">
             <div class="flex-1 md:pr-12 order-3"></div>
-            <div class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-tertiary/30 group-hover:scale-125 transition-transform font-bold text-lg">
+            <div
+              class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-tertiary/30 group-hover:scale-125 transition-transform font-bold text-lg">
               2
             </div>
             <div class="flex-1 md:pl-12 order-2 tl-box">
               <h3 class="font-headline-sm text-primary mb-2">Мы связываемся</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Наш менеджер перезвонит, уточнит дату, количество детей, тематику и ваши особые пожелания.</p>
+              <p class="text-on-surface-variant text-sm md:text-base">Наш менеджер перезвонит, уточнит дату, количество
+                детей, тематику и ваши особые пожелания.</p>
             </div>
           </div>
-          
+
           <!-- Step 3 -->
           <div class="relative flex flex-col md:flex-row items-center mb-24 group">
             <div class="flex-1 md:text-right md:pr-12 order-2 md:order-1 tl-box">
               <h3 class="font-headline-sm text-primary mb-2">Подбираем программу</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Разрабатываем индивидуальный сценарий мероприятия, подбираем активности, декор и меню.</p>
+              <p class="text-on-surface-variant text-sm md:text-base">Разрабатываем индивидуальный сценарий мероприятия,
+                подбираем активности, декор и меню.</p>
             </div>
-            <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
+            <div
+              class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
               3
             </div>
             <div class="flex-1 md:pl-12 order-3"></div>
           </div>
-          
+
           <!-- Step 4 -->
           <div class="relative flex flex-col md:flex-row items-center mb-24 group">
             <div class="flex-1 md:pr-12 order-3"></div>
-            <div class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-tertiary/30 group-hover:scale-125 transition-transform font-bold text-lg">
+            <div
+              class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-tertiary/30 group-hover:scale-125 transition-transform font-bold text-lg">
               4
             </div>
             <div class="flex-1 md:pl-12 order-2 tl-box">
               <h3 class="font-headline-sm text-primary mb-2">Проводим мероприятие</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Наша команда приезжает заранее на площадку, всё оформляет и делает каждый момент праздника волшебным.</p>
+              <p class="text-on-surface-variant text-sm md:text-base">Наша команда приезжает заранее на площадку, всё
+                оформляет и делает каждый момент праздника волшебным.</p>
             </div>
           </div>
-          
+
           <!-- Step 5 -->
           <div class="relative flex flex-col md:flex-row items-center group">
             <div class="flex-1 md:text-right md:pr-12 order-2 md:order-1 tl-box">
               <h3 class="font-headline-sm text-primary mb-2">Ребёнок счастлив! 🎉</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Дети уходят с самодельными сладостями, яркими эмоциями, подарками и желанием вернуться к нам снова.</p>
+              <p class="text-on-surface-variant text-sm md:text-base">Дети уходят с самодельными сладостями, яркими
+                эмоциями, подарками и желанием вернуться к нам снова.</p>
             </div>
-            <div class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
+            <div
+              class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
               5
             </div>
             <div class="flex-1 md:pl-12 order-3"></div>
@@ -546,35 +726,43 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
         <div class="space-y-2">
           <div class="text-primary font-display-lg text-4xl md:text-5xl">1000+</div>
-          <div class="font-label-bold text-on-surface-variant uppercase tracking-widest text-xs md:text-sm">Счастливых детей</div>
+          <div class="font-label-bold text-on-surface-variant uppercase tracking-widest text-xs md:text-sm">Счастливых
+            детей</div>
         </div>
         <div class="space-y-2">
           <div class="text-tertiary font-display-lg text-4xl md:text-5xl">500+</div>
-          <div class="font-label-bold text-on-surface-variant uppercase tracking-widest text-xs md:text-sm">Проведенных праздников</div>
+          <div class="font-label-bold text-on-surface-variant uppercase tracking-widest text-xs md:text-sm">Проведенных
+            праздников</div>
         </div>
         <div class="space-y-2">
           <div class="text-primary font-display-lg text-4xl md:text-5xl">50+</div>
-          <div class="font-label-bold text-on-surface-variant uppercase tracking-widest text-xs md:text-sm">Волшебных рецептов</div>
+          <div class="font-label-bold text-on-surface-variant uppercase tracking-widest text-xs md:text-sm">Волшебных
+            рецептов</div>
         </div>
         <div class="space-y-2">
           <div class="text-tertiary font-display-lg text-4xl md:text-5xl">10к+</div>
-          <div class="font-label-bold text-on-surface-variant uppercase tracking-widest text-xs md:text-sm">Использованных посыпок</div>
+          <div class="font-label-bold text-on-surface-variant uppercase tracking-widest text-xs md:text-sm">
+            Использованных посыпок</div>
         </div>
       </div>
     </section>
 
     <!-- Pricing Section (Birthday Packages) -->
-    <section id="pricing" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative">
+    <section id="pricing"
+      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative">
       <div class="absolute inset-0 sprinkle-bg opacity-10 pointer-events-none"></div>
       <div class="text-center mb-16 space-y-4">
-        <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Пакеты</span>
+        <span
+          class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Пакеты</span>
         <h2 class="font-headline-md text-display-lg text-primary">Выберите идеальный праздник</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Три готовых предложения для событий любого масштаба — от камерных праздников до грандиозных шоу.</p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Три готовых предложения для
+          событий любого масштаба — от камерных праздников до грандиозных шоу.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto z-10 relative">
-        
+
         <!-- Mini -->
-        <div class="price-card bg-white p-8 rounded-lg rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300">
+        <div
+          class="price-card bg-white p-8 rounded-lg rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300">
           <div class="space-y-4">
             <h3 class="font-headline-sm text-headline-sm text-primary">Мини</h3>
             <p class="text-on-surface-variant text-sm">Уютный праздник для небольшой компании</p>
@@ -583,20 +771,30 @@
               <span class="text-xs text-on-surface-variant italic block mt-1">Цена уточняется</span>
             </div>
             <ul class="space-y-3 pt-4 text-sm text-on-surface-variant">
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>До 8 детей</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Длительность 2 часа</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Один мастер-класс</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Мини-торт в подарок</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Фотозона</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Сладкие сувениры</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>До 8 детей</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Длительность 2 часа</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Один мастер-класс</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Мини-торт в подарок</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Фотозона</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Сладкие сувениры</li>
             </ul>
           </div>
-          <a href="#contacts" class="block text-center bg-secondary text-on-secondary py-3 rounded-full font-label-bold hover:bg-primary transition-colors">Записаться</a>
+          <a href="#contacts"
+            class="block text-center bg-secondary text-on-secondary py-3 rounded-full font-label-bold hover:bg-primary transition-colors">Записаться</a>
         </div>
 
         <!-- Standard (Featured) -->
-        <div class="price-card bg-inverse-surface text-inverse-on-surface p-8 rounded-lg border-2 border-primary-fixed rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300 relative overflow-hidden">
-          <div class="absolute top-4 right-4 bg-primary text-on-primary text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">Популярный</div>
+        <div
+          class="price-card bg-inverse-surface text-inverse-on-surface p-8 rounded-lg border-2 border-primary-fixed rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+          <div
+            class="absolute top-4 right-4 bg-primary text-on-primary text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">
+            Популярный</div>
           <div class="space-y-4">
             <h3 class="font-headline-sm text-headline-sm text-primary-fixed-dim">Стандарт</h3>
             <p class="text-on-surface-variant/80 text-sm">Идеальный баланс программы и эмоций</p>
@@ -605,20 +803,32 @@
               <span class="text-xs text-on-surface-variant/80 italic block mt-1">Цена уточняется</span>
             </div>
             <ul class="space-y-3 pt-4 text-sm text-inverse-on-surface/90">
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>До 15 детей</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Длительность 3 часа</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Два мастер-класса</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Именной торт</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Декор и оформление</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Аниматор</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Фотоотчёт</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>До 15 детей</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Длительность 3
+                часа</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Два мастер-класса
+              </li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Именной торт</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Декор и оформление
+              </li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Аниматор</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Фотоотчёт</li>
             </ul>
           </div>
-          <a href="#contacts" class="block text-center bg-primary text-on-primary py-3 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">Записаться</a>
+          <a href="#contacts"
+            class="block text-center bg-primary text-on-primary py-3 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">Записаться</a>
         </div>
 
         <!-- Premium -->
-        <div class="price-card bg-white p-8 rounded-lg rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300">
+        <div
+          class="price-card bg-white p-8 rounded-lg rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300">
           <div class="space-y-4">
             <h3 class="font-headline-sm text-headline-sm text-primary">Премиум</h3>
             <p class="text-on-surface-variant text-sm">Роскошный праздник под ключ</p>
@@ -627,17 +837,26 @@
               <span class="text-xs text-on-surface-variant italic block mt-1">Цена уточняется</span>
             </div>
             <ul class="space-y-3 pt-4 text-sm text-on-surface-variant">
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>До 25 детей</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Длительность 4 часа</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Три мастер-класса</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Торт-эксклюзив</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Полное оформление</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>2 аниматора</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Видео + фотосъёмка</li>
-              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">check_circle</span>Подарки всем детям</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>До 25 детей</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Длительность 4 часа</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Три мастер-класса</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Торт-эксклюзив</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Полное оформление</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>2 аниматора</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Видео + фотосъёмка</li>
+              <li class="flex items-center gap-2"><span
+                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Подарки всем детям</li>
             </ul>
           </div>
-          <a href="#contacts" class="block text-center bg-tertiary text-on-tertiary py-3 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-tertiary/20">Записаться</a>
+          <a href="#contacts"
+            class="block text-center bg-tertiary text-on-tertiary py-3 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-tertiary/20">Записаться</a>
         </div>
 
       </div>
@@ -650,18 +869,26 @@
         <div class="relative flex justify-center items-center">
           <div class="absolute w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl"></div>
           <div class="relative rounded-lg overflow-hidden rose-shadow max-w-[500px]">
-            <img class="cake-wrap w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1567636788276-40a47795ba4d?w=900&q=80&auto=format&fit=crop" alt="Роскошный авторский торт с цветами" />
-            <div class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-4 py-2 rounded-full font-label-bold text-xs uppercase shadow-md animate-float">
+            <img
+              class="cake-wrap w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+              src="https://images.unsplash.com/photo-1567636788276-40a47795ba4d?w=900&q=80&auto=format&fit=crop"
+              alt="Роскошный авторский торт с цветами" />
+            <div
+              class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-4 py-2 rounded-full font-label-bold text-xs uppercase shadow-md animate-float">
               Авторский Дизайн
             </div>
           </div>
         </div>
         <!-- Content -->
         <div class="space-y-6 text-left">
-          <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Торты на заказ</span>
+          <span
+            class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Торты
+            на заказ</span>
           <h2 class="font-headline-md text-display-lg text-primary leading-tight">Торт, о котором будут говорить</h2>
           <p class="text-body-lg text-on-surface-variant">
-            Каждый торт — это уникальное произведение кондитерского искусства, созданное специально для вас. Мы воплощаем любые идеи: от нежных пастельных шедевров до ярких тематических конструкций с любимыми героями вашего ребёнка.
+            Каждый торт — это уникальное произведение кондитерского искусства, созданное специально для вас. Мы
+            воплощаем любые идеи: от нежных пастельных шедевров до ярких тематических конструкций с любимыми героями
+            вашего ребёнка.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="flex items-center gap-3 bg-white p-4 rounded-lg rose-shadow">
@@ -681,7 +908,8 @@
               <span class="text-sm font-bold text-on-surface">Быстрое изготовление</span>
             </div>
           </div>
-          <a href="#contacts" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-label-bold hover:scale-105 transition-all shadow-lg shadow-primary/20">
+          <a href="#contacts"
+            class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-label-bold hover:scale-105 transition-all shadow-lg shadow-primary/20">
             Заказать торт
             <span class="material-symbols-outlined">arrow_forward</span>
           </a>
@@ -693,73 +921,98 @@
     <section id="faq" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
       <div class="max-w-4xl mx-auto space-y-12">
         <div class="text-center space-y-4">
-          <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">FAQ</span>
+          <span
+            class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">FAQ</span>
           <h2 class="font-headline-md text-display-lg text-primary">Часто задаваемые вопросы</h2>
-          <p class="font-body-lg text-body-lg text-on-surface-variant">Мы ответили на самые популярные вопросы родителей</p>
+          <p class="font-body-lg text-body-lg text-on-surface-variant">Мы ответили на самые популярные вопросы родителей
+          </p>
         </div>
-        
+
         <div class="space-y-4" role="list">
           <!-- Item 1 -->
           <div class="faq-item bg-white rounded-lg rose-shadow overflow-hidden" role="listitem">
-            <button class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none" aria-expanded="false">
+            <button
+              class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none"
+              aria-expanded="false">
               <span class="font-headline-sm text-base md:text-lg">С какого возраста можно участвовать?</span>
-              <span class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
+              <span
+                class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
             </button>
             <div class="faq-a max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
               <div class="px-8 pb-6 text-on-surface-variant text-sm md:text-base">
-                Наши мастер-классы подходят детям от 4 лет. Для малышей 4–6 лет разрабатываем адаптированные программы с упрощёнными заданиями и дополнительной помощью мастеров. Дети старше 7 лет могут участвовать во всех форматах занятий.
+                Наши мастер-классы подходят детям от 4 лет. Для малышей 4–6 лет разрабатываем адаптированные программы с
+                упрощёнными заданиями и дополнительной помощью мастеров. Дети старше 7 лет могут участвовать во всех
+                форматах занятий.
               </div>
             </div>
           </div>
 
           <!-- Item 2 -->
           <div class="faq-item bg-white rounded-lg rose-shadow overflow-hidden" role="listitem">
-            <button class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none" aria-expanded="false">
+            <button
+              class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none"
+              aria-expanded="false">
               <span class="font-headline-sm text-base md:text-lg">Сколько длится мастер-класс?</span>
-              <span class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
+              <span
+                class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
             </button>
             <div class="faq-a max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
               <div class="px-8 pb-6 text-on-surface-variant text-sm md:text-base">
-                Стандартный мастер-класс длится от 1,5 до 2 часов в зависимости от программы и возраста детей. Праздники с несколькими активностями занимают 3–4 часа. Точную продолжительность согласовываем индивидуально при бронировании.
+                Стандартный мастер-класс длится от 1,5 до 2 часов в зависимости от программы и возраста детей. Праздники
+                с несколькими активностями занимают 3–4 часа. Точную продолжительность согласовываем индивидуально при
+                бронировании.
               </div>
             </div>
           </div>
 
           <!-- Item 3 -->
           <div class="faq-item bg-white rounded-lg rose-shadow overflow-hidden" role="listitem">
-            <button class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none" aria-expanded="false">
+            <button
+              class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none"
+              aria-expanded="false">
               <span class="font-headline-sm text-base md:text-lg">Можно ли провести мероприятие на выезде?</span>
-              <span class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
+              <span
+                class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
             </button>
             <div class="faq-a max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
               <div class="px-8 pb-6 text-on-surface-variant text-sm md:text-base">
-                Да, с удовольствием приедем к вам! Организуем выездные мастер-классы в школах, детских садах, загородных домах и офисах. Всё необходимое оборудование и ингредиенты привозим с собой.
+                Да, с удовольствием приедем к вам! Организуем выездные мастер-классы в школах, детских садах, загородных
+                домах и офисах. Всё необходимое оборудование и ингредиенты привозим с собой.
               </div>
             </div>
           </div>
 
           <!-- Item 4 -->
           <div class="faq-item bg-white rounded-lg rose-shadow overflow-hidden" role="listitem">
-            <button class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none" aria-expanded="false">
+            <button
+              class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none"
+              aria-expanded="false">
               <span class="font-headline-sm text-base md:text-lg">Сколько детей может участвовать?</span>
-              <span class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
+              <span
+                class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
             </button>
             <div class="faq-a max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
               <div class="px-8 pb-6 text-on-surface-variant text-sm md:text-base">
-                В зависимости от пакета: от 8 до 25 детей. Для школьных и корпоративных мероприятий возможны группы до 40 человек при соответствующей организации. Минимальная группа — 5 детей.
+                В зависимости от пакета: от 8 до 25 детей. Для школьных и корпоративных мероприятий возможны группы до
+                40 человек при соответствующей организации. Минимальная группа — 5 детей.
               </div>
             </div>
           </div>
 
           <!-- Item 5 -->
           <div class="faq-item bg-white rounded-lg rose-shadow overflow-hidden" role="listitem">
-            <button class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none" aria-expanded="false">
+            <button
+              class="faq-q w-full text-left px-8 py-6 flex justify-between items-center gap-4 text-primary font-bold focus:outline-none"
+              aria-expanded="false">
               <span class="font-headline-sm text-base md:text-lg">Как заказать торт?</span>
-              <span class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
+              <span
+                class="faq-ico w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold transition-transform duration-300">+</span>
             </button>
             <div class="faq-a max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
               <div class="px-8 pb-6 text-on-surface-variant text-sm md:text-base">
-                Оставьте заявку через форму на сайте или напишите нам в WhatsApp. Менеджер свяжется с вами, уточнит детали (дата, вкус, дизайн, размер) и рассчитает стоимость. Рекомендуем заказывать за 7–14 дней до события.
+                Оставьте заявку через форму на сайте или напишите нам в WhatsApp. Менеджер свяжется с вами, уточнит
+                детали (дата, вкус, дизайн, размер) и рассчитает стоимость. Рекомендуем заказывать за 7–14 дней до
+                события.
               </div>
             </div>
           </div>
@@ -771,16 +1024,19 @@
     <!-- Testimonials Section -->
     <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
       <div class="text-center mb-16 space-y-4">
-        <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Отзывы</span>
+        <span
+          class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Отзывы</span>
         <h2 class="font-headline-md text-display-lg text-primary">Что говорят родители</h2>
-        <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Отзывы счастливых семей, которые уже отпраздновали события с нами</p>
+        <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Отзывы счастливых семей, которые уже
+          отпраздновали события с нами</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
+
         <!-- Testimonial 1 -->
         <div class="bg-white p-10 rounded-xl rose-shadow relative flex flex-col items-center mt-12 md:mt-0">
           <div class="absolute -top-12 w-24 h-24 rounded-full border-4 border-white overflow-hidden rose-shadow">
-            <img class="w-full h-full object-cover" alt="Елена М." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3NIJkD3ZW_tMsmKMJxqGbWhtjg6wBk8VS65hTfi3xugrxqwq3CeYHZxwJs0LlOahYSdltZYpE1XP0OPR_r50VvDs5V4i9zOh3O14l8mhHMUArxYh7Cwvwy0i_Ne6lLZEQXff9iKHh187eH3BNPPsHr4P4HPax6CoRtqEoICCbT_xVdKTH7RRS7EE_JSjyY87fkREbFwd43OzfQxaIf3sJrlo41US87g09QhksfHZlVU4wscjD-mQ_rlwSK0rPvbAgdrJMPMzbwis"/>
+            <img class="w-full h-full object-cover" alt="Елена М."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3NIJkD3ZW_tMsmKMJxqGbWhtjg6wBk8VS65hTfi3xugrxqwq3CeYHZxwJs0LlOahYSdltZYpE1XP0OPR_r50VvDs5V4i9zOh3O14l8mhHMUArxYh7Cwvwy0i_Ne6lLZEQXff9iKHh187eH3BNPPsHr4P4HPax6CoRtqEoICCbT_xVdKTH7RRS7EE_JSjyY87fkREbFwd43OzfQxaIf3sJrlo41US87g09QhksfHZlVU4wscjD-mQ_rlwSK0rPvbAgdrJMPMzbwis" />
           </div>
           <div class="mt-12 text-center space-y-4">
             <div class="flex justify-center text-tertiary">
@@ -791,7 +1047,8 @@
               <span class="material-symbols-outlined fill-current">star</span>
             </div>
             <p class="italic text-on-surface-variant text-sm md:text-base leading-relaxed">
-              "Мастер-класс стал главным событием лета для Саши. Она до сих пор вспоминает свой волшебный замок из капкейков и просится прийти ещё раз!"
+              "Мастер-класс стал главным событием лета для Саши. Она до сих пор вспоминает свой волшебный замок из
+              капкейков и просится прийти ещё раз!"
             </p>
             <h4 class="font-label-bold text-primary font-bold text-sm">— Елена М.</h4>
           </div>
@@ -800,7 +1057,8 @@
         <!-- Testimonial 2 -->
         <div class="bg-white p-10 rounded-xl rose-shadow relative flex flex-col items-center mt-12 md:mt-0">
           <div class="absolute -top-12 w-24 h-24 rounded-full border-4 border-white overflow-hidden rose-shadow">
-            <img class="w-full h-full object-cover" alt="Давид К." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeJj-7eEdUlzRSPklwQuOvfyULYBHY2XNeoU5XHJ38LvwmnhR3z4OK6whlJPb_JaWnfrbTt1WO9m4YJEzzvN46kIqXhZ54bJsTJiklcCNCg7yPKwjIX4QkSJQ1v3DT3_SyWywGran_ehKmgEoR33jxGwew2CoQ2Qn1LNLgZvM-pToppHllTlypYYMndmZZAIxNh__p3pkZX0wb59FRf-5xAV64z-ho3p51FZG51MG39IMNlpWQiOx0ti3OPUeSsAhh-r5Rz8ArNFA"/>
+            <img class="w-full h-full object-cover" alt="Давид К."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeJj-7eEdUlzRSPklwQuOvfyULYBHY2XNeoU5XHJ38LvwmnhR3z4OK6whlJPb_JaWnfrbTt1WO9m4YJEzzvN46kIqXhZ54bJsTJiklcCNCg7yPKwjIX4QkSJQ1v3DT3_SyWywGran_ehKmgEoR33jxGwew2CoQ2Qn1LNLgZvM-pToppHllTlypYYMndmZZAIxNh__p3pkZX0wb59FRf-5xAV64z-ho3p51FZG51MG39IMNlpWQiOx0ti3OPUeSsAhh-r5Rz8ArNFA" />
           </div>
           <div class="mt-12 text-center space-y-4">
             <div class="flex justify-center text-tertiary">
@@ -811,7 +1069,8 @@
               <span class="material-symbols-outlined fill-current">star</span>
             </div>
             <p class="italic text-on-surface-variant text-sm md:text-base leading-relaxed">
-              "Невероятное внимание к деталям. Торт был не просто красивым — это был самый вкусный шоколадный торт, который мы пробовали! Дети съели всё до крошки."
+              "Невероятное внимание к деталям. Торт был не просто красивым — это был самый вкусный шоколадный торт,
+              который мы пробовали! Дети съели всё до крошки."
             </p>
             <h4 class="font-label-bold text-primary font-bold text-sm">— Давид К.</h4>
           </div>
@@ -820,7 +1079,8 @@
         <!-- Testimonial 3 -->
         <div class="bg-white p-10 rounded-xl rose-shadow relative flex flex-col items-center mt-12 md:mt-0">
           <div class="absolute -top-12 w-24 h-24 rounded-full border-4 border-white overflow-hidden rose-shadow">
-            <img class="w-full h-full object-cover" alt="Мария Л." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD72FtkK0-_45DOjYoNEVCXKCsdMqCCUl2zIZadh0VJ7Kf8xD_hlpdKUSm4i68xMMXTLS-e0Rldf9CdhhGdTT-g3qy2OQI2HfQ5qaHW7Tm0ggsGkZLhvGUGabfTGqdL_NEdrUsSUGqkAnYJFgBhP3hO_Tx98SdLtzT_F36OKQvC9XXtqsEiMI6baEeT_gaQHA1r9k87BJ1wlOOJbeZoRfCofYHGezwtOF1czcKW_iedN--OPKPDx5uzlaYkkIl4qidC0CXWf70UD-8"/>
+            <img class="w-full h-full object-cover" alt="Мария Л."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD72FtkK0-_45DOjYoNEVCXKCsdMqCCUl2zIZadh0VJ7Kf8xD_hlpdKUSm4i68xMMXTLS-e0Rldf9CdhhGdTT-g3qy2OQI2HfQ5qaHW7Tm0ggsGkZLhvGUGabfTGqdL_NEdrUsSUGqkAnYJFgBhP3hO_Tx98SdLtzT_F36OKQvC9XXtqsEiMI6baEeT_gaQHA1r9k87BJ1wlOOJbeZoRfCofYHGezwtOF1czcKW_iedN--OPKPDx5uzlaYkkIl4qidC0CXWf70UD-8" />
           </div>
           <div class="mt-12 text-center space-y-4">
             <div class="flex justify-center text-tertiary">
@@ -831,7 +1091,8 @@
               <span class="material-symbols-outlined fill-current">star</span>
             </div>
             <p class="italic text-on-surface-variant text-sm md:text-base leading-relaxed">
-              "Выездная команда превратила наш задний двор в королевскую кондитерскую. Всё привезли с собой, организовали весело и без каких-либо забот для родителей."
+              "Выездная команда превратила наш задний двор в королевскую кондитерскую. Всё привезли с собой,
+              организовали весело и без каких-либо забот для родителей."
             </p>
             <h4 class="font-label-bold text-primary font-bold text-sm">— Мария Л.</h4>
           </div>
@@ -841,19 +1102,40 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contacts" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container relative overflow-hidden">
+    <section id="contacts"
+      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container relative overflow-hidden">
       <div class="absolute inset-0 sprinkle-bg opacity-20 pointer-events-none"></div>
       <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
-        
+
         <div class="space-y-8">
-          <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Контакты</span>
-          <h2 class="font-display-lg text-display-mobile md:text-display-lg text-primary leading-tight">Давайте создадим сладкое чудо вместе</h2>
+          <span
+            class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Контакты</span>
+          <h2 class="font-display-lg text-display-mobile md:text-display-lg text-primary leading-tight">Давайте создадим
+            сладкое чудо вместе</h2>
           <p class="text-body-lg text-on-surface-variant max-w-lg">
-            Готовы заказать праздник, торт или мастер-класс? Свяжитесь с нами удобным способом или просто заполните форму справа!
+            Готовы заказать праздник, торт или мастер-класс? Свяжитесь с нами удобным способом или просто заполните
+            форму справа!
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group" href="#" data-contact="whatsapp">
+
+            <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
+              href="https://www.facebook.com/267787436413637?ref=NONE_xav_ig_profile_page_web" target="_blank"
+              rel="noopener">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center"
+                style="background: #e7f0ff; color: #1877f2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-label-bold text-on-surface-variant text-xs font-bold">Facebook</p>
+                <p class="text-primary font-bold text-sm">Мы на Facebook</p>
+              </div>
+            </a>
+
+            <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
+              href="#" data-contact="whatsapp">
               <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
                 <span class="material-symbols-outlined">chat</span>
               </div>
@@ -862,8 +1144,9 @@
                 <p class="text-primary font-bold text-sm">Написать</p>
               </div>
             </a>
-            
-            <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group" href="#" data-contact="instagram">
+
+            <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
+              href="#" data-contact="instagram">
               <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center">
                 <span class="material-symbols-outlined">camera</span>
               </div>
@@ -873,10 +1156,14 @@
               </div>
             </a>
 
-            <a id="tgContactCard" class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group" href="#" target="_blank" rel="noopener">
+            <a id="tgContactCard"
+              class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
+              href="#" target="_blank" rel="noopener">
               <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:#e8f4fd">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path d="M21.8 2.6L1.5 10.3c-1.3.5-1.3 1.3-.2 1.7l5.1 1.6 1.9 5.8c.3.8.4.8 1.2.1l2.9-2.8 5.5 4.1c1 .6 1.7.3 2-1L22.9 4c.4-1.7-.6-2.5-1.1-1.4z" fill="#229ED9"/>
+                  <path
+                    d="M21.8 2.6L1.5 10.3c-1.3.5-1.3 1.3-.2 1.7l5.1 1.6 1.9 5.8c.3.8.4.8 1.2.1l2.9-2.8 5.5 4.1c1 .6 1.7.3 2-1L22.9 4c.4-1.7-.6-2.5-1.1-1.4z"
+                    fill="#229ED9" />
                 </svg>
               </div>
               <div>
@@ -885,7 +1172,8 @@
               </div>
             </a>
 
-            <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group" href="#" data-contact="phone">
+            <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
+              href="#" data-contact="phone">
               <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center">
                 <span class="material-symbols-outlined">phone</span>
               </div>
@@ -895,16 +1183,17 @@
               </div>
             </a>
 
-            <div class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow group">
+            <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
+              href="#" data-contact="address" target="_blank" rel="noopener">
               <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center">
                 <span class="material-symbols-outlined">location_on</span>
               </div>
               <div>
                 <p class="font-label-bold text-on-surface-variant text-xs font-bold">Адрес</p>
-                <p class="text-primary font-bold text-sm" data-contact="address">Укажите адрес</p>
+                <p class="text-primary font-bold text-sm" data-contact="address-text">Укажите адрес</p>
               </div>
-            </div>
-            
+            </a>
+
           </div>
         </div>
 
@@ -913,16 +1202,21 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
                 <label class="font-label-bold text-on-surface-variant text-xs font-bold pl-4">Ваше имя</label>
-                <input id="cfName" class="w-full bg-surface px-6 py-4 rounded-full border-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40" placeholder="Ваше имя" type="text" required autocomplete="name" />
+                <input id="cfName"
+                  class="w-full bg-surface px-6 py-4 rounded-full border-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40"
+                  placeholder="Ваше имя" type="text" required autocomplete="name" />
               </div>
               <div class="space-y-2">
                 <label class="font-label-bold text-on-surface-variant text-xs font-bold pl-4">Номер телефона</label>
-                <input id="cfPhone" class="w-full bg-surface px-6 py-4 rounded-full border-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40" placeholder="+7 (999) 000-00-00" type="tel" required autocomplete="tel" inputmode="tel" />
+                <input id="cfPhone"
+                  class="w-full bg-surface px-6 py-4 rounded-full border-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40"
+                  placeholder="+7 (999) 000-00-00" type="tel" required autocomplete="tel" inputmode="tel" />
               </div>
             </div>
             <div class="space-y-2">
               <label class="font-label-bold text-on-surface-variant text-xs font-bold pl-4">Выберите услугу</label>
-              <select id="cfService" class="w-full bg-surface px-6 py-4 rounded-full border-none focus:ring-2 focus:ring-primary text-on-surface-variant">
+              <select id="cfService"
+                class="w-full bg-surface px-6 py-4 rounded-full border-none focus:ring-2 focus:ring-primary text-on-surface-variant">
                 <option value="">Выберите услугу</option>
                 <option value="birthday">День рождения</option>
                 <option value="masterclass">Мастер-класс</option>
@@ -932,19 +1226,24 @@
             </div>
             <div class="space-y-2">
               <label class="font-label-bold text-on-surface-variant text-xs font-bold pl-4">Опишите ваше событие</label>
-              <textarea id="cfMsg" class="w-full bg-surface px-6 py-4 rounded-[32px] border-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40" placeholder="Количество гостей, дата праздника, тематика..." rows="4" style="resize:none"></textarea>
+              <textarea id="cfMsg"
+                class="w-full bg-surface px-6 py-4 rounded-[32px] border-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40"
+                placeholder="Количество гостей, дата праздника, тематика..." rows="4" style="resize:none"></textarea>
             </div>
 
             <!-- Messenger Selector -->
             <div class="space-y-3">
-              <label class="font-label-bold text-on-surface-variant text-xs font-bold pl-4">Удобный мессенджер для связи</label>
+              <label class="font-label-bold text-on-surface-variant text-xs font-bold pl-4">Удобный мессенджер для
+                связи</label>
               <div class="flex gap-3">
                 <button type="button" id="pickWA"
                   class="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-full border-2 border-green-400 bg-green-50 text-green-700 font-bold text-sm transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] ring-0 cf-messenger-btn selected-messenger"
                   data-messenger="whatsapp">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="12" fill="#25D366"/>
-                    <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-1-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3z" fill="white"/>
+                    <circle cx="12" cy="12" r="12" fill="#25D366" />
+                    <path
+                      d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-1-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3z"
+                      fill="white" />
                   </svg>
                   WhatsApp
                 </button>
@@ -952,18 +1251,23 @@
                   class="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-full border-2 border-sky-300 bg-white text-sky-600 font-bold text-sm transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] ring-0 cf-messenger-btn"
                   data-messenger="telegram">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="12" fill="#229ED9"/>
-                    <path d="M17.8 7.1l-2.9 13.6c-.2.9-.8 1.1-1.6.7l-4.1-3-2 1.9c-.2.2-.4.3-.8.3l.3-4.2 7.4-6.7c.3-.3-.1-.4-.5-.2L5.2 14.8l-4-1.3c-.9-.3-.9-.9.2-1.3l15.6-6c.8-.3 1.5.2 1.2 1.3l-.4-.1z" fill="white"/>
+                    <circle cx="12" cy="12" r="12" fill="#229ED9" />
+                    <path
+                      d="M17.8 7.1l-2.9 13.6c-.2.9-.8 1.1-1.6.7l-4.1-3-2 1.9c-.2.2-.4.3-.8.3l.3-4.2 7.4-6.7c.3-.3-.1-.4-.5-.2L5.2 14.8l-4-1.3c-.9-.3-.9-.9.2-1.3l15.6-6c.8-.3 1.5.2 1.2 1.3l-.4-.1z"
+                      fill="white" />
                   </svg>
                   Telegram
                 </button>
               </div>
             </div>
 
-            <button type="submit" id="cfSubmitBtn" class="w-full bg-primary text-on-primary py-5 rounded-full font-label-bold text-headline-sm shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+            <button type="submit" id="cfSubmitBtn"
+              class="w-full bg-primary text-on-primary py-5 rounded-full font-label-bold text-headline-sm shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
               <svg id="cfSubmitIcon" width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="12" fill="rgba(255,255,255,0.25)"/>
-                <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-1-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3z" fill="white"/>
+                <circle cx="12" cy="12" r="12" fill="rgba(255,255,255,0.25)" />
+                <path
+                  d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-1-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3z"
+                  fill="white" />
               </svg>
               <span id="cfSubmitLabel">Написать в WhatsApp</span>
             </button>
@@ -975,47 +1279,63 @@
           <div id="cfSuccess" class="hidden text-center py-12 space-y-4">
             <div class="text-6xl animate-bounce">🎉</div>
             <h4 class="font-headline-sm text-2xl text-primary font-bold">Заявка отправлена!</h4>
-            <p class="text-on-surface-variant text-sm max-w-sm mx-auto">Спасибо за обращение! Мы свяжемся с вами в течение одного часа.</p>
+            <p class="text-on-surface-variant text-sm max-w-sm mx-auto">Спасибо за обращение! Мы свяжемся с вами в
+              течение одного часа.</p>
           </div>
         </div>
-        
+
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-surface-container-highest w-full rounded-t-xl grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16" role="contentinfo">
+  <footer
+    class="bg-surface-container-highest w-full rounded-t-xl grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16"
+    role="contentinfo">
     <div class="space-y-6">
       <div class="flex items-center gap-2">
-        <img alt="Sweetland Kids Bakery Castle Logo" class="h-10 w-auto object-contain" src="castle_logo.jpg"/>
+        <img alt="Sweetland Kids Bakery Castle Logo" class="h-10 w-auto object-contain" src="castle_logo.jpg" />
         <div class="flex flex-col">
           <span class="font-headline-sm text-lg font-bold text-primary leading-tight">Sweetland</span>
-          <span class="text-[8px] font-bold tracking-[0.1em] text-on-surface-variant/70 uppercase leading-none mt-[-1px]">Kids Bakery</span>
+          <span
+            class="text-[8px] font-bold tracking-[0.1em] text-on-surface-variant/70 uppercase leading-none mt-[-1px]">Kids
+            Bakery</span>
         </div>
       </div>
       <p class="text-on-surface-variant text-sm leading-relaxed">
         Создаём незабываемые детские праздники с любовью, кондитерским мастерством и по-настоящему вкусными угощениями.
       </p>
       <div class="flex gap-4">
-        <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all" href="#" data-contact="instagram" aria-label="Instagram">
+        <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all"
+          href="#" data-contact="instagram" aria-label="Instagram">
           <span class="material-symbols-outlined text-[20px]">camera</span>
         </a>
-        <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all" href="#" data-contact="whatsapp" aria-label="WhatsApp">
+        <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all"
+          href="#" data-contact="whatsapp" aria-label="WhatsApp">
           <span class="material-symbols-outlined text-[20px]">chat</span>
+        </a>
+        <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all"
+          href="https://www.facebook.com/267787436413637?ref=NONE_xav_ig_profile_page_web" target="_blank"
+          rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+            <path
+              d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
+          </svg>
         </a>
       </div>
     </div>
-    
+
     <div class="space-y-6">
       <h4 class="font-label-bold text-primary uppercase tracking-widest text-xs font-bold">Услуги</h4>
       <nav class="flex flex-col gap-4 text-sm">
         <a class="text-on-surface-variant hover:text-primary transition-colors" href="#services">Дни рождения</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors" href="#services">Мастер-классы</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#services">Выездные мастер-классы</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#services">Выездные
+          мастер-классы</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors" href="#cakes">Торты на заказ</a>
       </nav>
     </div>
-    
+
     <div class="space-y-6">
       <h4 class="font-label-bold text-primary uppercase tracking-widest text-xs font-bold">Информация</h4>
       <nav class="flex flex-col gap-4 text-sm">
@@ -1025,31 +1345,42 @@
         <a class="text-on-surface-variant hover:text-primary transition-colors" href="#faq">FAQ</a>
       </nav>
     </div>
-    
+
     <div class="space-y-6">
       <h4 class="font-label-bold text-primary uppercase tracking-widest text-xs font-bold">Контакты</h4>
       <div class="text-sm text-on-surface-variant space-y-3">
-        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">phone</span><a href="#contacts" data-contact="phone">Укажите телефон</a></p>
-        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">chat</span><a href="#contacts" data-contact="whatsapp">WhatsApp</a></p>
-        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">location_on</span><span data-contact="address">Укажите адрес</span></p>
+        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">phone</span><a
+            href="#contacts" data-contact="phone">Укажите телефон</a></p>
+        <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">chat</span><a
+            href="#contacts" data-contact="whatsapp">WhatsApp</a></p>
+        <p class="flex items-center gap-2"><span
+            class="material-symbols-outlined text-primary text-base">location_on</span><a href="#"
+            data-contact="address" target="_blank" rel="noopener" data-contact="address-text">Укажите адрес</a></p>
         <div class="pt-2">
           <span class="text-tertiary font-bold block">Работаем ежедневно: 9:00 - 19:00</span>
         </div>
       </div>
     </div>
-    
-    <div class="md:col-span-4 border-t border-primary/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+
+    <div
+      class="md:col-span-4 border-t border-primary/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
       <p class="text-on-surface-variant/70">© 2026 Sweetland Kids Bakery. Все права защищены. Создано с волшебством.</p>
       <div class="flex gap-6">
-        <img alt="Visa" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq8V5avuSEc4RPrJfMCNpqoJIHecDqeknYwjU-QKivM15zARO8LcFlpEaJs_C87FEnIwxW3wZCMQyU2jX9LdqsBnlOFsmXuJ5LdcqMXmVz4sUr1qruyt9i8dKVloNx0_ca_k3DHe019L4w5n68diMB7pGT82Zo_HBOCenM5tcM_Ceif_xClrR-pWhDEBYRDD3ykDwvxbG6bCYhvPtoqrEon_ztcIuudCkpvb3AqabOw6MjZn3dP57PwWsLtGDyU7LBjP44IxIXDB0"/>
-        <img alt="Mastercard" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB20csQ8j0yQc3qw8X3SChzBWG8tWmWVI3FetSgyE8trao9V5J6ERmU5yG0UJ_r-eBuVMnMBsG3C4JM8qiV7CtNeo1xLroD_AT9b7FsdHDtB6yE7eXxJihexsgGqlST2GNsN4L0OOvfmmrlMkpMCTHf5e-YUFB6mEc7ReEKqspUcSxAIANbTKa3zL9gvjYx9UXaY1EA0OgPVH-r3srLKaqsSZ0LyX3d9PxB4Bz7iUfih-SEfhb1wR7QnTPb-GlLcHwS-qWT22FVsI"/>
-        <img alt="Paypal" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG-3UTy3jXsWY5yXER91xgVOiy-i0ITf-54IoYMpr9F9IxBBi67KHOp7O_oy1CCU-J8AMn2fKhpOkx4tg_yLGBiB1NvvB0pKunvmr3sX7Ft0Y7LIdZSra8hkPbgyXxXUAKVVRaf4rZHnFZk5q9KWDAXMTZV8YiquxrOUWo4Psac-SKRK1z3KWY3o3Llf6p8x8JW_hrgiO6hLDnaUpHi2OYpcc6eyFw8R6xTuWOxSbJ7KKkz9Q74opbtPhGZFIG81LJbC5bLVjrorg"/>
+        <img alt="Visa" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq8V5avuSEc4RPrJfMCNpqoJIHecDqeknYwjU-QKivM15zARO8LcFlpEaJs_C87FEnIwxW3wZCMQyU2jX9LdqsBnlOFsmXuJ5LdcqMXmVz4sUr1qruyt9i8dKVloNx0_ca_k3DHe019L4w5n68diMB7pGT82Zo_HBOCenM5tcM_Ceif_xClrR-pWhDEBYRDD3ykDwvxbG6bCYhvPtoqrEon_ztcIuudCkpvb3AqabOw6MjZn3dP57PwWsLtGDyU7LBjP44IxIXDB0" />
+        <img alt="Mastercard" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB20csQ8j0yQc3qw8X3SChzBWG8tWmWVI3FetSgyE8trao9V5J6ERmU5yG0UJ_r-eBuVMnMBsG3C4JM8qiV7CtNeo1xLroD_AT9b7FsdHDtB6yE7eXxJihexsgGqlST2GNsN4L0OOvfmmrlMkpMCTHf5e-YUFB6mEc7ReEKqspUcSxAIANbTKa3zL9gvjYx9UXaY1EA0OgPVH-r3srLKaqsSZ0LyX3d9PxB4Bz7iUfih-SEfhb1wR7QnTPb-GlLcHwS-qWT22FVsI" />
+        <img alt="Paypal" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG-3UTy3jXsWY5yXER91xgVOiy-i0ITf-54IoYMpr9F9IxBBi67KHOp7O_oy1CCU-J8AMn2fKhpOkx4tg_yLGBiB1NvvB0pKunvmr3sX7Ft0Y7LIdZSra8hkPbgyXxXUAKVVRaf4rZHnFZk5q9KWDAXMTZV8YiquxrOUWo4Psac-SKRK1z3KWY3o3Llf6p8x8JW_hrgiO6hLDnaUpHi2OYpcc6eyFw8R6xTuWOxSbJ7KKkz9Q74opbtPhGZFIG81LJbC5bLVjrorg" />
       </div>
     </div>
   </footer>
 
   <!-- Floating CTA Button -->
-  <button id="floatBtn" class="fixed bottom-8 right-8 z-[40] bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-bold text-label-bold shadow-xl shadow-primary/30 transition-all duration-300 translate-y-24 opacity-0 flex items-center gap-2 hover:scale-105 active:scale-95 hover:shadow-2xl" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})" aria-label="Записаться на праздник">
+  <button id="floatBtn"
+    class="fixed bottom-8 right-8 z-[40] bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-bold text-label-bold shadow-xl shadow-primary/30 transition-all duration-300 translate-y-24 opacity-0 flex items-center gap-2 hover:scale-105 active:scale-95 hover:shadow-2xl"
+    onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})"
+    aria-label="Записаться на праздник">
     🎂 Записаться
   </button>
 
@@ -1059,26 +1390,61 @@
   <!-- GSAP core + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  
+
   <script>
     // Configuration for Contacts
     const siteContacts = {
-      phone: '',
-      whatsapp: '',
-      telegram: '',       // @username без @ или номер телефона
-      instagram: '',
-      address: ''
+      phone: '+374 77 907270',
+      whatsapp: '+374 77 907270',
+      telegram: '+37477907270',
+      instagram: 'https://www.instagram.com/sweetlandkidsbakery/',
+      address: 'Garegin Njdeh 25/8, Yerevan, Armenia',
+      addressLink: 'https://yandex.com/maps/-/CPdNF-l9'
     };
 
-    function normalizePhone (value) {
+    // ================================================================
+    // TELEGRAM BOT — приём заявок
+    // ================================================================
+    // Чтобы получать заявки в Telegram:
+    // 1. Создайте бота через @BotFather → скопируйте токен
+    // 2. Получите chat_id: напишите боту, затем откройте
+    //    https://api.telegram.org/bot<TOKEN>/getUpdates
+    // 3. Вставьте токен и chat_id ниже
+    const TELEGRAM_BOT = {
+      enabled: true,
+      token: '',     // ← Вставьте токен бота сюда, например: '123456:ABC-DEF...'
+      chatId: ''     // ← Вставьте chat_id сюда, например: '-1001234567890'
+    };
+
+    async function sendToTelegramBot(text) {
+      if (!TELEGRAM_BOT.enabled || !TELEGRAM_BOT.token || !TELEGRAM_BOT.chatId) return false;
+      try {
+        const resp = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT.token}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_BOT.chatId,
+            text: text,
+            parse_mode: 'HTML'
+          })
+        });
+        return resp.ok;
+      } catch (e) {
+        console.warn('Telegram Bot send failed:', e);
+        return false;
+      }
+    }
+
+    function normalizePhone(value) {
       return value.replace(/[^\d+]/g, '');
     }
 
-    function applyContactConfig () {
+    function applyContactConfig() {
       const phone = siteContacts.phone.trim();
       const whatsapp = siteContacts.whatsapp.trim();
       const instagram = siteContacts.instagram.trim();
       const address = siteContacts.address.trim();
+      const addressLink = siteContacts.addressLink.trim();
 
       document.querySelectorAll('[data-contact="phone"]').forEach(el => {
         if (el.tagName === 'A') {
@@ -1093,7 +1459,7 @@
 
       document.querySelectorAll('[data-contact="whatsapp"]').forEach(el => {
         if (el.tagName === 'A') {
-          el.href = whatsapp ? `https://wa.me/${normalizePhone(whatsapp).replace('+','')}` : '#contacts';
+          el.href = whatsapp ? `https://wa.me/${normalizePhone(whatsapp).replace('+', '')}` : '#contacts';
           if (el.children.length === 0) {
             el.textContent = whatsapp ? 'WhatsApp' : 'WhatsApp';
           }
@@ -1114,6 +1480,12 @@
       });
 
       document.querySelectorAll('[data-contact="address"]').forEach(el => {
+        if (el.tagName === 'A') {
+          el.href = addressLink || '#contacts';
+        }
+      });
+
+      document.querySelectorAll('[data-contact="address-text"]').forEach(el => {
         el.textContent = address || 'Укажите адрес';
       });
     }
@@ -1209,7 +1581,7 @@
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      
+
       // Header py-4 to py-3 shrink effect
       if (y > 80) {
         headerEl.classList.add('py-2.5', 'bg-surface/95', 'shadow-lg');
@@ -1236,15 +1608,15 @@
     const mobileMenu = document.getElementById('mobileMenu');
     const menuClose = document.getElementById('menuClose');
 
-    function openMenu () {
-      mobileMenu.classList.remove('translate-x-full');
+    function openMenu() {
+      mobileMenu.classList.remove('translate-x-full', 'pointer-events-none', 'invisible');
       burger.classList.add('open');
       burger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeMenu () {
-      mobileMenu.classList.add('translate-x-full');
+    function closeMenu() {
+      mobileMenu.classList.add('translate-x-full', 'pointer-events-none', 'invisible');
       burger.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
@@ -1313,7 +1685,7 @@
       item.style.cursor = 'zoom-in';
     });
 
-    function closeLightbox () {
+    function closeLightbox() {
       lightbox.classList.add('hidden');
       lightbox.classList.remove('flex');
       document.body.style.overflow = '';
@@ -1335,7 +1707,7 @@
     ================================================================ */
     const contactForm = document.getElementById('cfFields');
 
-    function cfSubmit (event) {
+    function cfSubmit(event) {
       event.preventDefault();
 
       const name = document.getElementById('cfName').value.trim();
@@ -1357,22 +1729,32 @@
         message ? `💬 Пожелания: ${message}` : ''
       ].filter(Boolean).join('\n');
 
+      // Отправка заявки в Telegram-бот (если настроен)
+      const botText = [
+        '🎂 <b>Новая заявка — Sweetland Kids Bakery</b>',
+        `👤 Имя: ${name}`,
+        `📞 Телефон: ${phone}`,
+        `🎉 Услуга: ${serviceText}`,
+        message ? `💬 Пожелания: ${message}` : '',
+        `📲 Мессенджер: ${document.querySelector('.cf-messenger-btn.selected-messenger')?.dataset.messenger === 'telegram' ? 'Telegram' : 'WhatsApp'}`,
+        `🕐 ${new Date().toLocaleString('ru-RU')}`
+      ].filter(Boolean).join('\n');
+      sendToTelegramBot(botText);
+
       const chosenMessenger = document.querySelector('.cf-messenger-btn.selected-messenger');
       const messengerType = chosenMessenger ? chosenMessenger.dataset.messenger : 'whatsapp';
 
       if (messengerType === 'telegram' && siteContacts.telegram.trim()) {
-        // Telegram: если username — открываем чат, если номер — через wa
-        const tg = siteContacts.telegram.trim().replace('@','');
+        const tg = siteContacts.telegram.trim().replace('@', '');
         const isUsername = /^[a-zA-Z0-9_]{4,}$/.test(tg);
         if (isUsername) {
           window.open(`https://t.me/${tg}?text=${encodeURIComponent(requestText)}`, '_blank', 'noopener');
         } else {
-          // номер телефона для Telegram
-          const tgPhone = normalizePhone(tg).replace('+','');
+          const tgPhone = normalizePhone(tg).replace('+', '');
           window.open(`https://t.me/+${tgPhone}`, '_blank', 'noopener');
         }
       } else if (siteContacts.whatsapp.trim()) {
-        const wa = normalizePhone(siteContacts.whatsapp).replace('+','');
+        const wa = normalizePhone(siteContacts.whatsapp).replace('+', '');
         window.open(`https://wa.me/${wa}?text=${encodeURIComponent(requestText)}`, '_blank', 'noopener');
       }
 
@@ -1384,7 +1766,7 @@
       }
     }
 
-    function highlight (id) {
+    function highlight(id) {
       const el = document.getElementById(id);
       el.classList.add('ring-2', 'ring-error', 'border-error');
       el.focus();
@@ -1394,7 +1776,7 @@
     }
 
     ['cfName', 'cfPhone'].forEach(id => {
-      document.getElementById(id).addEventListener('input', function() {
+      document.getElementById(id).addEventListener('input', function () {
         this.classList.remove('ring-2', 'ring-error', 'border-error');
       });
     });
@@ -1409,7 +1791,7 @@
 
     function setMessenger(type) {
       const submitLabel = document.getElementById('cfSubmitLabel');
-      const submitIcon  = document.getElementById('cfSubmitIcon');
+      const submitIcon = document.getElementById('cfSubmitIcon');
 
       document.querySelectorAll('.cf-messenger-btn').forEach(btn => {
         const isWA = btn.dataset.messenger === 'whatsapp';
@@ -1425,12 +1807,12 @@
       });
 
       if (type === 'telegram') {
-        if (submitIcon)  submitIcon.outerHTML = `<span id="cfSubmitIcon">${TG_ICON}</span>`;
+        if (submitIcon) submitIcon.outerHTML = `<span id="cfSubmitIcon">${TG_ICON}</span>`;
         if (submitLabel) submitLabel.textContent = 'Написать в Telegram';
         const note = document.getElementById('cfNote');
         if (note) note.textContent = 'Нажмите кнопку — откроется Telegram с готовым сообщением 🚀';
       } else {
-        if (submitIcon)  submitIcon.outerHTML = `<span id="cfSubmitIcon">${WA_ICON}</span>`;
+        if (submitIcon) submitIcon.outerHTML = `<span id="cfSubmitIcon">${WA_ICON}</span>`;
         if (submitLabel) submitLabel.textContent = 'Написать в WhatsApp';
         const note = document.getElementById('cfNote');
         if (note) note.textContent = 'Нажмите кнопку — откроется WhatsApp с готовым сообщением 🚀';
@@ -1448,9 +1830,9 @@
       const text = document.getElementById('tgContactText');
       if (!card) return;
       if (tg) {
-        const clean = tg.replace('@','');
+        const clean = tg.replace('@', '');
         const isUsername = /^[a-zA-Z0-9_]{4,}$/.test(clean);
-        card.href = isUsername ? `https://t.me/${clean}` : `https://t.me/+${clean.replace(/\D/g,'')}`;
+        card.href = isUsername ? `https://t.me/${clean}` : `https://t.me/+${clean.replace(/\D/g, '')}`;
         if (text) text.textContent = isUsername ? `@${clean}` : tg;
       } else {
         card.style.opacity = '0.5';
@@ -1482,11 +1864,11 @@
        SPRINKLE TRAIL MICRO-INTERACTION ON BUTTONS
     ================================================================ */
     document.querySelectorAll('button, .btn, .mob-l, a.inline-flex, a[href^="#contacts"]').forEach(button => {
-      button.addEventListener('click', function(e) {
+      button.addEventListener('click', function (e) {
         if (!e.clientX || !e.clientY) return;
-        
+
         const sprinkleColors = ['#f6b5c8', '#ffe08a', '#ffd9e2', '#804d5e'];
-        for(let i = 0; i < 8; i++) {
+        for (let i = 0; i < 8; i++) {
           const sprinkle = document.createElement('div');
           sprinkle.classList.add('fixed', 'pointer-events-none', 'z-[100]');
           sprinkle.style.width = '8px';
@@ -1495,14 +1877,14 @@
           sprinkle.style.backgroundColor = sprinkleColors[Math.floor(Math.random() * sprinkleColors.length)];
           sprinkle.style.left = e.clientX + 'px';
           sprinkle.style.top = e.clientY + 'px';
-          
+
           const angle = Math.random() * Math.PI * 2;
           const distance = 40 + Math.random() * 60;
           const destX = Math.cos(angle) * distance;
           const destY = Math.sin(angle) * distance;
-          
+
           document.body.appendChild(sprinkle);
-          
+
           const animation = sprinkle.animate([
             { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
             { transform: `translate(${destX}px, ${destY}px) rotate(360deg)`, opacity: 0 }
@@ -1510,7 +1892,7 @@
             duration: 800,
             easing: 'cubic-bezier(0.25, 1, 0.5, 1)'
           });
-          
+
           animation.onfinish = () => sprinkle.remove();
         }
       });
@@ -1519,4 +1901,5 @@
     console.log('%c🎂 Sweetland Kids Bakery — New Premium Design Live', 'color:#804d5e;font-size:14px;font-weight:bold');
   </script>
 </body>
+
 </html>
