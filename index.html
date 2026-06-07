@@ -292,7 +292,8 @@
 
   <main>
     <!-- Hero Section -->
-    <section class="relative min-h-[90vh] flex items-center bg-surface-container-low pt-40 md:pt-48 wave-bottom">
+    <section id="hero-section"
+      class="hero relative min-h-[90vh] flex items-center bg-surface-container-low pt-28 md:pt-48 md:wave-bottom">
       <!-- Floating Background Sprinkle -->
       <div class="absolute inset-0 sprinkle-bg opacity-30 pointer-events-none overflow-hidden"></div>
 
@@ -339,26 +340,26 @@
           <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg hero-sub">
             Дни рождения, кондитерские мастер-классы и незабываемые эмоции в атмосфере волшебства и творчества.
           </p>
-          <div class="flex flex-wrap gap-4 hero-btns">
+          <div class="flex flex-col sm:flex-row gap-4 hero-btns z-30 relative">
             <a href="#contacts"
-              class="bg-primary text-on-primary px-10 py-5 rounded-full font-label-bold text-headline-sm hover:scale-105 transition-all rose-shadow active:scale-95 text-center">
+              class="bg-primary text-on-primary px-6 sm:px-10 py-4 sm:py-5 rounded-full font-label-bold text-base sm:text-headline-sm hover:scale-105 transition-all rose-shadow active:scale-95 text-center">
               Записаться на праздник
             </a>
 
             <a href="#services"
-              class="border-2 border-primary text-primary px-10 py-5 rounded-full font-label-bold text-headline-sm hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-center">
+              class="border-2 border-primary text-primary px-6 sm:px-10 py-4 sm:py-5 rounded-full font-label-bold text-base sm:text-headline-sm hover:bg-primary hover:text-on-primary transition-all active:scale-95 text-center">
               Наши услуги
             </a>
           </div>
         </div>
 
         <!-- Right Column (High Resolution Castle Logo Image) -->
-        <div class="relative flex justify-center items-center mt-12 lg:mt-0" style="z-index:20">
+        <div class="relative flex justify-center items-center mt-6 lg:mt-0" style="z-index:10">
           <div class="absolute w-[130%] h-[130%] bg-primary/5 rounded-full blur-3xl"></div>
 
           <!-- Cupcake on the top-left of the castle logo -->
           <div class="absolute top-[-10%] left-[-10%] animate-float hidden xl:block"
-            style="z-index:25; animation: fl1 6s ease-in-out infinite" aria-hidden="true">
+            style="z-index:15; animation: fl1 6s ease-in-out infinite" aria-hidden="true">
             <svg class="drop-shadow-lg opacity-80" width="76" height="76" viewBox="0 0 92 92" fill="none">
               <rect x="26" y="56" width="40" height="26" rx="9" fill="rgba(240,217,213,.92)" />
               <path d="M20 59 Q46 40 72 59" fill="rgba(200,160,106,.88)" />
@@ -373,7 +374,7 @@
 
           <!-- Cookie on the bottom-right of the castle logo -->
           <div class="absolute bottom-[0%] right-[-10%] animate-float hidden xl:block"
-            style="z-index:25; animation: fl2 8s ease-in-out infinite 1s" aria-hidden="true">
+            style="z-index:15; animation: fl2 8s ease-in-out infinite 1s" aria-hidden="true">
             <svg class="drop-shadow-lg opacity-80" width="64" height="64" viewBox="0 0 78 78" fill="none">
               <circle cx="39" cy="39" r="32" fill="rgba(229,201,154,.92)" />
               <circle cx="39" cy="39" r="27" fill="rgba(200,160,106,.82)" stroke="rgba(229,201,154,.5)"
@@ -387,8 +388,8 @@
           </div>
 
           <img id="heroBg" alt="Sweetland Kids Bakery Castle Logo"
-            class="relative w-full max-w-[560px] lg:max-w-[640px] animate-float drop-shadow-2xl object-contain"
-            style="z-index:22; image-rendering: high-quality;" src="castle_logo.jpg" />
+            class="relative w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[640px] animate-float drop-shadow-2xl object-contain"
+            style="z-index:12; image-rendering: high-quality;" src="castle_logo.jpg" />
         </div>
       </div>
 
@@ -635,7 +636,7 @@
 
     <!-- How It Works (Timeline) -->
     <section id="how"
-      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-high relative wave-top wave-bottom">
+      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-high relative md:wave-top md:wave-bottom">
       <div class="max-w-4xl mx-auto py-20">
         <div class="text-center mb-16 space-y-4">
           <span
@@ -1508,17 +1509,19 @@
         .from('.hero-btns', { opacity: 0, y: 20, duration: 0.8 }, '-=0.55')
         .from('.hero-scroll', { opacity: 0, duration: 1.0 }, '-=0.2');
 
-      // Parallax effect on hero castle logo
-      gsap.to('#heroBg', {
-        yPercent: 15,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
-      });
+      // Parallax effect on hero castle logo (only on screens wider than mobile)
+      if (window.innerWidth > 768) {
+        gsap.to('#heroBg', {
+          yPercent: 15,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
 
       // Bento cards staggered entrance
       gsap.from('.why-card', {
