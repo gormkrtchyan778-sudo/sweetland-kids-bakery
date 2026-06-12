@@ -215,6 +215,21 @@
       }
     }
 
+    /* Services dropdown */
+    .nav-services-dropdown .dropdown-menu {
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+      transform: translateY(6px);
+    }
+    .nav-services-dropdown:hover .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0);
+    }
+    .mob-accordion-content { display: none; }
+    .mob-accordion-content.open { display: flex; }
+    .mob-accordion-toggle .accordion-arrow { transition: transform 0.2s; }
+    .mob-accordion.open .accordion-arrow { transform: rotate(180deg); }
+
     #navBurger.open span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
@@ -246,12 +261,20 @@
     </div>
 
     <nav class="hidden md:flex items-center gap-8">
-      <a class="text-primary font-bold border-b-2 border-primary transition-all duration-300"
-        href="#services">Услуги</a>
+      <div class="relative nav-services-dropdown">
+        <button class="text-primary font-bold border-b-2 border-primary transition-all duration-300 flex items-center gap-1 cursor-pointer bg-transparent border-x-0 border-t-0 p-0">
+          Услуги <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+        </button>
+        <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-xl shadow-xl py-2 min-w-[220px] opacity-0 invisible z-[60]">
+          <a href="services/birthday.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Дни рождения</a>
+          <a href="services/masterclass.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Мастер-классы</a>
+          <a href="services/school.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Школьные мероприятия</a>
+          <a href="services/cakes.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Торты на заказ</a>
+          <a href="services/constructor.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Конструктор праздника</a>
+        </div>
+      </div>
       <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300"
         href="#gallery">Галерея</a>
-      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300"
-        href="#pricing">Пакеты</a>
       <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="#faq">FAQ</a>
       <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300"
         href="#contacts">Контакты</a>
@@ -279,12 +302,21 @@
     <button id="menuClose" class="absolute top-6 right-6 text-primary text-3xl focus:outline-none"
       aria-label="Закрыть меню">✕</button>
     <nav class="flex flex-col items-center gap-6">
-      <a class="text-2xl text-primary font-bold mob-l" href="#services">Услуги</a>
+      <div class="mob-accordion text-center">
+        <button class="mob-accordion-toggle text-2xl text-primary font-bold flex items-center gap-1">
+          Услуги <span class="material-symbols-outlined accordion-arrow">expand_more</span>
+        </button>
+        <div class="mob-accordion-content flex-col items-center gap-3 mt-3">
+          <a class="text-lg text-primary font-medium mob-l" href="services/birthday.html">Дни рождения</a>
+          <a class="text-lg text-primary font-medium mob-l" href="services/masterclass.html">Мастер-классы</a>
+          <a class="text-lg text-primary font-medium mob-l" href="services/school.html">Школьные мероприятия</a>
+          <a class="text-lg text-primary font-medium mob-l" href="services/cakes.html">Торты на заказ</a>
+          <a class="text-lg text-primary font-medium mob-l" href="services/constructor.html">Конструктор праздника</a>
+        </div>
+      </div>
       <a class="text-2xl text-on-surface-variant font-medium mob-l" href="#gallery">Галерея</a>
-      <a class="text-2xl text-on-surface-variant font-medium mob-l" href="#pricing">Пакеты</a>
       <a class="text-2xl text-on-surface-variant font-medium mob-l" href="#faq">FAQ</a>
       <a class="text-2xl text-on-surface-variant font-medium mob-l" href="#contacts">Контакты</a>
-
     </nav>
     <a href="#contacts"
       class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold shadow-lg shadow-primary/20 mob-l">Записаться</a>
@@ -338,7 +370,7 @@
             Самые <span class="text-tertiary font-serif italic">сладкие</span> праздники для ваших детей
           </h1>
           <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg hero-sub">
-            Дни рождения, кондитерские мастер-классы и незабываемые эмоции в атмосфере волшебства и творчества.
+            Дни рождения, мастер-классы и незабываемые эмоции в атмосфере волшебства и творчества.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 hero-btns z-30 relative">
             <a href="#contacts"
@@ -448,117 +480,70 @@
 
     <!-- Services Section -->
     <section id="services"
-      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
+      class="py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
       <div class="absolute inset-0 sprinkle-bg opacity-10 pointer-events-none"></div>
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 relative z-10">
-        <div class="max-w-xl text-left space-y-3">
-          <span
-            class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Услуги</span>
-          <h2 class="font-headline-md text-display-lg text-primary">Наши волшебные услуги</h2>
-          <p class="text-body-lg text-on-surface-variant">От весёлых дней рождения до обучающих кулинарных
-            мастер-классов.</p>
+      <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4 relative z-10">
+        <div class="space-y-2">
+          <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Услуги</span>
+          <h2 class="font-headline-md text-headline-md text-primary">Наши волшебные услуги</h2>
         </div>
-        <a href="#contacts"
-          class="bg-primary text-on-primary px-8 py-3.5 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">
-          Все услуги
+        <a href="#contacts" class="bg-primary text-on-primary px-6 py-3 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20 shrink-0">
+          Записаться
         </a>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter relative z-10">
-        <!-- Service Card 1 -->
-        <div
-          class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+        <!-- Card 1 -->
+        <a href="services/birthday.html"
+          class="group bg-white border-2 border-primary-fixed rounded-xl p-6 hover:border-primary hover:scale-[1.02] transition-all duration-300 flex flex-col gap-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+            <span class="material-symbols-outlined text-2xl">celebration</span>
+          </div>
           <div>
-            <div class="flex items-center gap-6 mb-6">
-              <div
-                class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <span class="material-symbols-outlined text-4xl">celebration</span>
-              </div>
-              <h3 class="font-headline-sm text-headline-md text-primary">Дни рождения</h3>
-            </div>
-            <p class="text-on-surface-variant mb-8 text-body-lg">
-              Полная организация детского дня рождения: тематический декор, кондитерский мастер-класс и торжественный
-              вынос торта.
-            </p>
+            <h3 class="font-bold text-primary text-base mb-1">Дни рождения</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Тематический декор, мастер-класс и торжественный вынос торта.</p>
           </div>
-          <div class="relative h-64 w-full rounded-lg overflow-hidden mt-auto">
-            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              alt="Детский день рождения Sweetland"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3mumqNJ9WSu2bwtEAohRfHbRWbnzSJjYS-Cwt2C_qLflJPUjZXY1Ez7qEZN0acVysJX_WCvaDmE_pkooKsMFGTZ4WygXJWaANv_pk5DDcFmgQgUvFVBESuc3dSCbQ7ogq9l_TNToFatBh8Ns0YbHCN5c7LB0Oc5HwFoYsE5VYTdZf82UkKnaEkRarvB-GgoCg15KL0rR97ovoyUA_kCg3S82rvkLHO_3Ub4XRpHK5b8OZgvZG-_j5RFdV_nz5IJmvNZGmw-8OSA4" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-          </div>
-        </div>
+          <span class="mt-auto inline-flex items-center gap-1 text-primary text-sm font-bold group-hover:gap-2 transition-all">Подробнее <span class="material-symbols-outlined text-base">arrow_forward</span></span>
+        </a>
 
-        <!-- Service Card 2 -->
-        <div
-          class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
+        <!-- Card 2 -->
+        <a href="services/masterclass.html"
+          class="group bg-white border-2 border-primary-fixed rounded-xl p-6 hover:border-primary hover:scale-[1.02] transition-all duration-300 flex flex-col gap-4">
+          <div class="w-12 h-12 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors shrink-0">
+            <span class="material-symbols-outlined text-2xl">school</span>
+          </div>
           <div>
-            <div class="flex items-center gap-6 mb-6">
-              <div
-                class="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors">
-                <span class="material-symbols-outlined text-4xl">school</span>
-              </div>
-              <h3 class="font-headline-sm text-headline-md text-primary">Мастер-классы</h3>
-            </div>
-            <p class="text-on-surface-variant mb-8 text-body-lg">
-              Увлекательные практические занятия, где дети учатся готовить, выпекать и украшать сладости своими руками.
-            </p>
+            <h3 class="font-bold text-primary text-base mb-1">Мастер-классы</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Капкейки, макарон, шоколад — дети готовят и забирают угощение домой.</p>
           </div>
-          <div class="relative h-64 w-full rounded-lg overflow-hidden mt-auto">
-            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              alt="Детские кондитерские мастер-классы"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY4c52QJn9B4XHHFt8tHhVJ8V2FydXZZ71Y6iLokQLunEmGiwypZwL-YktU_13Lvn6CohlXevNrFsITtwD5Oz5TiY_VM73d-XetahdlOaY2P-4aCTYgiuvwxdBqu--vv80ZCGNm22pIvboa3NLGqyr8euTJAizaevIcgMfg0_pCmrx7c173aIcUb2NFB_nJQzo4O6NgQW79rGChVqKLRHirY68YoFXddNjPTeTiXqJJS0iBgOGsu-rJbyxf0COX46fKVRJHJkD9oA" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-          </div>
-        </div>
+          <span class="mt-auto inline-flex items-center gap-1 text-primary text-sm font-bold group-hover:gap-2 transition-all">Подробнее <span class="material-symbols-outlined text-base">arrow_forward</span></span>
+        </a>
 
-        <!-- Service Card 3 -->
-        <div
-          class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
+        <!-- Card 3 -->
+        <a href="services/school.html"
+          class="group bg-white border-2 border-primary-fixed rounded-xl p-6 hover:border-primary hover:scale-[1.02] transition-all duration-300 flex flex-col gap-4">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+            <span class="material-symbols-outlined text-2xl">local_shipping</span>
+          </div>
           <div>
-            <div class="flex items-center gap-6 mb-6">
-              <div
-                class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                <span class="material-symbols-outlined text-4xl">local_shipping</span>
-              </div>
-              <h3 class="font-headline-sm text-headline-md text-primary">Выездные мастер-классы</h3>
-            </div>
-            <p class="text-on-surface-variant mb-8 text-body-lg">
-              Привезем всё необходимое оборудование, фартуки, шапочки и свежие ингредиенты к вам домой, в школу или в
-              игровую.
-            </p>
+            <h3 class="font-bold text-primary text-base mb-1">Школьные мероприятия</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Приедем с оборудованием и ингредиентами — нужна только площадка.</p>
           </div>
-          <div class="relative h-64 w-full rounded-lg overflow-hidden mt-auto">
-            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              alt="Выездные детские мастер-классы"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDef2Z1chsczeZ8b4yL6IO41OA5E_abs-wh1hGmuKNZ0kx-SS0T9SCz-0CWXHcdht2ArEGOT9UOmssul_IGg-Dfmb4K6oSJjY8Z0vmKXuRUDolY1n8WxtXOiEYgUrlKCmawf3MtasQ9T0SPcCkBffzR5NlCjKbINFYy6EswpLKVmwYlgGyeKGfGGNc8FW_WEQelKKDwBtFjpsSk2Q9CxuOoPJTaNOpVPV_j_Nf0Gak9eS9zD0vlvx6L170k5v3pT35byvlnhMvFyhg" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-          </div>
-        </div>
+          <span class="mt-auto inline-flex items-center gap-1 text-primary text-sm font-bold group-hover:gap-2 transition-all">Подробнее <span class="material-symbols-outlined text-base">arrow_forward</span></span>
+        </a>
 
-        <!-- Service Card 4 -->
-        <div
-          class="group relative bg-white border-2 border-primary-fixed rounded-xl p-8 overflow-hidden hover:border-primary transition-all duration-500 flex flex-col justify-between">
+        <!-- Card 4: Торты — маленькое описание без фото -->
+        <a href="services/cakes.html"
+          class="group bg-primary-fixed border-2 border-primary-fixed rounded-xl p-6 hover:border-primary hover:scale-[1.02] transition-all duration-300 flex flex-col gap-4">
+          <div class="w-12 h-12 bg-white/60 rounded-xl flex items-center justify-center text-primary shrink-0">
+            <span class="material-symbols-outlined text-2xl">bakery_dining</span>
+          </div>
           <div>
-            <div class="flex items-center gap-6 mb-6">
-              <div
-                class="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-white transition-colors">
-                <span class="material-symbols-outlined text-4xl">bakery_dining</span>
-              </div>
-              <h3 class="font-headline-sm text-headline-md text-primary">Торты на заказ</h3>
-            </div>
-            <p class="text-on-surface-variant mb-8 text-body-lg">
-              Авторские кондитерские шедевры, созданные индивидуально под ваши пожелания из 100% натуральных
-              ингредиентов.
-            </p>
+            <h3 class="font-bold text-primary text-base mb-1">Торты на заказ</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Авторские шедевры из натуральных ингредиентов — любая тематика и дизайн.</p>
           </div>
-          <div class="relative h-64 w-full rounded-lg overflow-hidden mt-auto">
-            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-              alt="Авторские торты на заказ"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt7rBxjGOGs_p9BLPbdkXmQt2H7mEv_zWuDRDPzYFR_tr1hxvFadyNvrLuZ3DKvrcESQYAw6axb13v5Altb6uZna6zTHp2jOETeMopxEfUmbuz8NSfvcjseVkFwthNGU8CCOcKNIvuVnghWHxFMdsMZXNZn12ddY6D6-OjM9sA-ANWL3DwxItpfqVmz_NrEaknmMvQSrwRvioL4MFI9MA5BRfZSsCrztn4FBb4eMUcGcmrTXktjbRMUx4vhvjwi4z5EC1H-vnPN0U" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-          </div>
-        </div>
+          <span class="mt-auto inline-flex items-center gap-1 text-primary text-sm font-bold group-hover:gap-2 transition-all">Заказать <span class="material-symbols-outlined text-base">arrow_forward</span></span>
+        </a>
       </div>
     </section>
 
@@ -634,93 +619,6 @@
       <img id="lbImg" class="max-w-full max-h-[90vh] rounded-lg object-contain" src="" alt="">
     </div>
 
-    <!-- How It Works (Timeline) -->
-    <section id="how"
-      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-high relative md:wave-top md:wave-bottom">
-      <div class="max-w-4xl mx-auto py-20">
-        <div class="text-center mb-16 space-y-4">
-          <span
-            class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Как
-            это работает</span>
-          <h2 class="font-headline-md text-display-lg text-primary">Путь к незабываемому празднику</h2>
-          <p class="text-body-lg text-on-surface-variant">5 простых шагов к созданию детского праздника мечты</p>
-        </div>
-        <div class="relative">
-          <!-- Vertical Line -->
-          <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 -translate-x-1/2 hidden md:block"></div>
-
-          <!-- Step 1 -->
-          <div class="relative flex flex-col md:flex-row items-center mb-24 group">
-            <div class="flex-1 md:text-right md:pr-12 order-2 md:order-1 tl-box">
-              <h3 class="font-headline-sm text-primary mb-2">Оставляете заявку</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Заполните форму на сайте, напишите в WhatsApp или
-                позвоните — ответим в течение часа.</p>
-            </div>
-            <div
-              class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
-              1
-            </div>
-            <div class="flex-1 md:pl-12 order-3"></div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="relative flex flex-col md:flex-row items-center mb-24 group">
-            <div class="flex-1 md:pr-12 order-3"></div>
-            <div
-              class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-tertiary/30 group-hover:scale-125 transition-transform font-bold text-lg">
-              2
-            </div>
-            <div class="flex-1 md:pl-12 order-2 tl-box">
-              <h3 class="font-headline-sm text-primary mb-2">Мы связываемся</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Наш менеджер перезвонит, уточнит дату, количество
-                детей, тематику и ваши особые пожелания.</p>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="relative flex flex-col md:flex-row items-center mb-24 group">
-            <div class="flex-1 md:text-right md:pr-12 order-2 md:order-1 tl-box">
-              <h3 class="font-headline-sm text-primary mb-2">Подбираем программу</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Разрабатываем индивидуальный сценарий мероприятия,
-                подбираем активности, декор и меню.</p>
-            </div>
-            <div
-              class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
-              3
-            </div>
-            <div class="flex-1 md:pl-12 order-3"></div>
-          </div>
-
-          <!-- Step 4 -->
-          <div class="relative flex flex-col md:flex-row items-center mb-24 group">
-            <div class="flex-1 md:pr-12 order-3"></div>
-            <div
-              class="w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-tertiary/30 group-hover:scale-125 transition-transform font-bold text-lg">
-              4
-            </div>
-            <div class="flex-1 md:pl-12 order-2 tl-box">
-              <h3 class="font-headline-sm text-primary mb-2">Проводим мероприятие</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Наша команда приезжает заранее на площадку, всё
-                оформляет и делает каждый момент праздника волшебным.</p>
-            </div>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="relative flex flex-col md:flex-row items-center group">
-            <div class="flex-1 md:text-right md:pr-12 order-2 md:order-1 tl-box">
-              <h3 class="font-headline-sm text-primary mb-2">Ребёнок счастлив! 🎉</h3>
-              <p class="text-on-surface-variant text-sm md:text-base">Дети уходят с самодельными сладостями, яркими
-                эмоциями, подарками и желанием вернуться к нам снова.</p>
-            </div>
-            <div
-              class="w-16 h-16 rounded-full bg-primary text-on-primary flex items-center justify-center relative z-10 order-1 md:order-2 mb-4 md:mb-0 shadow-lg shadow-primary/30 group-hover:scale-125 transition-transform font-bold text-lg">
-              5
-            </div>
-            <div class="flex-1 md:pl-12 order-3"></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Statistics Section -->
     <section class="py-24 px-margin-mobile md:px-margin-desktop bg-background overflow-hidden">
@@ -748,175 +646,6 @@
       </div>
     </section>
 
-    <!-- Pricing Section (Birthday Packages) -->
-    <section id="pricing"
-      class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low relative">
-      <div class="absolute inset-0 sprinkle-bg opacity-10 pointer-events-none"></div>
-      <div class="text-center mb-16 space-y-4">
-        <span
-          class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Пакеты</span>
-        <h2 class="font-headline-md text-display-lg text-primary">Выберите идеальный праздник</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Три готовых предложения для
-          событий любого масштаба — от камерных праздников до грандиозных шоу.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto z-10 relative">
-
-        <!-- Mini -->
-        <div
-          class="price-card bg-white p-8 rounded-lg rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300">
-          <div class="space-y-4">
-            <h3 class="font-headline-sm text-headline-sm text-primary">Мини</h3>
-            <p class="text-on-surface-variant text-sm">Уютный праздник для небольшой компании</p>
-            <div class="pt-4 border-t border-primary-fixed/30">
-              <span class="text-3xl font-bold text-primary font-headline-md">——</span>
-              <span class="text-xs text-on-surface-variant italic block mt-1">Цена уточняется</span>
-            </div>
-            <ul class="space-y-3 pt-4 text-sm text-on-surface-variant">
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>До 8 детей</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Длительность 2 часа</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Один мастер-класс</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Мини-торт в подарок</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Фотозона</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Сладкие сувениры</li>
-            </ul>
-          </div>
-          <a href="#contacts"
-            class="block text-center bg-secondary text-on-secondary py-3 rounded-full font-label-bold hover:bg-primary transition-colors">Записаться</a>
-        </div>
-
-        <!-- Standard (Featured) -->
-        <div
-          class="price-card bg-inverse-surface text-inverse-on-surface p-8 rounded-lg border-2 border-primary-fixed rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300 relative overflow-hidden">
-          <div
-            class="absolute top-4 right-4 bg-primary text-on-primary text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">
-            Популярный</div>
-          <div class="space-y-4">
-            <h3 class="font-headline-sm text-headline-sm text-primary-fixed-dim">Стандарт</h3>
-            <p class="text-on-surface-variant/80 text-sm">Идеальный баланс программы и эмоций</p>
-            <div class="pt-4 border-t border-primary-fixed/20">
-              <span class="text-3xl font-bold text-primary-fixed font-headline-md">——</span>
-              <span class="text-xs text-on-surface-variant/80 italic block mt-1">Цена уточняется</span>
-            </div>
-            <ul class="space-y-3 pt-4 text-sm text-inverse-on-surface/90">
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>До 15 детей</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Длительность 3
-                часа</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Два мастер-класса
-              </li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Именной торт</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Декор и оформление
-              </li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Аниматор</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary-fixed-dim text-lg">check_circle</span>Фотоотчёт</li>
-            </ul>
-          </div>
-          <a href="#contacts"
-            class="block text-center bg-primary text-on-primary py-3 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-primary/20">Записаться</a>
-        </div>
-
-        <!-- Premium -->
-        <div
-          class="price-card bg-white p-8 rounded-lg rose-shadow flex flex-col justify-between space-y-6 hover:scale-105 transition-transform duration-300">
-          <div class="space-y-4">
-            <h3 class="font-headline-sm text-headline-sm text-primary">Премиум</h3>
-            <p class="text-on-surface-variant text-sm">Роскошный праздник под ключ</p>
-            <div class="pt-4 border-t border-primary-fixed/30">
-              <span class="text-3xl font-bold text-primary font-headline-md">——</span>
-              <span class="text-xs text-on-surface-variant italic block mt-1">Цена уточняется</span>
-            </div>
-            <ul class="space-y-3 pt-4 text-sm text-on-surface-variant">
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>До 25 детей</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Длительность 4 часа</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Три мастер-класса</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Торт-эксклюзив</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Полное оформление</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>2 аниматора</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Видео + фотосъёмка</li>
-              <li class="flex items-center gap-2"><span
-                  class="material-symbols-outlined text-primary text-lg">check_circle</span>Подарки всем детям</li>
-            </ul>
-          </div>
-          <a href="#contacts"
-            class="block text-center bg-tertiary text-on-tertiary py-3 rounded-full font-label-bold hover:scale-105 transition-transform shadow-lg shadow-tertiary/20">Записаться</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Custom Cakes Section -->
-    <section id="cakes" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background">
-      <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <!-- Visual -->
-        <div class="relative flex justify-center items-center">
-          <div class="absolute w-[120%] h-[120%] bg-primary/5 rounded-full blur-3xl"></div>
-          <div class="relative rounded-lg overflow-hidden rose-shadow max-w-[500px]">
-            <img
-              class="cake-wrap w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-              src="https://images.unsplash.com/photo-1567636788276-40a47795ba4d?w=900&q=80&auto=format&fit=crop"
-              alt="Роскошный авторский торт с цветами" />
-            <div
-              class="absolute top-4 right-4 bg-tertiary text-on-tertiary px-4 py-2 rounded-full font-label-bold text-xs uppercase shadow-md animate-float">
-              Авторский Дизайн
-            </div>
-          </div>
-        </div>
-        <!-- Content -->
-        <div class="space-y-6 text-left">
-          <span
-            class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Торты
-            на заказ</span>
-          <h2 class="font-headline-md text-display-lg text-primary leading-tight">Торт, о котором будут говорить</h2>
-          <p class="text-body-lg text-on-surface-variant">
-            Каждый торт — это уникальное произведение кондитерского искусства, созданное специально для вас. Мы
-            воплощаем любые идеи: от нежных пастельных шедевров до ярких тематических конструкций с любимыми героями
-            вашего ребёнка.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="flex items-center gap-3 bg-white p-4 rounded-lg rose-shadow">
-              <span class="text-2xl">🎨</span>
-              <span class="text-sm font-bold text-on-surface">Индивидуальный дизайн</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white p-4 rounded-lg rose-shadow">
-              <span class="text-2xl">🌿</span>
-              <span class="text-sm font-bold text-on-surface">Натуральные ингредиенты</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white p-4 rounded-lg rose-shadow">
-              <span class="text-2xl">🎭</span>
-              <span class="text-sm font-bold text-on-surface">Любая тематика</span>
-            </div>
-            <div class="flex items-center gap-3 bg-white p-4 rounded-lg rose-shadow">
-              <span class="text-2xl">⚡</span>
-              <span class="text-sm font-bold text-on-surface">Быстрое изготовление</span>
-            </div>
-          </div>
-          <a href="#contacts"
-            class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-label-bold hover:scale-105 transition-all shadow-lg shadow-primary/20">
-            Заказать торт
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-        </div>
-      </div>
-    </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low">
@@ -1102,6 +831,58 @@
       </div>
     </section>
 
+    <!-- Special Offers Section -->
+    <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-background">
+      <div class="text-center mb-12 space-y-4">
+        <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Акции</span>
+        <h2 class="font-headline-md text-display-lg text-primary">Специальные предложения</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Ограниченные по времени праздники и мастер-классы по особым случаям</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+        <!-- 8 Марта -->
+        <a href="offers/march8.html"
+          class="group relative bg-white border-2 border-primary-fixed rounded-xl overflow-hidden rose-shadow hover:border-primary hover:scale-[1.03] transition-all duration-300 flex flex-col">
+          <div class="relative h-44 overflow-hidden">
+            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL21pkForq9JgQd6mlfNdPQY3UY9N1enJec7uuIexCDQtsWlbks8OrJJ8ky6l73Xj_UW9boPdvVE2dSIs-3i9-RVwgwqk6TlTE2dgEPkbbiy3p_RQoScm17PiHDnSfwMQwMdIi5PdFYB4IUD6W3PjX2qomViJb2PJ-vd528mvdE97HDffDCUdUdaXrc_3A1h-v6C_wwL358EkGs8aboXWSHKvpz2FtZxplW4rTeKxArmTtZeqQsiCqYY9XB4Nxgj6FTmSq5v3RlTo"
+              alt="8 Марта — праздник для девочек" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-primary text-on-primary text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">До 8 марта</span>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between gap-4">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-2xl">🌸</div>
+              <h3 class="font-headline-sm text-headline-sm text-primary group-hover:underline">Праздник для принцесс</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed">Мастер-класс «Цветочные капкейки», декор в розовых тонах и мини-тортик каждой участнице.</p>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-on-surface-variant">От 5 детей · 2 часа</span>
+              <span class="inline-flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">
+                Подробнее <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Placeholder card 2 -->
+        <div class="relative bg-surface-container-low border-2 border-dashed border-primary/20 rounded-xl overflow-hidden flex flex-col items-center justify-center p-10 text-center space-y-4 min-h-[280px]">
+          <span class="text-5xl opacity-30">🎉</span>
+          <p class="text-on-surface-variant text-sm font-medium">Скоро появится новая акция</p>
+          <p class="text-on-surface-variant/60 text-xs">Следите за обновлениями</p>
+        </div>
+
+        <!-- Placeholder card 3 -->
+        <div class="relative bg-surface-container-low border-2 border-dashed border-primary/20 rounded-xl overflow-hidden flex flex-col items-center justify-center p-10 text-center space-y-4 min-h-[280px]">
+          <span class="text-5xl opacity-30">🎂</span>
+          <p class="text-on-surface-variant text-sm font-medium">Скоро появится новая акция</p>
+          <p class="text-on-surface-variant/60 text-xs">Следите за обновлениями</p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contacts"
       class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container relative overflow-hidden">
@@ -1147,29 +928,19 @@
             </a>
 
             <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
-              href="#" data-contact="instagram">
+              href="https://www.instagram.com/sweetlandkidsbakery/" target="_blank" rel="noopener">
               <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center">
-                <span class="material-symbols-outlined">camera</span>
-              </div>
-              <div>
-                <p class="font-label-bold text-on-surface-variant text-xs font-bold">Instagram</p>
-                <p class="text-primary font-bold text-sm">@sweetland.kids.bakery</p>
-              </div>
-            </a>
-
-            <a id="tgContactCard"
-              class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
-              href="#" target="_blank" rel="noopener">
-              <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:#e8f4fd">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M21.8 2.6L1.5 10.3c-1.3.5-1.3 1.3-.2 1.7l5.1 1.6 1.9 5.8c.3.8.4.8 1.2.1l2.9-2.8 5.5 4.1c1 .6 1.7.3 2-1L22.9 4c.4-1.7-.6-2.5-1.1-1.4z"
-                    fill="#229ED9" />
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#ffd600"/><stop offset="50%" stop-color="#ff0069"/><stop offset="100%" stop-color="#d300c5"/></radialGradient></defs>
+                  <rect width="24" height="24" rx="6" fill="url(#ig-grad)"/>
+                  <rect x="6.5" y="6.5" width="11" height="11" rx="3.5" stroke="white" stroke-width="1.5" fill="none"/>
+                  <circle cx="12" cy="12" r="2.8" stroke="white" stroke-width="1.5" fill="none"/>
+                  <circle cx="17" cy="7" r="1" fill="white"/>
                 </svg>
               </div>
               <div>
-                <p class="font-label-bold text-on-surface-variant text-xs font-bold">Telegram</p>
-                <p id="tgContactText" class="text-primary font-bold text-sm">Написать</p>
+                <p class="font-label-bold text-on-surface-variant text-xs font-bold">Instagram</p>
+                <p class="text-primary font-bold text-sm">@sweetlandkidsbakery</p>
               </div>
             </a>
 
@@ -1185,13 +956,13 @@
             </a>
 
             <a class="flex items-center gap-4 bg-white p-5 rounded-full rose-shadow hover:scale-105 transition-transform group"
-              href="#" data-contact="address" target="_blank" rel="noopener">
+              href="https://yandex.com/maps/-/CPdNF-l9" target="_blank" rel="noopener">
               <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center">
                 <span class="material-symbols-outlined">location_on</span>
               </div>
               <div>
                 <p class="font-label-bold text-on-surface-variant text-xs font-bold">Адрес</p>
-                <p class="text-primary font-bold text-sm" data-contact="address-text">Укажите адрес</p>
+                <p class="text-primary font-bold text-sm">Garegin Njdeh 25/8, Yerevan</p>
               </div>
             </a>
 
@@ -1248,17 +1019,6 @@
                   </svg>
                   WhatsApp
                 </button>
-                <button type="button" id="pickTG"
-                  class="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-full border-2 border-sky-300 bg-white text-sky-600 font-bold text-sm transition-all duration-200 hover:scale-[1.03] active:scale-[0.97] ring-0 cf-messenger-btn"
-                  data-messenger="telegram">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="12" fill="#229ED9" />
-                    <path
-                      d="M17.8 7.1l-2.9 13.6c-.2.9-.8 1.1-1.6.7l-4.1-3-2 1.9c-.2.2-.4.3-.8.3l.3-4.2 7.4-6.7c.3-.3-.1-.4-.5-.2L5.2 14.8l-4-1.3c-.9-.3-.9-.9.2-1.3l15.6-6c.8-.3 1.5.2 1.2 1.3l-.4-.1z"
-                      fill="white" />
-                  </svg>
-                  Telegram
-                </button>
               </div>
             </div>
 
@@ -1273,7 +1033,7 @@
               <span id="cfSubmitLabel">Написать в WhatsApp</span>
             </button>
             <div id="cfNote" class="text-xs text-center text-on-surface-variant/60" aria-live="polite">
-              Нажмите кнопку — откроется WhatsApp или Telegram с готовым сообщением 🚀
+              Нажмите кнопку — откроется WhatsApp с готовым сообщением 🚀
             </div>
           </form>
 
@@ -1308,8 +1068,13 @@
       </p>
       <div class="flex gap-4">
         <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all"
-          href="#" data-contact="instagram" aria-label="Instagram">
-          <span class="material-symbols-outlined text-[20px]">camera</span>
+          href="https://www.instagram.com/sweetlandkidsbakery/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
+            <rect width="24" height="24" rx="6" fill="currentColor"/>
+            <rect x="6.5" y="6.5" width="11" height="11" rx="3.5" stroke="white" stroke-width="1.5" fill="none"/>
+            <circle cx="12" cy="12" r="2.8" stroke="white" stroke-width="1.5" fill="none"/>
+            <circle cx="17" cy="7" r="1" fill="white"/>
+          </svg>
         </a>
         <a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all"
           href="#" data-contact="whatsapp" aria-label="WhatsApp">
@@ -1341,7 +1106,6 @@
       <h4 class="font-label-bold text-primary uppercase tracking-widest text-xs font-bold">Информация</h4>
       <nav class="flex flex-col gap-4 text-sm">
         <a class="text-on-surface-variant hover:text-primary transition-colors" href="#why">О нас</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#pricing">Пакеты услуг</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors" href="#gallery">Галерея</a>
         <a class="text-on-surface-variant hover:text-primary transition-colors" href="#faq">FAQ</a>
       </nav>
@@ -1355,8 +1119,8 @@
         <p class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">chat</span><a
             href="#contacts" data-contact="whatsapp">WhatsApp</a></p>
         <p class="flex items-center gap-2"><span
-            class="material-symbols-outlined text-primary text-base">location_on</span><a href="#"
-            data-contact="address" target="_blank" rel="noopener" data-contact="address-text">Укажите адрес</a></p>
+            class="material-symbols-outlined text-primary text-base">location_on</span><a href="https://yandex.com/maps/-/CPdNF-l9"
+            target="_blank" rel="noopener">Garegin Njdeh 25/8, Yerevan</a></p>
         <div class="pt-2">
           <span class="text-tertiary font-bold block">Работаем ежедневно: 9:00 - 19:00</span>
         </div>
@@ -1898,6 +1662,17 @@
 
           animation.onfinish = () => sprinkle.remove();
         }
+      });
+    });
+
+    /* Mobile accordion for Services */
+    document.querySelectorAll('.mob-accordion-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const acc = btn.closest('.mob-accordion');
+        const content = acc.querySelector('.mob-accordion-content');
+        const isOpen = acc.classList.contains('open');
+        acc.classList.toggle('open', !isOpen);
+        content.classList.toggle('open', !isOpen);
       });
     });
 
