@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Мастер-классы | Sweetland Kids Bakery</title>
+  <meta name="description" content="Детские кондитерские мастер-классы в Sweetland Kids Bakery — капкейки, макарон, шоколад. Увлекательно, вкусно, незабываемо.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Quicksand:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#ffd9e2", "on-primary": "#ffffff", "primary-fixed-dim": "#f6b5c8",
+            "on-primary-fixed-variant": "#683848", "surface-tint": "#834f60",
+            "on-surface-variant": "#504347", "surface-container-highest": "#f4dde2",
+            "tertiary-container": "#c6a955", "surface": "#fff8f8", "primary-container": "#9b6576",
+            "on-surface": "#25181c", "tertiary": "#735c0c", "surface-container": "#ffe8ed",
+            "background": "#fff8f8", "surface-container-high": "#fae2e7",
+            "surface-container-low": "#fff0f2", "secondary-container": "#fad7e1",
+            "surface-dim": "#ebd4d9", "on-background": "#25181c", "primary": "#804d5e",
+            "on-tertiary": "#ffffff", "tertiary-fixed": "#ffe08a", "tertiary-fixed-dim": "#e2c46d",
+            "secondary": "#725760", "on-secondary": "#ffffff"
+          },
+          borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+          spacing: { gutter: "24px", "section-gap": "120px", "margin-desktop": "80px", base: "8px", "margin-mobile": "20px" },
+          fontFamily: { "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Quicksand"], "label-bold": ["Quicksand"], "headline-sm": ["Plus Jakarta Sans"], "body-lg": ["Quicksand"] },
+          fontSize: {
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+            "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "display-mobile": ["36px", { lineHeight: "1.2", fontWeight: "800" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "500" }],
+            "label-bold": ["14px", { lineHeight: "1.2", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .rose-shadow { box-shadow: 0 20px 40px -10px rgba(128,77,94,0.15); }
+    .sprinkle-bg { background-image: radial-gradient(circle,#f6b5c8 1px,transparent 1px); background-size: 30px 30px; }
+    .nav-services-dropdown .dropdown-menu { transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; transform: translateY(6px); }
+    .nav-services-dropdown:hover .dropdown-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-lg shadow-primary/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 transition-all duration-300">
+    <a href="../index.html" class="flex items-center gap-2">
+      <img alt="Sweetland Kids Bakery" class="h-12 w-auto object-contain" src="../castle_logo.jpg" />
+      <div class="flex flex-col">
+        <span class="font-headline-md text-xl md:text-2xl font-bold text-primary leading-tight">Sweetland</span>
+        <span class="text-[9px] font-bold tracking-[0.15em] text-on-surface-variant uppercase leading-none mt-[-2px]">Kids Bakery</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <div class="relative nav-services-dropdown">
+        <button class="text-primary font-bold border-b-2 border-primary transition-all duration-300 flex items-center gap-1 cursor-pointer bg-transparent border-x-0 border-t-0 p-0">
+          Услуги <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+        </button>
+        <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-xl shadow-xl py-2 min-w-[220px] opacity-0 invisible z-[60]">
+          <a href="birthday.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Дни рождения</a>
+          <a href="masterclass.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Мастер-классы</a>
+          <a href="school.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Школьные мероприятия</a>
+          <a href="cakes.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Торты на заказ</a>
+          <a href="constructor.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Конструктор праздника</a>
+        </div>
+      </div>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#gallery">Галерея</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#faq">FAQ</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#contacts">Контакты</a>
+    </nav>
+    <a href="../index.html#contacts" class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold hover:scale-105 transition-transform duration-300 shadow-lg shadow-primary/20">Записаться</a>
+  </header>
+
+  <main class="pt-28 md:pt-36">
+    <!-- Hero -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
+      <div class="absolute inset-0 sprinkle-bg opacity-20 pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+        <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Услуга</span>
+        <h1 class="font-display-lg text-display-mobile md:text-display-lg text-primary">Мастер-классы</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Увлекательные практические занятия, где дети учатся готовить, выпекать и украшать сладости своими руками. Каждый ребёнок уходит с гордостью — и вкусным угощением!
+        </p>
+        <a href="../index.html#contacts" class="inline-block bg-primary text-on-primary px-10 py-4 rounded-full font-label-bold text-headline-sm hover:scale-105 transition-all rose-shadow">
+          Записаться на мастер-класс
+        </a>
+      </div>
+    </section>
+
+    <!-- Formats -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop bg-background">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 space-y-3">
+          <h2 class="font-headline-md text-display-mobile text-primary">Форматы мастер-классов</h2>
+          <p class="text-body-lg text-on-surface-variant">Выберите тему — мы подготовим всё необходимое</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary text-4xl">cake</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Капкейки</h3>
+            <p class="text-on-surface-variant">Дети выпекают пышные кексы и украшают их разноцветным кремом, посыпками и съедобными фигурками. Подходит с 4 лет.</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-tertiary/10 rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-tertiary text-4xl">cookie</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Макарон</h3>
+            <p class="text-on-surface-variant">Французское искусство — по-детски просто и весело. Дети смешивают тесто, выпекают и соединяют половинки с ароматным ганашем.</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary text-4xl">sentiment_very_satisfied</span>
+            </div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Шоколад</h3>
+            <p class="text-on-surface-variant">Темперирование шоколада, создание конфет и шоколадных фигурок. Дети узнают секреты шоколатье и уходят с подарочной коробкой.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info + image -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="relative rounded-xl overflow-hidden rose-shadow">
+          <img class="w-full h-auto object-cover" alt="Мастер-класс для детей"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY4c52QJn9B4XHHFt8tHhVJ8V2FydXZZ71Y6iLokQLunEmGiwypZwL-YktU_13Lvn6CohlXevNrFsITtwD5Oz5TiY_VM73d-XetahdlOaY2P-4aCTYgiuvwxdBqu--vv80ZCGNm22pIvboa3NLGqyr8euTJAizaevIcgMfg0_pCmrx7c173aIcUb2NFB_nJQzo4O6NgQW79rGChVqKLRHirY68YoFXddNjPTeTiXqJJS0iBgOGsu-rJbyxf0COX46fKVRJHJkD9oA" />
+        </div>
+        <div class="space-y-6">
+          <h2 class="font-headline-md text-display-mobile text-primary">Как проходит мастер-класс?</h2>
+          <p class="text-body-lg text-on-surface-variant">
+            Наши опытные кондитеры проводят занятие в игровой и доступной форме. Каждый ребёнок получает своё рабочее место, фартук, колпак и все необходимые инструменты.
+          </p>
+          <p class="text-body-lg text-on-surface-variant">
+            Продолжительность — от 1,5 до 2 часов. Группа — от 5 до 20 детей. Возраст — от 4 лет. Все ингредиенты натуральные и безопасные.
+          </p>
+          <a href="../index.html#contacts" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-label-bold hover:scale-105 transition-all shadow-lg shadow-primary/20">
+            Записаться <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-highest rounded-t-xl px-margin-mobile md:px-margin-desktop py-10 text-center space-y-4">
+    <div class="flex items-center justify-center gap-2">
+      <img alt="Sweetland Kids Bakery" class="h-10 w-auto object-contain" src="../castle_logo.jpg" />
+      <div class="flex flex-col text-left">
+        <span class="font-headline-sm text-lg font-bold text-primary leading-tight">Sweetland</span>
+        <span class="text-[8px] font-bold tracking-[0.1em] text-on-surface-variant/70 uppercase leading-none">Kids Bakery</span>
+      </div>
+    </div>
+    <p class="text-on-surface-variant text-sm">© 2026 Sweetland Kids Bakery. Все права защищены.</p>
+    <nav class="flex flex-wrap justify-center gap-4 text-sm">
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="birthday.html">Дни рождения</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="masterclass.html">Мастер-классы</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="school.html">Школьные мероприятия</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="cakes.html">Торты на заказ</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="constructor.html">Конструктор праздника</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

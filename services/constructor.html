@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Конструктор праздника | Sweetland Kids Bakery</title>
+  <meta name="description" content="Составьте идеальный праздник сами — выберите основу и дополнения, узнайте стоимость и отправьте заявку в WhatsApp.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Quicksand:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#ffd9e2", "on-primary": "#ffffff", "primary-fixed-dim": "#f6b5c8",
+            "on-primary-fixed-variant": "#683848", "on-surface-variant": "#504347",
+            "surface-container-highest": "#f4dde2", "surface": "#fff8f8",
+            "on-surface": "#25181c", "tertiary": "#735c0c", "surface-container": "#ffe8ed",
+            "background": "#fff8f8", "surface-container-high": "#fae2e7",
+            "surface-container-low": "#fff0f2", "on-background": "#25181c", "primary": "#804d5e",
+            "on-tertiary": "#ffffff", "secondary": "#725760", "on-secondary": "#ffffff",
+            "tertiary-fixed": "#ffe08a", "tertiary-fixed-dim": "#e2c46d"
+          },
+          borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+          spacing: { gutter: "24px", "section-gap": "120px", "margin-desktop": "80px", base: "8px", "margin-mobile": "20px" },
+          fontFamily: { "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Quicksand"], "label-bold": ["Quicksand"], "headline-sm": ["Plus Jakarta Sans"], "body-lg": ["Quicksand"] },
+          fontSize: {
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+            "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "display-mobile": ["36px", { lineHeight: "1.2", fontWeight: "800" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "500" }],
+            "label-bold": ["14px", { lineHeight: "1.2", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .rose-shadow { box-shadow: 0 20px 40px -10px rgba(128,77,94,0.15); }
+    .sprinkle-bg { background-image: radial-gradient(circle,#f6b5c8 1px,transparent 1px); background-size: 30px 30px; }
+    .nav-services-dropdown .dropdown-menu { transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; transform: translateY(6px); }
+    .nav-services-dropdown:hover .dropdown-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0); }
+
+    .option-card { cursor: pointer; transition: all 0.2s ease; }
+    .option-card:hover { transform: translateY(-2px); }
+    .option-card.selected { border-color: #804d5e !important; background-color: #ffd9e2 !important; }
+    .option-card.selected .card-check { background-color: #804d5e; border-color: #804d5e; }
+    .option-card.selected .card-check::after { content: ''; display: block; width: 6px; height: 10px; border: 2px solid #fff; border-top: none; border-left: none; transform: rotate(45deg) translate(1px,-1px); margin: auto; }
+    .card-check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #d4c2c6; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .option-card.selected .radio-check { background: #804d5e; border-color: #804d5e; }
+    .option-card.selected .radio-check::after { content: ''; display: block; width: 8px; height: 8px; border-radius: 50%; background: #fff; margin: auto; }
+    .radio-check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #d4c2c6; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .summary-item { animation: slideIn 0.25s ease; }
+    @keyframes slideIn { from { opacity:0; transform:translateX(-8px); } to { opacity:1; transform:translateX(0); } }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-lg shadow-primary/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 transition-all duration-300">
+    <a href="../index.html" class="flex items-center gap-2">
+      <img alt="Sweetland Kids Bakery" class="h-12 w-auto object-contain" src="../castle_logo.jpg" />
+      <div class="flex flex-col">
+        <span class="font-headline-md text-xl md:text-2xl font-bold text-primary leading-tight">Sweetland</span>
+        <span class="text-[9px] font-bold tracking-[0.15em] text-on-surface-variant uppercase leading-none mt-[-2px]">Kids Bakery</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <div class="relative nav-services-dropdown">
+        <button class="text-primary font-bold border-b-2 border-primary transition-all duration-300 flex items-center gap-1 cursor-pointer bg-transparent border-x-0 border-t-0 p-0">
+          Услуги <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+        </button>
+        <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-xl shadow-xl py-2 min-w-[220px] opacity-0 invisible z-[60]">
+          <a href="birthday.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Дни рождения</a>
+          <a href="masterclass.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Мастер-классы</a>
+          <a href="school.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Школьные мероприятия</a>
+          <a href="cakes.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Торты на заказ</a>
+          <a href="constructor.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Конструктор праздника</a>
+        </div>
+      </div>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#gallery">Галерея</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#faq">FAQ</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#contacts">Контакты</a>
+    </nav>
+    <a href="../index.html#contacts" class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold hover:scale-105 transition-transform duration-300 shadow-lg shadow-primary/20">Записаться</a>
+  </header>
+
+  <main class="pt-28 md:pt-36">
+    <!-- Hero -->
+    <section class="py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
+      <div class="absolute inset-0 sprinkle-bg opacity-20 pointer-events-none"></div>
+      <div class="max-w-3xl mx-auto text-center space-y-5 relative z-10">
+        <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Интерактивный инструмент</span>
+        <h1 class="font-display-lg text-display-mobile md:text-display-lg text-primary">Конструктор праздника</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">
+          Выберите основу и добавьте всё, что хотите. Итоговая стоимость считается автоматически — а заявка уходит прямо в WhatsApp.
+        </p>
+      </div>
+    </section>
+
+    <!-- Constructor -->
+    <section class="py-16 px-margin-mobile md:px-margin-desktop bg-background">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+        <!-- Left: Selectors -->
+        <div class="lg:col-span-2 space-y-12">
+
+          <!-- Block A: Base -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-lg">A</div>
+              <h2 class="font-headline-sm text-headline-sm text-primary">Основа праздника <span class="text-on-surface-variant font-normal text-base">(выберите одно)</span></h2>
+            </div>
+            <div class="space-y-3" id="baseOptions">
+              <div class="option-card flex items-center gap-4 bg-white border-2 border-[#d4c2c6] rounded-xl p-5 rose-shadow" data-type="base" data-label="День рождения" data-price="15000">
+                <div class="radio-check"></div>
+                <div class="flex-1">
+                  <p class="font-bold text-on-surface">День рождения</p>
+                  <p class="text-on-surface-variant text-sm">Тематический декор, программа, ведущий</p>
+                </div>
+                <span class="font-bold text-primary text-lg whitespace-nowrap">15 000 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-4 bg-white border-2 border-[#d4c2c6] rounded-xl p-5 rose-shadow" data-type="base" data-label="Школьное мероприятие" data-price="12000">
+                <div class="radio-check"></div>
+                <div class="flex-1">
+                  <p class="font-bold text-on-surface">Школьное мероприятие</p>
+                  <p class="text-on-surface-variant text-sm">Выезд к вам, оборудование, все материалы</p>
+                </div>
+                <span class="font-bold text-primary text-lg whitespace-nowrap">12 000 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-4 bg-white border-2 border-[#d4c2c6] rounded-xl p-5 rose-shadow" data-type="base" data-label="Выездной мастер-класс" data-price="10000">
+                <div class="radio-check"></div>
+                <div class="flex-1">
+                  <p class="font-bold text-on-surface">Выездной мастер-класс</p>
+                  <p class="text-on-surface-variant text-sm">Мастер приезжает к вам с полным набором</p>
+                </div>
+                <span class="font-bold text-primary text-lg whitespace-nowrap">10 000 ₽</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Block B: Extras -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-lg">B</div>
+              <h2 class="font-headline-sm text-headline-sm text-primary">Добавить к празднику <span class="text-on-surface-variant font-normal text-base">(можно несколько)</span></h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="extraOptions">
+              <div class="option-card flex items-center gap-3 bg-white border-2 border-[#d4c2c6] rounded-xl p-4 rose-shadow" data-type="extra" data-label="Мастер-класс «Капкейки»" data-price="3000">
+                <div class="card-check"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-on-surface text-sm leading-tight">Мастер-класс «Капкейки»</p>
+                </div>
+                <span class="font-bold text-primary text-sm whitespace-nowrap">+3 000 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-3 bg-white border-2 border-[#d4c2c6] rounded-xl p-4 rose-shadow" data-type="extra" data-label="Мастер-класс «Макарон»" data-price="4000">
+                <div class="card-check"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-on-surface text-sm leading-tight">Мастер-класс «Макарон»</p>
+                </div>
+                <span class="font-bold text-primary text-sm whitespace-nowrap">+4 000 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-3 bg-white border-2 border-[#d4c2c6] rounded-xl p-4 rose-shadow" data-type="extra" data-label="Мастер-класс «Шоколад»" data-price="3500">
+                <div class="card-check"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-on-surface text-sm leading-tight">Мастер-класс «Шоколад»</p>
+                </div>
+                <span class="font-bold text-primary text-sm whitespace-nowrap">+3 500 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-3 bg-white border-2 border-[#d4c2c6] rounded-xl p-4 rose-shadow" data-type="extra" data-label="Именной торт" data-price="5000">
+                <div class="card-check"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-on-surface text-sm leading-tight">Именной торт</p>
+                </div>
+                <span class="font-bold text-primary text-sm whitespace-nowrap">+5 000 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-3 bg-white border-2 border-[#d4c2c6] rounded-xl p-4 rose-shadow" data-type="extra" data-label="Аниматор" data-price="4000">
+                <div class="card-check"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-on-surface text-sm leading-tight">Аниматор</p>
+                </div>
+                <span class="font-bold text-primary text-sm whitespace-nowrap">+4 000 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-3 bg-white border-2 border-[#d4c2c6] rounded-xl p-4 rose-shadow" data-type="extra" data-label="Фотосъёмка" data-price="3000">
+                <div class="card-check"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-on-surface text-sm leading-tight">Фотосъёмка</p>
+                </div>
+                <span class="font-bold text-primary text-sm whitespace-nowrap">+3 000 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-3 bg-white border-2 border-[#d4c2c6] rounded-xl p-4 rose-shadow" data-type="extra" data-label="Декор и оформление" data-price="2500">
+                <div class="card-check"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-on-surface text-sm leading-tight">Декор и оформление</p>
+                </div>
+                <span class="font-bold text-primary text-sm whitespace-nowrap">+2 500 ₽</span>
+              </div>
+              <div class="option-card flex items-center gap-3 bg-white border-2 border-[#d4c2c6] rounded-xl p-4 rose-shadow" data-type="extra" data-label="Подарки всем детям" data-price="1500">
+                <div class="card-check"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-bold text-on-surface text-sm leading-tight">Подарки всем детям</p>
+                </div>
+                <span class="font-bold text-primary text-sm whitespace-nowrap">+1 500 ₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Summary -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-28 bg-white rounded-2xl rose-shadow p-7 space-y-6">
+            <h2 class="font-headline-sm text-headline-sm text-primary border-b border-[#ffd9e2] pb-4">Ваш праздник</h2>
+
+            <!-- Selected items list -->
+            <div id="summaryList" class="space-y-2 min-h-[80px]">
+              <p id="summaryEmpty" class="text-on-surface-variant text-sm italic">Выберите хотя бы одну позицию...</p>
+            </div>
+
+            <!-- Total -->
+            <div class="border-t border-[#ffd9e2] pt-4 flex justify-between items-center">
+              <span class="font-bold text-on-surface">Итого:</span>
+              <span id="totalPrice" class="font-bold text-primary text-2xl">0 ₽</span>
+            </div>
+
+            <!-- Contact fields -->
+            <div class="space-y-3">
+              <input id="cName" type="text" placeholder="Ваше имя" autocomplete="name"
+                class="w-full bg-surface-container-low px-5 py-3 rounded-full border-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40 text-sm" />
+              <input id="cPhone" type="tel" placeholder="Телефон" autocomplete="tel" inputmode="tel"
+                class="w-full bg-surface-container-low px-5 py-3 rounded-full border-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/40 text-sm" />
+            </div>
+
+            <!-- WhatsApp button -->
+            <button id="sendWA"
+              class="w-full bg-[#25D366] text-white py-4 rounded-full font-label-bold text-base shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="12" fill="rgba(255,255,255,0.25)" />
+                <path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-1-2.2-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3 4.9 4.2.7.3 1.2.4 1.6.5.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3z" fill="white"/>
+              </svg>
+              Отправить заявку в WhatsApp
+            </button>
+            <p class="text-xs text-center text-on-surface-variant/60">Откроется WhatsApp с готовым сообщением</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-highest rounded-t-xl px-margin-mobile md:px-margin-desktop py-10 text-center space-y-4">
+    <div class="flex items-center justify-center gap-2">
+      <img alt="Sweetland Kids Bakery" class="h-10 w-auto object-contain" src="../castle_logo.jpg" />
+      <div class="flex flex-col text-left">
+        <span class="font-headline-sm text-lg font-bold text-primary leading-tight">Sweetland</span>
+        <span class="text-[8px] font-bold tracking-[0.1em] text-on-surface-variant/70 uppercase leading-none">Kids Bakery</span>
+      </div>
+    </div>
+    <p class="text-on-surface-variant text-sm">© 2026 Sweetland Kids Bakery. Все права защищены.</p>
+    <nav class="flex flex-wrap justify-center gap-4 text-sm">
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="birthday.html">Дни рождения</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="masterclass.html">Мастер-классы</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="school.html">Школьные мероприятия</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="cakes.html">Торты на заказ</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="constructor.html">Конструктор праздника</a>
+    </nav>
+  </footer>
+
+  <script>
+    const WA_NUMBER = '37477907270'; // +374 77 907270
+
+    let selectedBase = null;   // { label, price }
+    let selectedExtras = [];   // [{ label, price }, ...]
+
+    function formatPrice(n) {
+      return n.toLocaleString('ru-RU') + ' ₽';
+    }
+
+    function updateSummary() {
+      const list = document.getElementById('summaryList');
+      const empty = document.getElementById('summaryEmpty');
+      const totalEl = document.getElementById('totalPrice');
+
+      const items = [];
+      if (selectedBase) items.push(selectedBase);
+      items.push(...selectedExtras);
+
+      if (items.length === 0) {
+        empty.style.display = '';
+        list.querySelectorAll('.summary-item').forEach(el => el.remove());
+        totalEl.textContent = '0 ₽';
+        return;
+      }
+
+      empty.style.display = 'none';
+
+      // Rebuild list
+      list.querySelectorAll('.summary-item').forEach(el => el.remove());
+      items.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'summary-item flex justify-between items-start gap-2 text-sm';
+        row.innerHTML = `<span class="text-on-surface">${item.label}</span><span class="font-bold text-primary whitespace-nowrap">${formatPrice(item.price)}</span>`;
+        list.appendChild(row);
+      });
+
+      const total = items.reduce((sum, i) => sum + i.price, 0);
+      totalEl.textContent = formatPrice(total);
+    }
+
+    // Base cards (radio behaviour)
+    document.querySelectorAll('[data-type="base"]').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('[data-type="base"]').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        selectedBase = { label: card.dataset.label, price: parseInt(card.dataset.price) };
+        updateSummary();
+      });
+    });
+
+    // Extra cards (checkbox behaviour)
+    document.querySelectorAll('[data-type="extra"]').forEach(card => {
+      card.addEventListener('click', () => {
+        const isSelected = card.classList.contains('selected');
+        if (isSelected) {
+          card.classList.remove('selected');
+          selectedExtras = selectedExtras.filter(e => e.label !== card.dataset.label);
+        } else {
+          card.classList.add('selected');
+          selectedExtras.push({ label: card.dataset.label, price: parseInt(card.dataset.price) });
+        }
+        updateSummary();
+      });
+    });
+
+    // WhatsApp send
+    document.getElementById('sendWA').addEventListener('click', () => {
+      const name = document.getElementById('cName').value.trim();
+      const phone = document.getElementById('cPhone').value.trim();
+
+      if (!selectedBase) {
+        alert('Пожалуйста, выберите основу праздника (блок A).');
+        return;
+      }
+
+      const items = [selectedBase, ...selectedExtras];
+      const total = items.reduce((s, i) => s + i.price, 0);
+
+      const lines = [
+        'Здравствуйте! Хочу заказать праздник:',
+        `- ${selectedBase.label} — ${formatPrice(selectedBase.price)}`,
+        ...selectedExtras.map(e => `- ${e.label} — ${formatPrice(e.price)}`),
+        `Итого: ${formatPrice(total)}`,
+      ];
+      if (name) lines.push(`Имя: ${name}`);
+      if (phone) lines.push(`Телефон: ${phone}`);
+
+      const text = encodeURIComponent(lines.join('\n'));
+      window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, '_blank', 'noopener');
+    });
+  </script>
+
+</body>
+</html>

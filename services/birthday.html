@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Дни рождения | Sweetland Kids Bakery</title>
+  <meta name="description" content="Незабываемые детские дни рождения от Sweetland Kids Bakery — тематический декор, мастер-классы и торжественный вынос торта.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Quicksand:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#ffd9e2", "on-primary": "#ffffff", "primary-fixed-dim": "#f6b5c8",
+            "on-primary-fixed-variant": "#683848", "surface-tint": "#834f60",
+            "surface-container-lowest": "#ffffff", "outline-variant": "#d4c2c6",
+            "secondary": "#725760", "on-secondary": "#ffffff", "inverse-on-surface": "#ffecf0",
+            "surface-variant": "#f4dde2", "on-surface-variant": "#504347",
+            "surface-container-highest": "#f4dde2", "on-secondary-container": "#765b64",
+            "tertiary-container": "#c6a955", "surface": "#fff8f8", "primary-container": "#9b6576",
+            "on-surface": "#25181c", "tertiary": "#735c0c", "surface-container": "#ffe8ed",
+            "background": "#fff8f8", "surface-container-high": "#fae2e7",
+            "secondary-fixed": "#fddae4", "surface-bright": "#fff8f8",
+            "inverse-surface": "#3b2d30", "surface-container-low": "#fff0f2",
+            "secondary-container": "#fad7e1", "on-primary-container": "#fffbff",
+            "surface-dim": "#ebd4d9", "outline": "#837377", "on-background": "#25181c",
+            "primary": "#804d5e", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffe08a",
+            "tertiary-fixed-dim": "#e2c46d"
+          },
+          borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+          spacing: { gutter: "24px", "section-gap": "120px", "margin-desktop": "80px", base: "8px", "margin-mobile": "20px" },
+          fontFamily: { "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Quicksand"], "label-bold": ["Quicksand"], "headline-sm": ["Plus Jakarta Sans"], "body-lg": ["Quicksand"] },
+          fontSize: {
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+            "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "display-mobile": ["36px", { lineHeight: "1.2", fontWeight: "800" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "500" }],
+            "label-bold": ["14px", { lineHeight: "1.2", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .rose-shadow { box-shadow: 0 20px 40px -10px rgba(128,77,94,0.15); }
+    .sprinkle-bg { background-image: radial-gradient(circle,#f6b5c8 1px,transparent 1px); background-size: 30px 30px; }
+    .nav-services-dropdown .dropdown-menu { transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; transform: translateY(6px); }
+    .nav-services-dropdown:hover .dropdown-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-lg shadow-primary/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 transition-all duration-300">
+    <a href="../index.html" class="flex items-center gap-2">
+      <img alt="Sweetland Kids Bakery" class="h-12 w-auto object-contain" src="../castle_logo.jpg" />
+      <div class="flex flex-col">
+        <span class="font-headline-md text-xl md:text-2xl font-bold text-primary leading-tight">Sweetland</span>
+        <span class="text-[9px] font-bold tracking-[0.15em] text-on-surface-variant uppercase leading-none mt-[-2px]">Kids Bakery</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <div class="relative nav-services-dropdown">
+        <button class="text-primary font-bold border-b-2 border-primary transition-all duration-300 flex items-center gap-1 cursor-pointer bg-transparent border-x-0 border-t-0 p-0">
+          Услуги <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+        </button>
+        <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-xl shadow-xl py-2 min-w-[220px] opacity-0 invisible z-[60]">
+          <a href="birthday.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Дни рождения</a>
+          <a href="masterclass.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Мастер-классы</a>
+          <a href="school.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Школьные мероприятия</a>
+          <a href="cakes.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Торты на заказ</a>
+          <a href="constructor.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Конструктор праздника</a>
+        </div>
+      </div>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#gallery">Галерея</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#faq">FAQ</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#contacts">Контакты</a>
+    </nav>
+    <a href="../index.html#contacts" class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold hover:scale-105 transition-transform duration-300 shadow-lg shadow-primary/20">Записаться</a>
+  </header>
+
+  <main class="pt-28 md:pt-36">
+    <!-- Hero -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
+      <div class="absolute inset-0 sprinkle-bg opacity-20 pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+        <span class="text-xs font-bold tracking-[0.2em] text-primary uppercase bg-primary-fixed px-4 py-1.5 rounded-full">Услуга</span>
+        <h1 class="font-display-lg text-display-mobile md:text-display-lg text-primary">Дни рождения</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Превратим день рождения вашего ребёнка в волшебное событие, которое он будет помнить всю жизнь. Тематический декор, увлекательные мастер-классы и торжественный вынос торта — всё включено.
+        </p>
+        <a href="../index.html#contacts" class="inline-block bg-primary text-on-primary px-10 py-4 rounded-full font-label-bold text-headline-sm hover:scale-105 transition-all rose-shadow">
+          Записаться на праздник
+        </a>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop bg-background">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6">
+          <h2 class="font-headline-md text-display-mobile text-primary">Что входит в праздник?</h2>
+          <p class="text-body-lg text-on-surface-variant">
+            Мы берём на себя всю организацию: от оформления зала до уборки после праздника. Вы просто наслаждаетесь счастьем своего ребёнка, пока мы делаем всё остальное.
+          </p>
+          <p class="text-body-lg text-on-surface-variant">
+            Каждый день рождения — это индивидуальная программа, разработанная с учётом возраста, интересов именинника и пожеланий родителей. Мы работаем с группами от 5 до 25 детей.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface font-medium">Тематический декор зала</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface font-medium">Кондитерский мастер-класс для детей</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface font-medium">Именной торт и торжественный вынос</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface font-medium">Сладкие подарки каждому гостю</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface font-medium">Фотозона</span></li>
+          </ul>
+          <a href="../index.html#contacts" class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-label-bold hover:scale-105 transition-all shadow-lg shadow-primary/20">
+            Заказать день рождения <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div class="relative rounded-xl overflow-hidden rose-shadow">
+          <img class="w-full h-auto object-cover" alt="Детский день рождения Sweetland"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3mumqNJ9WSu2bwtEAohRfHbRWbnzSJjYS-Cwt2C_qLflJPUjZXY1Ez7qEZN0acVysJX_WCvaDmE_pkooKsMFGTZ4WygXJWaANv_pk5DDcFmgQgUvFVBESuc3dSCbQ7ogq9l_TNToFatBh8Ns0YbHCN5c7LB0Oc5HwFoYsE5VYTdZf82UkKnaEkRarvB-GgoCg15KL0rR97ovoyUA_kCg3S82rvkLHO_3Ub4XRpHK5b8OZgvZG-_j5RFdV_nz5IJmvNZGmw-8OSA4" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery strip -->
+    <section class="py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+      <h2 class="font-headline-md text-headline-md text-primary text-center mb-10">Фотографии с праздников</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-xl overflow-hidden rose-shadow aspect-square">
+          <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="День рождения 1"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSimAVJTYsUI6Y2jfjNI6IankjpwlbbMui2AnUoWc-3ap0ka9jH9X0TYqymhyeB5bM30CL4lnyFlyiiV2oWClRt4DLzhBCT2txGJ9IL2QQk6tSbGdH7HoWfDXeWtw7R1-x2phX1_HApimMi4dHs1-PjfEEkG5pANU72hhtxstm6sMGN24nYrTz2eU4nSa5ZkqVW-cKCydIWGYML56-wMeE_Q47_ZXfAHcV97mvHiRrWtQX_7LZVTajtqg8d5FaiqwqgVVN8TBrwRI" />
+        </div>
+        <div class="rounded-xl overflow-hidden rose-shadow aspect-square">
+          <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="День рождения 2"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL21pkForq9JgQd6mlfNdPQY3UY9N1enJec7uuIexCDQtsWlbks8OrJJ8ky6l73Xj_UW9boPdvVE2dSIs-3i9-RVwgwqk6TlTE2dgEPkbbiy3p_RQoScm17PiHDnSfwMQwMdIi5PdFYB4IUD6W3PjX2qomViJb2PJ-vd528mvdE97HDffDCUdUdaXrc_3A1h-v6C_wwL358EkGs8aboXWSHKvpz2FtZxplW4rTeKxArmTtZeqQsiCqYY9XB4Nxgj6FTmSq5v3RlTo" />
+        </div>
+        <div class="rounded-xl overflow-hidden rose-shadow aspect-square">
+          <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="День рождения 3"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlVzlEqkpZ0MJI1wcWgMdIfbC4pyjc7hppgkBEj0c0XubIspgT8pYH4380ODbGSrDidzakG9l-VtBo-FyNrp2JVlCNC93lqnjCupdxGf0xVrhztNWx8QrUtCkHb8jLUo5xXZ-I043MF29zBttkJNKrUQ0yBJEXHf6J2HolXyqpXwUvkl4FwhRSGZT1lUN0UJZsmDUXDZZutNsGIlheERh5tng6IzNw5YnrgWe7ZPOEN20aHuDW46TQBHJPKZBWPnQ4GPae6flfl5A" />
+        </div>
+        <div class="rounded-xl overflow-hidden rose-shadow aspect-square">
+          <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="День рождения 4"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRgh5JlibWIab-xyFc06aKFXDl4ddaUbTg4KJ0463ZglIRgAEiKWM7wlaS1zHwpvYA4ePUJuLqKCbyJSNLfljkhxuatCpISmXDyAdYYLBS3D-iKfQX1Mcgqi_t2OXwG1pa0D5yQenxUJz5O_ytALhKQnKJ7hHVZ0ROOaLmo8jgnn7uCPIswytyFdGy9fTY08WU58OvEFBlZIbT-nSJncBsn4irH7l2St09iTMhwxCTX25sN__G-0n14J2phP2II0vM6jOLMEiFqeM" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container text-center space-y-6">
+      <h2 class="font-headline-md text-display-mobile text-primary">Готовы устроить незабываемый праздник?</h2>
+      <p class="text-body-lg text-on-surface-variant max-w-xl mx-auto">Свяжитесь с нами, и мы создадим идеальный день рождения специально для вашего ребёнка.</p>
+      <a href="../index.html#contacts" class="inline-block bg-primary text-on-primary px-10 py-4 rounded-full font-label-bold text-headline-sm hover:scale-105 transition-all rose-shadow">
+        Записаться сейчас
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-highest rounded-t-xl px-margin-mobile md:px-margin-desktop py-10 text-center space-y-4">
+    <div class="flex items-center justify-center gap-2">
+      <img alt="Sweetland Kids Bakery" class="h-10 w-auto object-contain" src="../castle_logo.jpg" />
+      <div class="flex flex-col text-left">
+        <span class="font-headline-sm text-lg font-bold text-primary leading-tight">Sweetland</span>
+        <span class="text-[8px] font-bold tracking-[0.1em] text-on-surface-variant/70 uppercase leading-none">Kids Bakery</span>
+      </div>
+    </div>
+    <p class="text-on-surface-variant text-sm">© 2026 Sweetland Kids Bakery. Все права защищены.</p>
+    <nav class="flex flex-wrap justify-center gap-4 text-sm">
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="birthday.html">Дни рождения</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="masterclass.html">Мастер-классы</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="school.html">Школьные мероприятия</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="cakes.html">Торты на заказ</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="constructor.html">Конструктор праздника</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

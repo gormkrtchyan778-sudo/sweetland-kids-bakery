@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>8 Марта — Праздник для девочек | Sweetland Kids Bakery</title>
+  <meta name="description" content="Специальное предложение на 8 марта от Sweetland Kids Bakery — кондитерский мастер-класс для девочек, праздничный декор и именной торт.">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&family=Quicksand:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#ffd9e2", "on-primary": "#ffffff", "primary-fixed-dim": "#f6b5c8",
+            "on-primary-fixed-variant": "#683848", "on-surface-variant": "#504347",
+            "surface-container-highest": "#f4dde2", "surface": "#fff8f8",
+            "on-surface": "#25181c", "tertiary": "#735c0c", "surface-container": "#ffe8ed",
+            "background": "#fff8f8", "surface-container-high": "#fae2e7",
+            "surface-container-low": "#fff0f2", "on-background": "#25181c", "primary": "#804d5e",
+            "on-tertiary": "#ffffff", "tertiary-fixed": "#ffe08a", "tertiary-fixed-dim": "#e2c46d",
+            "secondary": "#725760", "on-secondary": "#ffffff"
+          },
+          borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" },
+          spacing: { gutter: "24px", "section-gap": "120px", "margin-desktop": "80px", base: "8px", "margin-mobile": "20px" },
+          fontFamily: { "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-md": ["Quicksand"], "label-bold": ["Quicksand"], "headline-sm": ["Plus Jakarta Sans"], "body-lg": ["Quicksand"] },
+          fontSize: {
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+            "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+            "display-mobile": ["36px", { lineHeight: "1.2", fontWeight: "800" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "500" }],
+            "label-bold": ["14px", { lineHeight: "1.2", fontWeight: "700" }],
+            "headline-sm": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .rose-shadow { box-shadow: 0 20px 40px -10px rgba(128,77,94,0.15); }
+    .sprinkle-bg { background-image: radial-gradient(circle,#f6b5c8 1px,transparent 1px); background-size: 30px 30px; }
+    .nav-services-dropdown .dropdown-menu { transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; transform: translateY(6px); }
+    .nav-services-dropdown:hover .dropdown-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0); }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    .petal { position: absolute; font-size: 1.5rem; animation: fall linear infinite; pointer-events: none; }
+    @keyframes fall {
+      0%  { transform: translateY(-60px) rotate(0deg);   opacity: 1; }
+      100%{ transform: translateY(110vh)  rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md overflow-x-hidden">
+
+  <!-- Falling petals -->
+  <div id="petals" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-lg shadow-primary/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 transition-all duration-300">
+    <a href="../index.html" class="flex items-center gap-2">
+      <img alt="Sweetland Kids Bakery" class="h-12 w-auto object-contain" src="../castle_logo.jpg" />
+      <div class="flex flex-col">
+        <span class="font-headline-md text-xl md:text-2xl font-bold text-primary leading-tight">Sweetland</span>
+        <span class="text-[9px] font-bold tracking-[0.15em] text-on-surface-variant uppercase leading-none mt-[-2px]">Kids Bakery</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <div class="relative nav-services-dropdown">
+        <button class="text-primary font-bold border-b-2 border-primary transition-all duration-300 flex items-center gap-1 cursor-pointer bg-transparent border-x-0 border-t-0 p-0">
+          Услуги <span class="material-symbols-outlined text-base leading-none">expand_more</span>
+        </button>
+        <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white rounded-xl shadow-xl py-2 min-w-[220px] opacity-0 invisible z-[60]">
+          <a href="../services/birthday.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Дни рождения</a>
+          <a href="../services/masterclass.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Мастер-классы</a>
+          <a href="../services/school.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Школьные мероприятия</a>
+          <a href="../services/cakes.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Торты на заказ</a>
+          <a href="../services/constructor.html" class="block px-5 py-3 text-[#804d5e] font-medium hover:bg-[#ffd9e2] transition-colors rounded-lg mx-1">Конструктор праздника</a>
+        </div>
+      </div>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#gallery">Галерея</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#faq">FAQ</a>
+      <a class="text-on-surface-variant font-medium hover:text-primary transition-all duration-300" href="../index.html#contacts">Контакты</a>
+    </nav>
+    <a href="../index.html#contacts" class="hidden sm:inline-block bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold hover:scale-105 transition-transform duration-300 shadow-lg shadow-primary/20">Записаться</a>
+  </header>
+
+  <main class="pt-28 md:pt-36 relative z-10">
+
+    <!-- Hero -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop relative overflow-hidden" style="background: linear-gradient(135deg, #fff0f2 0%, #ffd9e2 50%, #fff0f2 100%);">
+      <div class="absolute inset-0 sprinkle-bg opacity-30 pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+        <div class="inline-flex items-center gap-2 bg-white/70 backdrop-blur px-5 py-2 rounded-full text-primary font-bold text-sm rose-shadow">
+          🌸 Специальное предложение · До 8 марта
+        </div>
+        <h1 class="font-display-lg text-display-mobile md:text-display-lg text-primary leading-tight">
+          Праздник для маленьких<br><span class="text-tertiary font-serif italic">принцесс</span>
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          Подарите девочкам незабываемый день 8 марта — кондитерский мастер-класс «Цветочные капкейки», праздничный декор в розовых тонах и маленький именной тортик в подарок каждой участнице.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="../index.html#contacts"
+            class="bg-primary text-on-primary px-10 py-4 rounded-full font-label-bold text-headline-sm hover:scale-105 transition-all rose-shadow">
+            Записаться сейчас
+          </a>
+          <a href="../services/constructor.html"
+            class="border-2 border-primary text-primary px-10 py-4 rounded-full font-label-bold text-headline-sm hover:bg-primary hover:text-on-primary transition-all">
+            Собрать свой праздник
+          </a>
+        </div>
+        <!-- Countdown -->
+        <div class="pt-4">
+          <p class="text-xs text-on-surface-variant uppercase tracking-widest font-bold mb-3">Предложение действует до 8 марта 2026</p>
+          <div class="flex justify-center gap-4" id="countdown">
+            <div class="bg-white rose-shadow rounded-xl px-5 py-3 text-center min-w-[64px]">
+              <div id="cd-d" class="text-2xl font-bold text-primary">--</div>
+              <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">дней</div>
+            </div>
+            <div class="bg-white rose-shadow rounded-xl px-5 py-3 text-center min-w-[64px]">
+              <div id="cd-h" class="text-2xl font-bold text-primary">--</div>
+              <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">часов</div>
+            </div>
+            <div class="bg-white rose-shadow rounded-xl px-5 py-3 text-center min-w-[64px]">
+              <div id="cd-m" class="text-2xl font-bold text-primary">--</div>
+              <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">минут</div>
+            </div>
+            <div class="bg-white rose-shadow rounded-xl px-5 py-3 text-center min-w-[64px]">
+              <div id="cd-s" class="text-2xl font-bold text-primary">--</div>
+              <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">секунд</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's included -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop bg-background">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 space-y-3">
+          <h2 class="font-headline-md text-display-mobile text-primary">Что входит в праздник?</h2>
+          <p class="text-body-lg text-on-surface-variant">Всё готово — вам остаётся только прийти и наслаждаться</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300 text-center">
+            <div class="text-4xl animate-float">🧁</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Мастер-класс «Цветочные капкейки»</h3>
+            <p class="text-on-surface-variant text-sm">Каждая девочка украсит свои капкейки кремом в форме весенних цветов и заберёт их домой в красивой коробочке.</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300 text-center">
+            <div class="text-4xl animate-float" style="animation-delay:0.5s">🌸</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Праздничный декор</h3>
+            <p class="text-on-surface-variant text-sm">Зал оформлен в нежных розово-белых тонах: цветы, шары, гирлянды и фотозона для памятных снимков.</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300 text-center">
+            <div class="text-4xl animate-float" style="animation-delay:1s">🎂</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Мини-тортик каждой</h3>
+            <p class="text-on-surface-variant text-sm">Каждая участница получает маленький именной тортик — сделанный нашими кондитерами специально для неё.</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300 text-center">
+            <div class="text-4xl animate-float" style="animation-delay:1.5s">👩‍🍳</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Опытный кондитер-ведущий</h3>
+            <p class="text-on-surface-variant text-sm">Профессиональный мастер ведёт программу, помогает и вдохновляет каждую участницу на протяжении всего занятия.</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300 text-center">
+            <div class="text-4xl animate-float" style="animation-delay:2s">🎁</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Подарки участницам</h3>
+            <p class="text-on-surface-variant text-sm">Фартук и колпак в подарок, плюс сладкий сюрприз-комплимент от Sweetland к 8 марта.</p>
+          </div>
+          <div class="bg-white p-8 rounded-xl rose-shadow space-y-4 hover:scale-105 transition-transform duration-300 text-center">
+            <div class="text-4xl animate-float" style="animation-delay:2.5s">📸</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary">Фотозона</h3>
+            <p class="text-on-surface-variant text-sm">Красивая тематическая фотозона — делайте фото на память и делитесь в Instagram. Мы обязательно сделаем репост!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Price block -->
+    <section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative overflow-hidden">
+      <div class="absolute inset-0 sprinkle-bg opacity-10 pointer-events-none"></div>
+      <div class="max-w-3xl mx-auto text-center space-y-8 relative z-10">
+        <h2 class="font-headline-md text-display-mobile text-primary">Стоимость</h2>
+        <div class="bg-white rounded-2xl rose-shadow p-10 space-y-6">
+          <div class="text-5xl font-bold text-primary font-headline-md">По запросу</div>
+          <p class="text-on-surface-variant">Цена зависит от количества участниц и выбранных дополнений. Напишите нам — рассчитаем индивидуально за 5 минут.</p>
+          <ul class="text-left space-y-3 max-w-xs mx-auto">
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface text-sm">От 5 до 20 участниц</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface text-sm">Длительность 2 часа</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface text-sm">Возраст от 5 лет</span></li>
+            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><span class="text-on-surface text-sm">Выезд или наша площадка</span></li>
+          </ul>
+          <a href="../index.html#contacts"
+            class="inline-block bg-primary text-on-primary px-10 py-4 rounded-full font-label-bold text-headline-sm hover:scale-105 transition-all rose-shadow">
+            Уточнить стоимость в WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="py-16 px-margin-mobile md:px-margin-desktop bg-background">
+      <h2 class="font-headline-md text-headline-md text-primary text-center mb-10">Как это выглядит</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-xl overflow-hidden rose-shadow aspect-square">
+          <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="8 марта мастер-класс"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSimAVJTYsUI6Y2jfjNI6IankjpwlbbMui2AnUoWc-3ap0ka9jH9X0TYqymhyeB5bM30CL4lnyFlyiiV2oWClRt4DLzhBCT2txGJ9IL2QQk6tSbGdH7HoWfDXeWtw7R1-x2phX1_HApimMi4dHs1-PjfEEkG5pANU72hhtxstm6sMGN24nYrTz2eU4nSa5ZkqVW-cKCydIWGYML56-wMeE_Q47_ZXfAHcV97mvHiRrWtQX_7LZVTajtqg8d5FaiqwqgVVN8TBrwRI" />
+        </div>
+        <div class="rounded-xl overflow-hidden rose-shadow aspect-square">
+          <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Капкейки 8 марта"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL21pkForq9JgQd6mlfNdPQY3UY9N1enJec7uuIexCDQtsWlbks8OrJJ8ky6l73Xj_UW9boPdvVE2dSIs-3i9-RVwgwqk6TlTE2dgEPkbbiy3p_RQoScm17PiHDnSfwMQwMdIi5PdFYB4IUD6W3PjX2qomViJb2PJ-vd528mvdE97HDffDCUdUdaXrc_3A1h-v6C_wwL358EkGs8aboXWSHKvpz2FtZxplW4rTeKxArmTtZeqQsiCqYY9XB4Nxgj6FTmSq5v3RlTo" />
+        </div>
+        <div class="rounded-xl overflow-hidden rose-shadow aspect-square">
+          <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Праздник для девочек"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRgh5JlibWIab-xyFc06aKFXDl4ddaUbTg4KJ0463ZglIRgAEiKWM7wlaS1zHwpvYA4ePUJuLqKCbyJSNLfljkhxuatCpISmXDyAdYYLBS3D-iKfQX1Mcgqi_t2OXwG1pa0D5yQenxUJz5O_ytALhKQnKJ7hHVZ0ROOaLmo8jgnn7uCPIswytyFdGy9fTY08WU58OvEFBlZIbT-nSJncBsn4irH7l2St09iTMhwxCTX25sN__G-0n14J2phP2II0vM6jOLMEiFqeM" />
+        </div>
+        <div class="rounded-xl overflow-hidden rose-shadow aspect-square">
+          <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Декор 8 марта"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlVzlEqkpZ0MJI1wcWgMdIfbC4pyjc7hppgkBEj0c0XubIspgT8pYH4380ODbGSrDidzakG9l-VtBo-FyNrp2JVlCNC93lqnjCupdxGf0xVrhztNWx8QrUtCkHb8jLUo5xXZ-I043MF29zBttkJNKrUQ0yBJEXHf6J2HolXyqpXwUvkl4FwhRSGZT1lUN0UJZsmDUXDZZutNsGIlheERh5tng6IzNw5YnrgWe7ZPOEN20aHuDW46TQBHJPKZBWPnQ4GPae6flfl5A" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-highest rounded-t-xl px-margin-mobile md:px-margin-desktop py-10 text-center space-y-4 relative z-10">
+    <div class="flex items-center justify-center gap-2">
+      <img alt="Sweetland Kids Bakery" class="h-10 w-auto object-contain" src="../castle_logo.jpg" />
+      <div class="flex flex-col text-left">
+        <span class="font-headline-sm text-lg font-bold text-primary leading-tight">Sweetland</span>
+        <span class="text-[8px] font-bold tracking-[0.1em] text-on-surface-variant/70 uppercase leading-none">Kids Bakery</span>
+      </div>
+    </div>
+    <p class="text-on-surface-variant text-sm">© 2026 Sweetland Kids Bakery. Все права защищены.</p>
+    <nav class="flex flex-wrap justify-center gap-4 text-sm">
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="../index.html">Главная</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="../services/birthday.html">Дни рождения</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="../services/masterclass.html">Мастер-классы</a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors" href="../index.html#contacts">Контакты</a>
+    </nav>
+  </footer>
+
+  <script>
+    /* Falling petals */
+    const petalsEl = document.getElementById('petals');
+    const emojis = ['🌸', '🌷', '🌺', '✿', '💐'];
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('span');
+      p.className = 'petal';
+      p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDuration = (6 + Math.random() * 8) + 's';
+      p.style.animationDelay = (Math.random() * 8) + 's';
+      p.style.fontSize = (1 + Math.random()) + 'rem';
+      petalsEl.appendChild(p);
+    }
+
+    /* Countdown to March 8, 2026 */
+    function updateCountdown() {
+      const target = new Date('2026-03-08T00:00:00');
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<p class="text-primary font-bold text-xl">🌸 Сегодня 8 марта!</p>';
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+      document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+      document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+      document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
